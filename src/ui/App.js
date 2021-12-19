@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import Links from "./Links"
-import Tags from "./Tags";
 
 function App() {
 

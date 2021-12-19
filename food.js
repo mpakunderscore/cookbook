@@ -1,20 +1,17 @@
-let food = [
-    meat,
-    fish,
-    vegetables,
-    drinks,
-    soup,
-    sous,
-    bread,
-    rice
-]
-
 let meat = {
     title: '',
-    steak: {},
-    goulash: {},
-    slow: {},
-    barbecue: {},
+    steak: {
+        index: 394,
+    },
+    goulash: {
+        index: 8,
+    },
+    slow: {
+        index: 600,
+    },
+    barbecue: {
+        index: 300,
+    },
     baked: {}
 }
 
@@ -58,5 +55,8 @@ let bread = {
 let rice = {
 
 }
+
+
+
 
 module.exports = food
