@@ -63,20 +63,48 @@ let soup = {
     ]
 }
 
+let sous = {
+    name: 'sous',
+    title: 'Sous',
+    color: '#E86515',
+
+    list: []
+}
+
+let bread = {
+    name: 'bread',
+    title: 'Bread',
+    color: '#FAD69E',
+
+    list: []
+}
+
+let rice = {
+    name: 'rice',
+    title: 'Rice',
+    color: '#FFF',
+
+    list: []
+}
+
+let spice = {
+    name: 'spice',
+    title: 'Spice',
+    color: '#4b4848',
+
+    list: []
+}
+
 let food = [
     meat,
     fish,
     vegetables,
     drinks,
-    soup
+    soup,
+    sous,
+    bread,
+    spice,
+    rice,
 ]
-
-let sous = {}
-
-let bread = {}
-
-let rice = {}
-
-let spices = {}
 
 module.exports = food

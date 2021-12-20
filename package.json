@@ -14,8 +14,8 @@
         "watch": "webpack --watch",
         "make": "NODE_ENV=production webpack",
         "dev": "node server.js",
-        "prod": "pm2 start ./ecosystem.config.js --only prod",
-        "stop": "pm2 stop prod",
+        "prod": "pm2 start ./ecosystem.config.js --only food",
+        "stop": "pm2 stop food",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "heroku-run-build-script": true,
