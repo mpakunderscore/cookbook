@@ -70,6 +70,10 @@ main {
     user-select: none;
 }
 
+.card:active {
+    height: 200px;
+}
+
 .card .title {
     font-size: 36px;
     color: #f2f2fa;

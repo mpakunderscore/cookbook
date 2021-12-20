@@ -79,7 +79,7 @@ export default function Pages(props) {
 
         pages.push(
             <div className={'card'} style={{background: '#361F1F'}} key={'menu'}>
-                <div className={'title'}>FOOD MENU</div>
+                <div className={'title'}>FOOD</div>
             </div>
         )
 
