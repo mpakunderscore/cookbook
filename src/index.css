@@ -4,6 +4,8 @@ html, body {
     background: ghostwhite;
 
     font-family: 'Open Sans', sans-serif;
+
+    -webkit-user-select: none;
 }
 
 body {
