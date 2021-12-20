@@ -28,7 +28,7 @@ let fish = {
 let vegetables = {
     name: 'vegetables',
     title: 'Vegetables',
-    color: '',
+    color: '#62bb69',
 
     list: [
         {name: 'salad'},
@@ -41,7 +41,7 @@ let vegetables = {
 let drinks = {
     name: 'drinks',
     title: 'Drinks',
-    color: '',
+    color: '#4BA0D2FF',
 
     list: [
         {name: 'coffee'},
@@ -54,7 +54,7 @@ let drinks = {
 let soup = {
     name: 'soup',
     title: 'Soup',
-    color: '',
+    color: '#E6B43C',
 
     list: [
         {name: 'bouillon'},
@@ -76,5 +76,7 @@ let sous = {}
 let bread = {}
 
 let rice = {}
+
+let spices = {}
 
 module.exports = food

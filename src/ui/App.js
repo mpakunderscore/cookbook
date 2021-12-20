@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Links from "./Links"
+import Pages from "./Pages"
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
 
     return (
         <div>
-            <Links/>
+            <Pages/>
         </div>
     )
 }
