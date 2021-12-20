@@ -1,62 +1,80 @@
 let meat = {
-    title: '',
-    steak: {
-        index: 394,
-    },
-    goulash: {
-        index: 8,
-    },
-    slow: {
-        index: 600,
-    },
-    barbecue: {
-        index: 300,
-    },
-    baked: {}
+    name: 'meat',
+    title: 'Meat',
+    color: '#A42E2F',
+
+    list: [
+        {name: 'steak', index: 394},
+        {name: 'stew', index: 126},
+        {name: 'slow', index: 600},
+        {name: 'barbecue', index: 300},
+        {name: 'baked', index: 385},
+    ]
 }
 
 let fish = {
-    raw: {},
-    baked: {},
-    fries: {},
-    sushi: {}
+    name: 'fish',
+    title: 'Fish',
+    color: '#FA8072',
+
+    list: [
+        {name: 'raw'},
+        {name: 'baked'},
+        {name: 'fries'},
+        {name: 'sushi'}
+    ]
 }
 
 let vegetables = {
-    fried: {},
-    salad: {},
-    pickled: {},
-    baked: {},
-    soup: {}
+    name: 'vegetables',
+    title: 'Vegetables',
+    color: '',
+
+    list: [
+        {name: 'salad'},
+        {name: 'pickled'},
+        {name: 'baked'},
+        {name: 'soup'}
+    ]
 }
 
 let drinks = {
-    coffee: {},
-    tea: {},
-    lemonade: {},
-    smoothie: {},
+    name: 'drinks',
+    title: 'Drinks',
+    color: '',
+
+    list: [
+        {name: 'coffee'},
+        {name: 'tea'},
+        {name: 'lemonade'},
+        {name: 'smoothie'},
+    ]
 }
 
 let soup = {
-    bouillon: {},
-    stew: {},
-    fried: {},
-    puree: {},
+    name: 'soup',
+    title: 'Soup',
+    color: '',
+
+    list: [
+        {name: 'bouillon'},
+        {name: 'stew'},
+        {name: 'puree'}
+    ]
 }
 
-let sous = {
+let food = [
+    meat,
+    fish,
+    vegetables,
+    drinks,
+    soup
+]
 
-}
+let sous = {}
 
-let bread = {
+let bread = {}
 
-}
-
-let rice = {
-
-}
-
-
-
+let rice = {}
 
 module.exports = food
