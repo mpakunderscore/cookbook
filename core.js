@@ -1,4 +1,4 @@
-let food = {
+let core = {
     name: 'food',
     title: 'Food',
     color: '#361F1F',
@@ -15,10 +15,19 @@ let meat = {
         {name: 'steak', index: 394},
         {name: 'stew', index: 126},
         {name: 'slow', index: 600},
-        {name: 'barbecue', index: 300},
+        {name: 'grill', index: 300},
+        {name: 'bonfire', index: 0},
         {name: 'baked', index: 385},
+        {name: 'chicken', index: 0},
+        {name: 'ground', index: 0},
+        {name: 'bolognese', index: 0},
+        {name: 'kebab', index: 0},
+        {name: 'meatball', index: 0},
+        {name: 'smoked', index: 0}
     ]
 }
+
+// wellington
 
 let fish = {
     name: 'fish',
@@ -30,6 +39,17 @@ let fish = {
         {name: 'baked'},
         {name: 'fries'},
         {name: 'sushi'}
+    ]
+}
+
+let chicken = {
+    name: 'chicken',
+    title: 'Chicken',
+    color: '#e79087',
+
+    list: [
+        {name: 'fries'},
+        {name: 'soup'}
     ]
 }
 
@@ -71,9 +91,9 @@ let soup = {
     ]
 }
 
-let sous = {
-    name: 'sous',
-    title: 'Sous',
+let sauce = {
+    name: 'sauce',
+    title: 'Sauce',
     color: '#E86515',
 
     list: []
@@ -103,15 +123,31 @@ let spice = {
     list: []
 }
 
+let equipment = {
+    name: 'equipment',
+    title: 'Equipment',
+    color: '#bdbdbd',
+
+    list: [
+        {name: 'knife'},
+        {name: 'pan'},
+        {name: 'oven'},
+        {name: 'board'},
+        {name: 'sharpener'}
+
+    ]
+}
+
 module.exports = [
-    food,
+    core,
     meat,
     fish,
     vegetables,
     drinks,
     soup,
-    sous,
+    sauce,
     bread,
     spice,
     rice,
+    equipment,
 ]

@@ -75,7 +75,8 @@ main {
 }
 
 .card.active {
-    height: 300px;
+    /*height: 318px;*/
+    height: auto;
 }
 
 .card .title {
@@ -115,19 +116,27 @@ main {
 }
 
 .list > div {
-    width: 30%;
+    width: calc((100% - 40px)/3);
     height: 60px;
     text-align: center;
     line-height: 60px;
-    border: 1px solid ghostwhite;
+    border: 1px dashed ghostwhite;
+    font-weight: 600;
 
     border-radius: 10px;
+    margin-bottom: 14px;
+    /*margin-right: 10px;*/
+    /*margin-left: 10px;*/
+    font-size: 10px;
+}
+
+.list > div:last-child {
     margin-bottom: 20px;
-    font-size: 12px;
 }
 
 .list > div:active {
     background: ghostwhite;
+    color: black;
 }
 
 @media screen and (min-width: 1000px) {

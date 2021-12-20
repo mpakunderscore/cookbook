@@ -83,7 +83,7 @@ export default function Pages(props) {
             let item = data[i]
             pages.push(
                 <div className={'card ' + (active === i ? 'active' : '')}
-                     onClick={() => {setActive(i)}}
+                     onClick={(active === i ? null : () => {setActive(i)})}
                      style={{background: item.color}} key={item.name}>
                     <div className={'title'}>{item.title.toUpperCase()}</div>
 
@@ -109,7 +109,7 @@ export default function Pages(props) {
 
         let list = []
         for (let i = 0; i < itemList.length; i++) {
-            list.push(<div>{itemList[i].name.toUpperCase()}</div>)
+            list.push(<div key={itemList[i].name}>{itemList[i].name.toUpperCase()}</div>)
         }
 
         return list

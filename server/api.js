@@ -1,4 +1,4 @@
-const food = require("../food");
+const food = require("../core");
 
 let prefix = '/api'
 
