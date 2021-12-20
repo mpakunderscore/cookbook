@@ -61,8 +61,12 @@ let vegetables = {
     list: [
         {name: 'salad'},
         {name: 'pickled'},
+        {name: 'fries'},
         {name: 'baked'},
-        {name: 'soup'}
+        {name: 'broth'},
+        {name: 'soup'},
+        {name: 'onion'},
+        {name: 'potato'},
     ]
 }
 
@@ -85,9 +89,10 @@ let soup = {
     color: '#E6B43C',
 
     list: [
-        {name: 'bouillon'},
+        {name: 'broth'},
         {name: 'stew'},
-        {name: 'puree'}
+        {name: 'puree'},
+        {name: 'tom yum'}
     ]
 }
 
@@ -123,6 +128,14 @@ let spice = {
     list: []
 }
 
+let herbs = {
+    name: 'herbs',
+    title: 'Herbs',
+    color: '#3d6729',
+
+    list: []
+}
+
 let equipment = {
     name: 'equipment',
     title: 'Equipment',
@@ -133,9 +146,24 @@ let equipment = {
         {name: 'pan'},
         {name: 'oven'},
         {name: 'board'},
-        {name: 'sharpener'}
+        {name: 'sharpener'},
+        {name: 'electric grill'},
+        {name: 'gas grill'},
+        {name: 'mixer'},
+        {name: 'thermo meter'},
+        {name: 'freezer'},
+        {name: 'towel'},
+        {name: 'blender'}
 
     ]
+}
+
+let pickling = {
+    name: 'pickling',
+    title: 'Pickling',
+    color: '#603e69',
+
+    list: []
 }
 
 module.exports = [
@@ -148,6 +176,8 @@ module.exports = [
     sauce,
     bread,
     spice,
+    herbs,
     rice,
     equipment,
+    pickling
 ]
