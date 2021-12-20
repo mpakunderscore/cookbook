@@ -79,19 +79,40 @@ export default function Pages(props) {
 
     let renderPages = () => {
         let pages = []
-
         for (let i = 0; i < data.length; i++) {
             let item = data[i]
             pages.push(
-                <div className={'card ' + (active === i ? 'active' : '')} onClick={() => {
-                    setActive(i)
-                }} style={{background: item.color}} key={item.name}>
+                <div className={'card ' + (active === i ? 'active' : '')}
+                     onClick={() => {setActive(i)}}
+                     style={{background: item.color}} key={item.name}>
                     <div className={'title'}>{item.title.toUpperCase()}</div>
+
+                    <div className={'list'}>
+                        {renderList(item.list)}
+                        {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
+                        {/*<div>{item.list[1].name}</div>*/}
+                        {/*<div>{item.list[2].name}</div>*/}
+                    </div>
+
                 </div>
             )
         }
 
         return pages
+    }
+
+    let capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    let renderList = (itemList) => {
+
+        let list = []
+        for (let i = 0; i < itemList.length; i++) {
+            list.push(<div>{itemList[i].name.toUpperCase()}</div>)
+        }
+
+        return list
     }
 
     // renderPages(data)

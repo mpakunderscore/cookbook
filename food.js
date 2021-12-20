@@ -3,11 +3,7 @@ let food = {
     title: 'Food',
     color: '#361F1F',
 
-    list: [
-        {name: 'raw'},
-        {name: 'baked'},
-        {name: 'fries'}
-    ]
+    list: []
 }
 
 let meat = {

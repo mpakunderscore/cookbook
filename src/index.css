@@ -62,20 +62,25 @@ main {
 }
 
 .card {
-    padding: 20px;
     /*height: 600px;*/
     box-shadow: rgba(0, 0, 0, 0.5) 0 4px 12px;
 
     cursor: pointer;
     user-select: none;
+
+    height: 86px;
+    overflow: hidden;
+
+    transition: .2s height;
 }
 
 .card.active {
-    height: 200px;
+    height: 300px;
 }
 
 .card .title {
-    font-size: 36px;
+    padding: 20px;
+    font-size: 34px;
     color: #f2f2fa;
     letter-spacing: 5px;
     font-weight: 600;
@@ -89,6 +94,40 @@ main {
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version */
+}
+
+.list {
+    color: ghostwhite;
+    /*padding-top: 20px;*/
+
+    line-height: 150%;
+    letter-spacing: 2px;
+    /*font-size: 20px;*/
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.list > div {
+    width: 30%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border: 1px solid ghostwhite;
+
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.list > div:active {
+    background: ghostwhite;
 }
 
 @media screen and (min-width: 1000px) {
