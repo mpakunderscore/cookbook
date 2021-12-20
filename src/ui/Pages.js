@@ -22,6 +22,9 @@ export default function Pages(props) {
     // let [wordsFilter, setWordsFilter] = useState([])
 
     let [pages, setPages] = useState([])
+    let [active, setActive] = useState(0)
+
+    let [data, setData] = useState([])
 
     const ref = useRef(null)
 
@@ -69,34 +72,33 @@ export default function Pages(props) {
         fetch(prefix + '/food')
             .then(response => response.json())
             .then(data => {
-                renderPages(data)
+                setData(data)
                 console.log(data)
             })
     }
 
-    let renderPages = (data) => {
+    let renderPages = () => {
         let pages = []
-
-        pages.push(
-            <div className={'card'} style={{background: '#361F1F'}} key={'menu'}>
-                <div className={'title'}>FOOD</div>
-            </div>
-        )
 
         for (let i = 0; i < data.length; i++) {
             let item = data[i]
             pages.push(
-                <div className={'card'} style={{background: item.color}} key={item.name}>
+                <div className={'card ' + (active === i ? 'active' : '')} onClick={() => {
+                    setActive(i)
+                }} style={{background: item.color}} key={item.name}>
                     <div className={'title'}>{item.title.toUpperCase()}</div>
                 </div>
             )
         }
-        setPages(pages)
+
+        return pages
     }
+
+    // renderPages(data)
 
     return (
         <div id={'pages'}>
-            {pages}
+            {renderPages()}
         </div>
     )
 }

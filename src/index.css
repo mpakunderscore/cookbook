@@ -70,7 +70,7 @@ main {
     user-select: none;
 }
 
-.card:active {
+.card.active {
     height: 200px;
 }
 

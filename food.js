@@ -1,3 +1,15 @@
+let food = {
+    name: 'food',
+    title: 'Food',
+    color: '#361F1F',
+
+    list: [
+        {name: 'raw'},
+        {name: 'baked'},
+        {name: 'fries'}
+    ]
+}
+
 let meat = {
     name: 'meat',
     title: 'Meat',
@@ -95,7 +107,8 @@ let spice = {
     list: []
 }
 
-let food = [
+module.exports = [
+    food,
     meat,
     fish,
     vegetables,
@@ -106,5 +119,3 @@ let food = [
     spice,
     rice,
 ]
-
-module.exports = food
