@@ -82,10 +82,12 @@ export default function Pages(props) {
     }
 
     let renderPages = () => {
+        let count = 0
         let pages = []
         let user = {}
         for (let i = 0; i < data.length; i++) {
             let item = data[i]
+            count += item.list.length
             user[item.name] = {}
             pages.push(
                 <div className={'card ' + (active === i ? 'active' : '')}
@@ -93,7 +95,7 @@ export default function Pages(props) {
                      style={{background: item.color}} key={item.name}>
                     <div className={'title'}>{item.title.toUpperCase()}</div>
 
-                    <div className={'list'}>
+                    <div className={'list'} style={(item.highlight ? {color: 'gray'} : {})}>
                         {renderList(item.list, item.name)}
                         {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
                         {/*<div>{item.list[1].name}</div>*/}
@@ -104,6 +106,7 @@ export default function Pages(props) {
             )
         }
 
+        console.log(count)
         console.log(user)
 
         return pages

@@ -7,6 +7,7 @@ let core = {
         {name: 'login', index: 0},
         {name: 'about', index: 0},
         {name: 'feedback', index: 0},
+        {name: 'unlocked 0/124', index: 0},
 
     ]
 }
@@ -130,8 +131,31 @@ let fruits = {
     name: 'fruits',
     title: 'Fruits',
     color: '#ffd658',
+    highlight: true,
 
-    list: [],
+    list: [
+        {name: 'apple'},
+        {name: 'blue berries'},
+        {name: 'banana'},
+        {name: 'orange'},
+        {name: 'lemon'},
+        {name: 'dragon'},
+        {name: 'mango'},
+        {name: 'avocado'},
+        {name: 'lychee'},
+        {name: 'pineapple'},
+        {name: 'straw berries'},
+        {name: 'durian'},
+        {name: 'cherries'},
+        {name: 'olive'},
+        {name: 'water melon'},
+        {name: 'kiwi'},
+        {name: 'peach'},
+        {name: 'guava'},
+        {name: 'grape'},
+        {name: 'pome granate'},
+        {name: 'grapefruit'},
+    ],
 }
 
 let sauce = {
@@ -146,16 +170,31 @@ let bread = {
     name: 'bread',
     title: 'Bread',
     color: '#FAD69E',
+    highlight: true,
 
-    list: []
+    list: [
+        {name: 'white'},
+        {name: 'brown'},
+        {name: 'pancakes'},
+        {name: 'pizza'},
+        {name: 'pie'},
+        {name: 'dumplings'},
+        {name: 'paste'},
+        {name: 'cake'}
+    ]
 }
 
 let rice = {
     name: 'rice',
     title: 'Rice',
     color: '#FFF',
+    highlight: true,
 
-    list: []
+    list: [
+        {name: 'plant'},
+        {name: 'sushi'},
+        {name: 'onigiri'},
+    ]
 }
 
 let spice = {
@@ -163,7 +202,15 @@ let spice = {
     title: 'Spice',
     color: '#4b4848',
 
-    list: []
+    list: [
+        {name: 'salt'},
+        {name: 'pepper'},
+        {name: 'paprika'},
+        {name: 'ginger'},
+        {name: 'garlic'},
+        {name: 'curry'},
+        {name: 'cinnamon'},
+    ]
 }
 
 let herbs = {
@@ -171,7 +218,14 @@ let herbs = {
     title: 'Herbs',
     color: '#538c37',
 
-    list: []
+    list: [
+        {name: 'dill'},
+        {name: 'parsley'},
+        {name: 'mint'},
+        {name: 'cilantro'},
+        {name: 'basil'},
+        {name: 'spinach'},
+    ]
 }
 
 let equipment = {
@@ -240,6 +294,7 @@ let achievements = {
     name: 'achievements',
     title: 'Achievements',
     color: '#fff',
+    highlight: true,
 
     list: [
         {name: 'hunter', index: 0},
