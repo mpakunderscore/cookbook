@@ -93,7 +93,7 @@ main {
     height: 46px;
 }
 
-.card .title {
+.card .text {
     /*font-size: 20px;*/
     font-weight: 300;
     letter-spacing: 1px;

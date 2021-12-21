@@ -70,7 +70,7 @@ export default function Pages(props) {
         //     // console.log(window.scrollY)
         // }
 
-    }, [user])
+    }, [])
 
 
     const prefix = '/api'
@@ -80,6 +80,10 @@ export default function Pages(props) {
             .then(response => response.json())
             .then(data => {
                 setData(data)
+
+                let user = JSON.parse(localStorage.getItem('user'))
+                console.log(user)
+                setUser(user)
                 // console.log(data)
             })
     }
@@ -97,7 +101,8 @@ export default function Pages(props) {
                      onClick={(active === i ? null : () => {setActive(i)})}
                      style={{background: item.color}} key={item.name}>
                     <div className={'name'}>{item.name.toUpperCase()}</div>
-                    <div className={'title'}>{item.title}</div>
+                    {/*<div className={'title'}>{item.title}</div>*/}
+                    <div className={'text'}>{item.text}</div>
 
                     <div className={'list'} style={(item.highlight ? {color: 'gray'} : {})}>
                         {renderList(item.list, item.name)}
@@ -155,11 +160,15 @@ export default function Pages(props) {
             }
 
         } else {
+
             if (!user[page])
                 user[page] = {}
+
             user[page][item] = !user[page][item]
+            user.count = count + 1
             setUser(user)
             setCount(count + 1)
+            localStorage.setItem('user', JSON.stringify(user))
             console.log(user)
             forceUpdate()
         }

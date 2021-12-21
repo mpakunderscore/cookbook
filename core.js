@@ -1,6 +1,7 @@
 let core = {
     name: 'food',
-    title: 'This is a simple food organizer. Mark what have you already done or want to try and see tips and recipes. Compete and discover new products. And other useful things.',
+    title: 'Food',
+    text: 'This is a simple food organizer. Mark what have you already done or want to try and see tips and recipes. Compete and discover new products. And other useful things.',
     color: '#361F1F',
 
     list: [
@@ -17,7 +18,8 @@ let core = {
 
 let meat = {
     name: 'meat',
-    title: 'Humans have hunted and killed animals for meat since prehistoric times. Meat is mainly composed of water, protein, and fat. It is edible raw, but is normally eaten after it has been cooked and seasoned or processed in a variety of ways.',
+    title: 'Meat',
+    text: 'Humans have hunted and killed animals for meat since prehistoric times. Meat is mainly composed of water, protein, and fat. It is edible raw, but is normally eaten after it has been cooked and seasoned or processed in a variety of ways.',
     color: '#A42E2F',
 
     list: [
@@ -40,7 +42,8 @@ let meat = {
 
 let fish = {
     name: 'fish',
-    title: 'Many species of fish are consumed as food in virtually all regions around the world. Fish has been an important source of protein and other nutrients for humans throughout history.',
+    title: 'Fish',
+    text: 'Many species of fish are consumed as food in virtually all regions around the world. Fish has been an important source of protein and other nutrients for humans throughout history.',
     color: '#FA8072',
 
     list: [
@@ -60,7 +63,8 @@ let fish = {
 
 let chicken = {
     name: 'chicken',
-    title: 'Poultry meat and everything related to it.',
+    title: 'Chicken',
+    text: 'Poultry meat and everything related to it.',
     color: '#ffdbd7',
 
     list: [
@@ -73,7 +77,8 @@ let chicken = {
 
 let vegetables = {
     name: 'vegetables',
-    title: 'Vegetables are parts of plants that are consumed by humans or other animals as food.',
+    title: 'Vegetables',
+    text: 'Vegetables are parts of plants that are consumed by humans or other animals as food.',
     color: '#62bb69',
 
     list: [
@@ -94,7 +99,8 @@ let vegetables = {
 
 let drinks = {
     name: 'drinks',
-    title: 'A drink (or beverage) is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture.',
+    title: 'Drinks',
+    text: 'A drink (or beverage) is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture.',
     color: '#4BA0D2FF',
 
     list: [
@@ -115,7 +121,8 @@ let drinks = {
 
 let soup = {
     name: 'soup',
-    title: 'Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, milk, or water.',
+    title: 'Soup',
+    text: 'Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, milk, or water.',
     color: '#E6B43C',
 
     list: [
@@ -135,6 +142,7 @@ let soup = {
 let fruits = {
     name: 'fruits',
     title: 'Fruits',
+    text: 'Fruits',
     color: '#ffd658',
     highlight: true,
 
@@ -159,13 +167,14 @@ let fruits = {
         {name: 'guava'},
         {name: 'grape'},
         {name: 'pome granate'},
-        {name: 'grape fruit'},
+        {name: 'grapefruit'},
     ],
 }
 
 let sauce = {
     name: 'sauce',
     title: 'Sauce',
+    text: 'Sauce',
     color: '#E86515',
 
     list: []
@@ -174,6 +183,7 @@ let sauce = {
 let bread = {
     name: 'bread',
     title: 'Bread',
+    text: 'Bread',
     color: '#FAD69E',
     highlight: true,
 
@@ -192,6 +202,7 @@ let bread = {
 let rice = {
     name: 'rice',
     title: 'Rice',
+    text: 'Rice',
     color: '#FFF',
     highlight: true,
 
@@ -205,6 +216,7 @@ let rice = {
 let spice = {
     name: 'spice',
     title: 'Spice',
+    text: 'Spice',
     color: '#4b4848',
 
     list: [
@@ -221,6 +233,7 @@ let spice = {
 let herbs = {
     name: 'herbs',
     title: 'Herbs',
+    text: 'Herbs',
     color: '#538c37',
 
     list: [
@@ -236,6 +249,7 @@ let herbs = {
 let equipment = {
     name: 'equipment',
     title: 'Equipment',
+    text: 'Equipment',
     color: '#bdbdbd',
 
     list: [
@@ -248,7 +262,7 @@ let equipment = {
         {name: 'gas grill'},
         {name: 'mixer'},
         {name: 'thermo meter'},
-        {name: 'freezer'},
+        {name: 'fridge'},
         {name: 'towel'},
         {name: 'blender'}
 
@@ -258,6 +272,7 @@ let equipment = {
 let pickling = {
     name: 'pickling',
     title: 'Pickling',
+    text: 'Pickling',
     color: '#603e69',
 
     list: []
@@ -265,7 +280,8 @@ let pickling = {
 
 let bento = {
     name: 'bento',
-    title: 'bento',
+    title: 'Bento',
+    text: 'bento',
     color: '#000',
 
     list: []
@@ -274,6 +290,7 @@ let bento = {
 let milk = {
     name: 'milk',
     title: 'Milk',
+    text: 'Milk',
     color: '#fff',
 
     list: []
@@ -282,6 +299,7 @@ let milk = {
 let dessert = {
     name: 'dessert',
     title: 'Dessert',
+    text: 'Dessert',
     color: '#000',
 
     list: []
@@ -290,6 +308,7 @@ let dessert = {
 let eggs = {
     name: 'eggs',
     title: 'Eggs',
+    text: 'Eggs',
     color: '#000',
 
     list: []
@@ -297,7 +316,8 @@ let eggs = {
 
 let fridge = {
     name: 'fridge',
-    title: 'You have to store your food in the fridge and he will advise you what else to put there',
+    title: 'Fridge',
+    text: 'You have to store your food in the fridge and he will advise you what else to put there',
     color: '#013191',
 
     list: []
@@ -306,6 +326,7 @@ let fridge = {
 let achievements = {
     name: 'achievements',
     title: 'Achievements',
+    text: 'Achievements',
     color: '#fff',
     highlight: true,
 
