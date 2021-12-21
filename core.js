@@ -318,7 +318,7 @@ let fridge = {
     name: 'fridge',
     title: 'Fridge',
     text: 'You have to store your food in the fridge and he will advise you what else to put there',
-    color: '#013191',
+    color: '#1c5ad5',
 
     list: []
 }
@@ -327,7 +327,7 @@ let achievements = {
     name: 'achievements',
     title: 'Achievements',
     text: 'Achievements',
-    color: '#fff',
+    color: '#ffd7b7',
     highlight: true,
 
     list: [

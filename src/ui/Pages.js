@@ -81,9 +81,10 @@ export default function Pages(props) {
             .then(data => {
                 setData(data)
 
-                let user = JSON.parse(localStorage.getItem('user'))
+                let user = JSON.parse(localStorage.getItem('user') || '{}')
                 console.log(user)
                 setUser(user)
+                setCount(user.count ? user.count : 0)
                 // console.log(data)
             })
     }
@@ -97,14 +98,14 @@ export default function Pages(props) {
             count += item.list.length
             user[item.name] = {}
             pages.push(
-                <div className={'card ' + (active === i ? 'active' : '')}
+                <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '')}
                      onClick={(active === i ? null : () => {setActive(i)})}
                      style={{background: item.color}} key={item.name}>
                     <div className={'name'}>{item.name.toUpperCase()}</div>
                     {/*<div className={'title'}>{item.title}</div>*/}
                     <div className={'text'}>{item.text}</div>
 
-                    <div className={'list'} style={(item.highlight ? {color: 'gray'} : {})}>
+                    <div className={'list'}>
                         {renderList(item.list, item.name)}
                         {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
                         {/*<div>{item.list[1].name}</div>*/}
@@ -148,6 +149,7 @@ export default function Pages(props) {
     }
 
     let selectItem = (page, item) => {
+
         // console.log(page, item)
         if (page === 'food') {
 
@@ -156,7 +158,7 @@ export default function Pages(props) {
             }
 
             if (item === 'restart') {
-
+                clear()
             }
 
         } else {
@@ -165,13 +167,19 @@ export default function Pages(props) {
                 user[page] = {}
 
             user[page][item] = !user[page][item]
-            user.count = count + 1
+            user.count = count + (user[page][item] ? 1 : -1)
             setUser(user)
-            setCount(count + 1)
+            setCount(user.count)
             localStorage.setItem('user', JSON.stringify(user))
             console.log(user)
             forceUpdate()
         }
+    }
+
+    let clear = () => {
+        localStorage.setItem('user', JSON.stringify({}))
+        setCount(0)
+        setUser({})
     }
 
     // renderPages(data)
