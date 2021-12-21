@@ -49,7 +49,8 @@ let chicken = {
 
     list: [
         {name: 'fries'},
-        {name: 'soup'}
+        {name: 'soup'},
+        {name: 'egg'}
     ]
 }
 
@@ -67,6 +68,10 @@ let vegetables = {
         {name: 'soup'},
         {name: 'onion'},
         {name: 'potato'},
+        {name: 'garlic'},
+        {name: 'tomato'},
+        {name: 'cucumber'},
+        {name: 'carrot'},
     ]
 }
 
@@ -94,6 +99,14 @@ let soup = {
         {name: 'puree'},
         {name: 'tom yum'}
     ]
+}
+
+let fruits = {
+    name: 'fruits',
+    title: 'Fruits',
+    color: '#ffd658',
+
+    list: [],
 }
 
 let sauce = {
@@ -131,7 +144,7 @@ let spice = {
 let herbs = {
     name: 'herbs',
     title: 'Herbs',
-    color: '#3d6729',
+    color: '#538c37',
 
     list: []
 }
@@ -185,6 +198,7 @@ module.exports = [
     bread,
     spice,
     herbs,
+    fruits,
     rice,
     equipment,
     pickling
