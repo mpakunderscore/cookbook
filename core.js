@@ -292,6 +292,7 @@ let milk = {
     title: 'Milk',
     text: 'Milk',
     color: '#fff',
+    highlight: true,
 
     list: []
 }
@@ -300,7 +301,7 @@ let dessert = {
     name: 'dessert',
     title: 'Dessert',
     text: 'Dessert',
-    color: '#000',
+    color: '#ff3774',
 
     list: []
 }
@@ -309,7 +310,17 @@ let eggs = {
     name: 'eggs',
     title: 'Eggs',
     text: 'Eggs',
-    color: '#000',
+    color: '#fff',
+    highlight: true,
+
+    list: []
+}
+
+let coffee = {
+    name: 'coffee',
+    title: 'Coffee',
+    text: 'Coffee',
+    color: '#6F4E37',
 
     list: []
 }
@@ -358,8 +369,12 @@ module.exports = [
     herbs,
     fruits,
     rice,
-    equipment,
     pickling,
+    eggs,
+    coffee,
+    dessert,
+    milk,
+    equipment,
     achievements,
     fridge
 ]

@@ -66,15 +66,17 @@ main {
 
 .card {
     /*height: 600px;*/
+    position: relative;
     box-shadow: rgba(0, 0, 0, 0.5) 0 4px 12px;
 
     cursor: pointer;
     user-select: none;
 
     height: 86px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 
-    transition: .2s height;
+    /*transition: .2s height;*/
+    overflow: hidden;
 }
 
 .card.active {
@@ -86,7 +88,7 @@ main {
 .card .name {
     padding: 20px;
     font-size: 34px;
-    color: #f2f2fa;
+    color: ghostwhite;
     letter-spacing: 5px;
     font-weight: 600;
     text-align: right;
@@ -140,7 +142,7 @@ main {
 }
 
 .list > div {
-    width: calc((100% - 40px)/3);
+    width: calc((100% - 40px)/3 - 4px);
 
     height: 64px;
     text-align: center;
@@ -153,8 +155,8 @@ main {
     justify-content: center;
 
     border-radius: 10px;
-    /*margin-left: 2px;*/
-    /*margin-right: 2px;*/
+    padding-left: 2px;
+    padding-right: 2px;
     /*margin-left: 10px;*/
     margin-bottom: 20px;
     /*margin-right: 10px;*/
@@ -163,18 +165,27 @@ main {
 }
 
 .list > div:active {
-    background: ghostwhite;
+    background: rgba(248, 248, 255, 0.5);
     color: gray;
 }
 
 .list > div.active {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.8);
     color: gray;
 }
 
-.list.highlight > div.active {
-    /*background: rgba(128, 128, 128, 0.7);*/
-    /*color: ghostwhite;*/
+.highlight .name {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.yolk {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #FFCC5F;
+    top: -50px;
+    left: -50px;
+    border-radius: 50%;
 }
 
 #modal {
