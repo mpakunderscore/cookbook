@@ -21,9 +21,13 @@ export default function Pages(props) {
     //
     // let [wordsFilter, setWordsFilter] = useState([])
 
+    const [, updateState] = React.useState()
+    const forceUpdate = React.useCallback(() => updateState({}), [])
+
+    let [user, setUser] = useState({})
+
     let [pages, setPages] = useState([])
     let [active, setActive] = useState(0)
-
     let [data, setData] = useState([])
 
     const ref = useRef(null)
@@ -63,7 +67,7 @@ export default function Pages(props) {
         //     // console.log(window.scrollY)
         // }
 
-    }, [])
+    }, [user])
 
 
     const prefix = '/api'
@@ -79,8 +83,10 @@ export default function Pages(props) {
 
     let renderPages = () => {
         let pages = []
+        let user = {}
         for (let i = 0; i < data.length; i++) {
             let item = data[i]
+            user[item.name] = {}
             pages.push(
                 <div className={'card ' + (active === i ? 'active' : '')}
                      onClick={(active === i ? null : () => {setActive(i)})}
@@ -88,7 +94,7 @@ export default function Pages(props) {
                     <div className={'title'}>{item.title.toUpperCase()}</div>
 
                     <div className={'list'}>
-                        {renderList(item.list)}
+                        {renderList(item.list, item.name)}
                         {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
                         {/*<div>{item.list[1].name}</div>*/}
                         {/*<div>{item.list[2].name}</div>*/}
@@ -98,21 +104,39 @@ export default function Pages(props) {
             )
         }
 
+        console.log(user)
+
         return pages
     }
 
-    let capitalizeFirstLetter = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
-    let renderList = (itemList) => {
+    let renderList = (itemList, name) => {
 
         let list = []
         for (let i = 0; i < itemList.length; i++) {
-            list.push(<div key={itemList[i].name}>{itemList[i].name.toUpperCase()}</div>)
+            list.push(
+                <div key={itemList[i].name}
+                     className={(user[name] && user[name][itemList[i].name] ? 'active' : '')}
+                     onClick={() => selectItem(name, itemList[i].name)}>
+                    {itemList[i].name.toUpperCase()}
+                </div>
+            )
         }
 
         return list
+    }
+
+    let selectItem = (page, item) => {
+        console.log(page, item)
+        if (page === 'food') {
+
+        } else {
+            if (!user[page])
+                user[page] = {}
+            user[page][item] = !user[page][item]
+            setUser(user)
+            console.log(user)
+            forceUpdate()
+        }
     }
 
     // renderPages(data)

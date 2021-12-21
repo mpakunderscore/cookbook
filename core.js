@@ -4,6 +4,10 @@ let core = {
     color: '#361F1F',
 
     list: [
+        {name: 'login', index: 0},
+        {name: 'about', index: 0},
+        {name: 'feedback', index: 0},
+
     ]
 }
 
@@ -37,21 +41,27 @@ let fish = {
 
     list: [
         {name: 'raw'},
+        {name: 'fried'},
         {name: 'baked'},
         {name: 'fries'},
-        {name: 'sushi'}
+        {name: 'sushi'},
+        {name: 'shrimps'},
+        {name: 'octopus'},
+        {name: 'mussels'},
+        {name: 'salted'},
     ]
 }
 
 let chicken = {
     name: 'chicken',
     title: 'Chicken',
-    color: '#e79087',
+    color: '#ffdbd7',
 
     list: [
+        {name: 'fried'},
         {name: 'fries'},
         {name: 'soup'},
-        {name: 'egg'}
+        {name: 'eggs'}
     ]
 }
 
@@ -86,10 +96,14 @@ let drinks = {
         {name: 'tea'},
         {name: 'lemonade'},
         {name: 'water'},
-        {name: 'smoothie'},
         {name: 'juice'},
+        {name: 'smoothie'},
         {name: 'chocolate'},
-
+        {name: 'mulled'},
+        {name: 'cocktail'},
+        {name: 'cider'},
+        {name: 'wine'},
+        {name: 'mors'},
     ]
 }
 
@@ -101,8 +115,14 @@ let soup = {
     list: [
         {name: 'broth'},
         {name: 'stew'},
-        {name: 'puree'},
-        {name: 'tom yum'}
+        {name: 'cream'},
+        {name: 'tom yum'},
+        {name: 'fish'},
+        {name: 'chicken'},
+        {name: 'onion'},
+        {name: 'gazpacho'},
+        {name: 'pho'},
+
     ]
 }
 
@@ -203,6 +223,14 @@ let milk = {
 let dessert = {
     name: 'dessert',
     title: 'Dessert',
+    color: '#000',
+
+    list: []
+}
+
+let eggs = {
+    name: 'eggs',
+    title: 'Eggs',
     color: '#000',
 
     list: []
