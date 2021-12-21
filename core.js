@@ -166,6 +166,14 @@ let pickling = {
     list: []
 }
 
+let bento = {
+    name: 'bento',
+    title: 'bento',
+    color: '#000',
+
+    list: []
+}
+
 module.exports = [
     core,
     meat,
