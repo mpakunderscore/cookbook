@@ -79,7 +79,8 @@ main {
 
 .card.active {
     /*height: 318px;*/
-    height: 396px;
+    /*height: 396px;*/
+    height: auto;
 }
 
 .card .title {
