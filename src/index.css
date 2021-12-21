@@ -83,7 +83,7 @@ main {
     height: auto;
 }
 
-.card .title {
+.card .name {
     padding: 20px;
     font-size: 34px;
     color: #f2f2fa;
@@ -91,6 +91,15 @@ main {
     font-weight: 600;
     text-align: right;
     height: 46px;
+}
+
+.card .title {
+    /*font-size: 20px;*/
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: ghostwhite;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 .noselect {
@@ -122,6 +131,7 @@ main {
 
 .list > div {
     width: calc((100% - 40px)/3);
+
     height: 64px;
     text-align: center;
     /*line-height: 60px;*/
@@ -133,6 +143,9 @@ main {
     justify-content: center;
 
     border-radius: 10px;
+    /*margin-left: 2px;*/
+    /*margin-right: 2px;*/
+    /*margin-left: 10px;*/
     margin-bottom: 20px;
     /*margin-right: 10px;*/
     /*margin-left: 10px;*/

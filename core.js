@@ -1,6 +1,6 @@
 let core = {
     name: 'food',
-    title: 'Food',
+    title: 'This is a simple food organizer. Mark what you did and see tips and recipes. Compete and discover new products. And other useful things.',
     color: '#361F1F',
 
     list: [
@@ -8,6 +8,9 @@ let core = {
         {name: 'about', index: 0},
         {name: 'feedback', index: 0},
         {name: 'unlocked 0/124', index: 0},
+        {name: 'restart', index: 0},
+        {name: 'basket', index: 0},
+
 
     ]
 }
@@ -290,6 +293,14 @@ let eggs = {
     list: []
 }
 
+let fridge = {
+    name: 'fridge',
+    title: 'You have to store your food in the fridge and he will advise you what else to put there',
+    color: '#002878',
+
+    list: []
+}
+
 let achievements = {
     name: 'achievements',
     title: 'Achievements',
@@ -317,6 +328,7 @@ module.exports = [
     vegetables,
     drinks,
     soup,
+    chicken,
     sauce,
     bread,
     spice,
@@ -325,5 +337,6 @@ module.exports = [
     rice,
     equipment,
     pickling,
-    achievements
+    achievements,
+    fridge
 ]

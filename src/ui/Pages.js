@@ -93,7 +93,8 @@ export default function Pages(props) {
                 <div className={'card ' + (active === i ? 'active' : '')}
                      onClick={(active === i ? null : () => {setActive(i)})}
                      style={{background: item.color}} key={item.name}>
-                    <div className={'title'}>{item.title.toUpperCase()}</div>
+                    <div className={'name'}>{item.name.toUpperCase()}</div>
+                    <div className={'title'}>{item.title}</div>
 
                     <div className={'list'} style={(item.highlight ? {color: 'gray'} : {})}>
                         {renderList(item.list, item.name)}
@@ -114,8 +115,11 @@ export default function Pages(props) {
 
     let renderList = (itemList, name) => {
 
+        let listLength = itemList.length >= 6 ? 6 : itemList.length
+        //itemList.length
+
         let list = []
-        for (let i = 0; i < itemList.length; i++) {
+        for (let i = 0; i < listLength; i++) {
             list.push(
                 <div key={itemList[i].name}
                      className={(user[name] && user[name][itemList[i].name] ? 'active' : '')}
