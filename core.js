@@ -17,7 +17,7 @@ let core = {
 
 let meat = {
     name: 'meat',
-    title: 'Meat',
+    title: 'Humans have hunted and killed animals for meat since prehistoric times. Meat is mainly composed of water, protein, and fat. It is edible raw, but is normally eaten after it has been cooked and seasoned or processed in a variety of ways.',
     color: '#A42E2F',
 
     list: [
@@ -40,25 +40,27 @@ let meat = {
 
 let fish = {
     name: 'fish',
-    title: 'Fish',
+    title: 'Many species of fish are consumed as food in virtually all regions around the world. Fish has been an important source of protein and other nutrients for humans throughout history.',
     color: '#FA8072',
 
     list: [
         {name: 'raw'},
         {name: 'fried'},
         {name: 'baked'},
+        {name: 'grill'},
         {name: 'fries'},
         {name: 'sushi'},
         {name: 'shrimps'},
         {name: 'octopus'},
         {name: 'mussels'},
-        {name: 'salted'},
+        {name: 'pickled'},
+        {name: 'smoked'},
     ]
 }
 
 let chicken = {
     name: 'chicken',
-    title: 'Chicken',
+    title: 'Poultry meat and everything related to it.',
     color: '#ffdbd7',
 
     list: [
@@ -71,7 +73,7 @@ let chicken = {
 
 let vegetables = {
     name: 'vegetables',
-    title: 'Vegetables',
+    title: 'Vegetables are parts of plants that are consumed by humans or other animals as food.',
     color: '#62bb69',
 
     list: [
@@ -92,7 +94,7 @@ let vegetables = {
 
 let drinks = {
     name: 'drinks',
-    title: 'Drinks',
+    title: 'A drink (or beverage) is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture.',
     color: '#4BA0D2FF',
 
     list: [
@@ -113,7 +115,7 @@ let drinks = {
 
 let soup = {
     name: 'soup',
-    title: 'Soup',
+    title: 'Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, milk, or water.',
     color: '#E6B43C',
 
     list: [
@@ -157,7 +159,7 @@ let fruits = {
         {name: 'guava'},
         {name: 'grape'},
         {name: 'pome granate'},
-        {name: 'grapefruit'},
+        {name: 'grape fruit'},
     ],
 }
 
@@ -272,7 +274,7 @@ let bento = {
 let milk = {
     name: 'milk',
     title: 'Milk',
-    color: '#000',
+    color: '#fff',
 
     list: []
 }
@@ -296,7 +298,7 @@ let eggs = {
 let fridge = {
     name: 'fridge',
     title: 'You have to store your food in the fridge and he will advise you what else to put there',
-    color: '#002878',
+    color: '#013191',
 
     list: []
 }

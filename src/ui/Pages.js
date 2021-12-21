@@ -77,7 +77,7 @@ export default function Pages(props) {
             .then(response => response.json())
             .then(data => {
                 setData(data)
-                console.log(data)
+                // console.log(data)
             })
     }
 
@@ -107,8 +107,8 @@ export default function Pages(props) {
             )
         }
 
-        console.log(count)
-        console.log(user)
+        // console.log(count)
+        // console.log(user)
 
         return pages
     }
@@ -120,9 +120,15 @@ export default function Pages(props) {
 
         let list = []
         for (let i = 0; i < listLength; i++) {
+            let active = user[name] && user[name][itemList[i].name]
+            if (active) {
+                if (itemList.length >= listLength + 3) {
+                    listLength = listLength + 3
+                }
+            }
             list.push(
                 <div key={itemList[i].name}
-                     className={(user[name] && user[name][itemList[i].name] ? 'active' : '')}
+                     className={(active ? 'active' : '')}
                      onClick={() => selectItem(name, itemList[i].name)}>
                     {itemList[i].name.toUpperCase()}
                 </div>
@@ -133,8 +139,12 @@ export default function Pages(props) {
     }
 
     let selectItem = (page, item) => {
-        console.log(page, item)
+        // console.log(page, item)
         if (page === 'food') {
+
+            if (item === 'basket') {
+                props.setModal(true)
+            }
 
         } else {
             if (!user[page])

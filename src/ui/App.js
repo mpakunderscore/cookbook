@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Pages from "./Pages"
+import Modal from "./Modal";
 
 function App() {
 
@@ -14,9 +15,12 @@ function App() {
     let theme = localStorage.getItem('theme')
     document.documentElement.setAttribute('data-theme', theme)
 
+    let [modal, setModal] = useState(false)
+
     return (
         <div>
-            <Pages/>
+            {modal && <Modal setModal={setModal}/>}
+            <Pages setModal={setModal}/>
         </div>
     )
 }
