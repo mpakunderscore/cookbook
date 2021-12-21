@@ -35,7 +35,7 @@ export default function Modal(props) {
             <div className={'card active'}
                  style={{background: 'gray'}}>
                 <div className={'name'}>BASKET</div>
-                <div className={'title'}>Group the ingredients and find the missing ones</div>
+                <div className={'text'}>Group the ingredients and find the missing ones</div>
 
                 <div className={'list'}>
                     {renderList([{name: 'close'}, {name: 'clear'}, {name: 'order'}], 'basket')}
