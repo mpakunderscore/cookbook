@@ -3,7 +3,8 @@ let core = {
     title: 'Food',
     color: '#361F1F',
 
-    list: []
+    list: [
+    ]
 }
 
 let meat = {
@@ -84,7 +85,11 @@ let drinks = {
         {name: 'coffee'},
         {name: 'tea'},
         {name: 'lemonade'},
+        {name: 'water'},
         {name: 'smoothie'},
+        {name: 'juice'},
+        {name: 'chocolate'},
+
     ]
 }
 
@@ -187,6 +192,41 @@ let bento = {
     list: []
 }
 
+let milk = {
+    name: 'milk',
+    title: 'Milk',
+    color: '#000',
+
+    list: []
+}
+
+let dessert = {
+    name: 'dessert',
+    title: 'Dessert',
+    color: '#000',
+
+    list: []
+}
+
+let achievements = {
+    name: 'achievements',
+    title: 'Achievements',
+    color: '#fff',
+
+    list: [
+        {name: 'hunter', index: 0},
+        {name: 'fisherman', index: 0},
+        {name: 'gardener', index: 0},
+
+        {name: 'grandpa', index: 0},
+        {name: 'chef', index: 0},
+        {name: 'salt bae', index: 0},
+        {name: 'druid', index: 0},
+        {name: 'monkey', index: 0},
+        {name: 'grandma', index: 0},
+    ]
+}
+
 module.exports = [
     core,
     meat,
@@ -201,5 +241,6 @@ module.exports = [
     fruits,
     rice,
     equipment,
-    pickling
+    pickling,
+    achievements
 ]
