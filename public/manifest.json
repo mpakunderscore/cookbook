@@ -1,7 +1,7 @@
 {
-  "name": "Food",
-  "short_name": "Food",
-  "description": "Food app",
+  "name": "FOOD",
+  "short_name": "FOOD",
+  "description": "FOOD APP",
   "version": "0.2.0",
   "manifest_version": 2,
   "start_url": "/?source=pwa",
