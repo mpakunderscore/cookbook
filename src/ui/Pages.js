@@ -2,6 +2,8 @@ import React, {useEffect, useState, useRef} from 'react'
 import api from "../api";
 import eventBus from "../EventBus";
 
+let all = 124
+
 export default function Pages(props) {
 
     // let [state, setState] = useState('')
@@ -25,6 +27,7 @@ export default function Pages(props) {
     const forceUpdate = React.useCallback(() => updateState({}), [])
 
     let [user, setUser] = useState({})
+    let [count, setCount] = useState(0)
 
     let [pages, setPages] = useState([])
     let [active, setActive] = useState(0)
@@ -131,6 +134,7 @@ export default function Pages(props) {
                      className={(active ? 'active' : '')}
                      onClick={() => selectItem(name, itemList[i].name)}>
                     {itemList[i].name.toUpperCase()}
+                    {(name === 'food' && itemList[i].name === 'unlocked') ? (' ' + count + '/' + all) : ''}
                 </div>
             )
         }
@@ -146,11 +150,16 @@ export default function Pages(props) {
                 props.setModal(true)
             }
 
+            if (item === 'restart') {
+
+            }
+
         } else {
             if (!user[page])
                 user[page] = {}
             user[page][item] = !user[page][item]
             setUser(user)
+            setCount(count + 1)
             console.log(user)
             forceUpdate()
         }

@@ -7,7 +7,7 @@ let core = {
         {name: 'login', index: 0},
         {name: 'about', index: 0},
         {name: 'feedback', index: 0},
-        {name: 'unlocked 0/124', index: 0},
+        {name: 'unlocked', index: 0},
         {name: 'restart', index: 0},
         {name: 'basket', index: 0},
 
