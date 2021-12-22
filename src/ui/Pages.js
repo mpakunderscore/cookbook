@@ -98,7 +98,7 @@ export default function Pages(props) {
             count += item.list.length
             // user[item.name] = {}
 
-            let userSelected = (user[item.name] ? Object.keys(user[item.name]).length : 0)
+            let userSelected = (user[item.name] ? (Object.keys(user[item.name]).filter(key => user[item.name][key] === true)).length : 0)
 
             pages.push(
                 <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '')}

@@ -337,7 +337,7 @@ let pasta = {
     name: 'pasta',
     title: 'Pasta',
     text: 'Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking. ',
-    color: '#d2b46e',
+    color: '#EECB7B',
     highlight: true,
 
     list: [
