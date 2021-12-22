@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from 'react'
 import api from "../api";
 import eventBus from "../EventBus";
 
-let all = 124
+let all = 145
 
 export default function Pages(props) {
 
@@ -34,6 +34,7 @@ export default function Pages(props) {
     let [data, setData] = useState([])
 
     let [login, setLogin] = useState(false)
+    let [feedback, setFeedback] = useState(false)
 
     const ref = useRef(null)
 
@@ -124,13 +125,22 @@ export default function Pages(props) {
                         {/*<div>{item.list[2].name}</div>*/}
                     </div>
 
-                    {(item.name === 'food' && login) ? <input spellCheck={false} placeholder={'E-MAIL'} type={'email'}/> : ''}
+                    {(item.name === 'food' && login) ?
+                    <div>
+                        <input spellCheck={false} autoFocus={true} placeholder={'E-MAIL'} type={'email'}/>
+                        <div className={'list'}>
+                            <div>SUBMIT</div>
+                        </div>
+                    </div>
+                        : ''}
+
+                    {(item.name === 'food' && feedback) ? <input spellCheck={true} autoFocus={true} placeholder={'MESSAGE'} type={'text'}/> : ''}
 
                 </div>
             )
         }
 
-        // console.log(count)
+        console.log(count)
         // console.log(user)
 
         return pages
@@ -169,6 +179,12 @@ export default function Pages(props) {
 
         // console.log(page, item)
         if (page === 'food') {
+
+            if (item === 'feedback') {
+                setFeedback(true)
+            } else {
+                setFeedback(false)
+            }
 
             if (item === 'basket') {
                 props.setModal(true)
