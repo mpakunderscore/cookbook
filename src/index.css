@@ -95,6 +95,13 @@ main {
     height: 46px;
 }
 
+.card .name span {
+    font-size: 10px;
+    float: left;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
 .card .text {
     /*font-size: 20px;*/
     font-weight: 300;
@@ -171,6 +178,7 @@ main {
 
 .list > div.active {
     background: rgba(255, 255, 255, 0.8);
+    border: 1px solid ghostwhite;
     color: gray;
 }
 

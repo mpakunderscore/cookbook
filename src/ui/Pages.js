@@ -92,16 +92,22 @@ export default function Pages(props) {
     let renderPages = () => {
         let count = 0
         let pages = []
-        let user = {}
+        // let user = {}
         for (let i = 0; i < data.length; i++) {
             let item = data[i]
             count += item.list.length
-            user[item.name] = {}
+            // user[item.name] = {}
+
+            let userSelected = (user[item.name] ? Object.keys(user[item.name]).length : 0)
+
             pages.push(
                 <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '')}
                      onClick={(active === i ? null : () => {setActive(i)})}
                      style={{background: item.color}} key={item.name}>
-                    <div className={'name'}>{item.name.toUpperCase()}</div>
+                    <div className={'name'}>
+                        {active === i && item.name !== 'food' ? <span>{userSelected + '/' + item.list.length}</span> : ''}
+                        {item.name.toUpperCase()}
+                    </div>
                     {/*<div className={'title'}>{item.title}</div>*/}
                     <div className={'text'}>{item.text}</div>
 
