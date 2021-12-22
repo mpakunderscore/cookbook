@@ -11,8 +11,6 @@ let core = {
         {name: 'unlocked', index: 0},
         {name: 'restart', index: 0},
         {name: 'basket', index: 0},
-
-
     ]
 }
 
@@ -178,7 +176,16 @@ let sauce = {
     text: 'Sauce',
     color: '#E86515',
 
-    list: []
+    list: [
+        {name: 'guacamole'},
+        {name: 'salsa'},
+        {name: 'mayonnaise'},
+        {name: 'teriyaki'},
+        {name: 'creamy'},
+        {name: 'bolognese'},
+        {name: 'pesto'},
+        {name: 'hollandaise'},
+    ]
 }
 
 let bread = {
