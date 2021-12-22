@@ -33,6 +33,8 @@ export default function Pages(props) {
     let [active, setActive] = useState(0)
     let [data, setData] = useState([])
 
+    let [login, setLogin] = useState(false)
+
     const ref = useRef(null)
 
     useEffect(() => {
@@ -104,10 +106,12 @@ export default function Pages(props) {
                 <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '')}
                      onClick={(active === i ? null : () => {setActive(i)})}
                      style={{background: item.color}} key={item.name}>
+
                     <div className={'name'}>
                         {active === i && item.name !== 'food' ? <span>{userSelected + '/' + item.list.length}</span> : ''}
                         {item.name.toUpperCase()}
                     </div>
+
                     {/*<div className={'title'}>{item.title}</div>*/}
                     <div className={'text'}>{item.text}</div>
 
@@ -119,6 +123,8 @@ export default function Pages(props) {
                         {/*<div>{item.list[1].name}</div>*/}
                         {/*<div>{item.list[2].name}</div>*/}
                     </div>
+
+                    {(item.name === 'food' && login) ? <input spellCheck={false} placeholder={'E-MAIL'} type={'email'}/> : ''}
 
                 </div>
             )
@@ -170,6 +176,12 @@ export default function Pages(props) {
 
             if (item === 'restart') {
                 clear()
+            }
+
+            if (item === 'login') {
+                setLogin(true)
+            } else {
+                setLogin(false)
             }
 
         } else {

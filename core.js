@@ -1,7 +1,7 @@
 let core = {
     name: 'food',
     title: 'Food',
-    text: 'This is a simple food organizer. Mark what have you already done or want to try and see tips and recipes. Compete and discover new products. And other useful things. (0.3.0)',
+    text: 'This is a simple food organizer. Mark what have you already done or want to try and see tips and recipes. Compete and discover new products. And other useful things. (0.3.1)',
     color: '#361F1F',
 
     list: [
@@ -100,7 +100,7 @@ let drinks = {
     name: 'drinks',
     title: 'Drinks',
     text: 'A drink (or beverage) is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture.',
-    color: '#4BA0D2FF',
+    color: 'rgba(75, 160, 210, 0.8)',
 
     list: [
         {name: 'coffee'},
@@ -173,7 +173,7 @@ let fruits = {
 let sauce = {
     name: 'sauce',
     title: 'Sauce',
-    text: 'Sauce',
+    text: 'In cooking, a sauce is a liquid, cream, or semi-solid food, served on or used in preparing other foods. Most sauces are not normally consumed by themselves, they add flavor, moisture, and visual appeal to a dish.',
     color: '#E86515',
 
     list: [
@@ -210,7 +210,7 @@ let bread = {
 let rice = {
     name: 'rice',
     title: 'Rice',
-    text: 'Rice',
+    text: 'As a cereal grain, domesticated rice is the most widely consumed staple food for over half of the world\'s human population, especially in Asia and Africa. It is the agricultural commodity with the third-highest worldwide production, after sugarcane and maize.',
     color: '#FFF',
     highlight: true,
 
@@ -242,7 +242,7 @@ let herbs = {
     name: 'herbs',
     title: 'Herbs',
     text: 'Herbs',
-    color: '#538c37',
+    color: 'rgba(80, 140, 50, 0.8)',
 
     list: [
         {name: 'dill'},
@@ -281,7 +281,7 @@ let pickling = {
     name: 'pickling',
     title: 'Pickling',
     text: 'Pickling',
-    color: '#603e69',
+    color: 'rgba(100, 60, 100, 0.8)',
 
     list: []
 }
@@ -299,7 +299,7 @@ let milk = {
     name: 'milk',
     title: 'Milk',
     text: 'Milk',
-    color: '#fff',
+    color: 'rgba(255, 255, 255, 0.8)',
     highlight: true,
 
     list: []
@@ -309,7 +309,7 @@ let dessert = {
     name: 'dessert',
     title: 'Dessert',
     text: 'Dessert',
-    color: '#ff3774',
+    color: 'rgba(255,55,116,0.8)',
 
     list: []
 }
@@ -352,7 +352,7 @@ let pasta = {
 let fridge = {
     name: 'fridge',
     title: 'Fridge',
-    text: 'You have to store your food in the fridge and he will advise you what else to put there',
+    text: 'You have to store your food in the fridge and it will advise you what else to put there',
     color: '#1c5ad5',
 
     list: []
@@ -379,6 +379,26 @@ let awards = {
     ]
 }
 
+let chain = {
+    name: 'chain',
+    title: 'Chain',
+    text: 'Chain',
+    color: '#707070',
+    highlight: true,
+
+    list: []
+}
+
+let space = {
+    name: 'space',
+    title: 'Space',
+    text: 'Space',
+    color: '#181818',
+    highlight: false,
+
+    list: []
+}
+
 module.exports = [
     core,
     meat,
@@ -401,5 +421,7 @@ module.exports = [
     milk,
     equipment,
     awards,
+    chain,
+    space,
     fridge
 ]
