@@ -19,7 +19,7 @@ let core = {
 let meat = {
     name: 'meat',
     title: 'Meat',
-    text: 'Humans have hunted and killed animals for meat since prehistoric times. Meat is mainly composed of water, protein, and fat. It is edible raw, but is normally eaten after it has been cooked and seasoned or processed in a variety of ways.',
+    text: 'Humans have hunted animals for meat since prehistoric times. Meat is mainly composed of water, protein, and fat. It is edible raw, but is normally eaten after it has been cooked and seasoned or processed in a variety of ways.',
     color: '#A42E2F',
 
     list: [
@@ -66,6 +66,7 @@ let chicken = {
     title: 'Chicken',
     text: 'Poultry meat and everything related to it.',
     color: '#ffdbd7',
+    highlight: true,
 
     list: [
         {name: 'fried'},
