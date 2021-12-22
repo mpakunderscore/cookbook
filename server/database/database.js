@@ -25,7 +25,7 @@ try {
 }
 
 // TODO
-let force = true
+let force = false
 module.exports.sequelize.sync({force: force}).then(async () => {
     console.log('DB SYNC')
 })
