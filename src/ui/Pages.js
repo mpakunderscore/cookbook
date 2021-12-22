@@ -139,8 +139,11 @@ export default function Pages(props) {
         for (let i = 0; i < listLength; i++) {
             let active = user[name] && user[name][itemList[i].name]
             if (active) {
-                if (itemList.length >= listLength + 3) {
-                    listLength = listLength + 3
+                if (itemList.length >= listLength) {
+                    if (itemList.length > listLength  + 3)
+                        listLength = listLength + 3
+                    else
+                        listLength = itemList.length
                 }
             }
             list.push(
