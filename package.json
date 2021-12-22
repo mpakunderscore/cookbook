@@ -8,9 +8,6 @@
     "scripts": {
         "start": "node server.js",
         "build": "webpack",
-
-
-
         "watch": "webpack --watch",
         "make": "NODE_ENV=production webpack",
         "dev": "node server.js",
@@ -30,7 +27,7 @@
         "pg": "^8.7.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-scripts": "4.0.3",
+        "react-scripts": "^5.0.0",
         "sequelize": "^6.5.0",
         "webpack": "^5.61.0",
         "webpack-cli": "^4.9.1"

@@ -92,6 +92,20 @@ export default function Pages(props) {
             })
     }
 
+    let submitLogin = () => {
+
+        let email = document.getElementById('email').value
+        console.log(email)
+
+        fetch(prefix + '/login?email=' + email + '&user=' + JSON.stringify(user))
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+
+        setLogin(false)
+    }
+
     let renderPages = () => {
         let count = 0
         let pages = []
@@ -118,18 +132,19 @@ export default function Pages(props) {
 
                     {item.name === 'eggs' ? <div className={'yolk'}></div> : ''}
 
-                    <div className={'list'}>
+                    {(login || feedback) ? '' : <div className={'list'}>
                         {renderList(item.list, item.name)}
                         {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
                         {/*<div>{item.list[1].name}</div>*/}
                         {/*<div>{item.list[2].name}</div>*/}
-                    </div>
+                    </div>}
 
                     {(item.name === 'food' && login) ?
                     <div>
-                        <input spellCheck={false} autoFocus={true} placeholder={'E-MAIL'} type={'email'}/>
+                        <input id={'email'} spellCheck={false} autoFocus={true} placeholder={'E-MAIL'} type={'email'}/>
                         <div className={'list'}>
-                            <div>SUBMIT</div>
+                            <div onClick={() => setLogin(false)}>BACK</div>
+                            <div onClick={submitLogin}>SUBMIT</div>
                         </div>
                     </div>
                         : ''}

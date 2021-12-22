@@ -228,7 +228,7 @@ input {
     width: calc(100% - 40px);
     margin: 20px;
     margin-top: 0;
-    height: 64px;
+    height: 66px;
     border-radius: 10px;
     box-sizing: border-box;
     border: 1px dashed ghostwhite;

@@ -1,5 +1,9 @@
 const food = require("../core");
-const {getUsers, saveUser} = require("./database/database");
+const {getUsers, saveUser} = require("./database/database")
+
+const {} = require("./database/models")
+const {} = require("./database/database")
+const {Sequelize, Op} = require("sequelize")
 
 let prefix = '/api'
 
@@ -10,10 +14,13 @@ let initAPI = async (app) => {
     })
 
     app.get(prefix + '/login', async (request, response) => {
-        const links = await getUsers()
+
         let email = request.query.email
-        let user = JSON.parse(request.query.user)
-        await saveUser(email, user)
+        let userData = JSON.parse(request.query.user)
+
+        console.log(userData)
+
+        let user = await saveUser(email, userData)
         response.json(user)
     })
 
