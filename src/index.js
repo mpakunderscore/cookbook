@@ -4,6 +4,8 @@ import './index.css'
 import App from './ui/App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 
+console.log(VERSION)
+
 document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(
         <React.StrictMode>
