@@ -335,10 +335,10 @@ let fridge = {
     list: []
 }
 
-let achievements = {
-    name: 'achievements',
-    title: 'Achievements',
-    text: 'Achievements',
+let awards = {
+    name: 'awards',
+    title: 'Awards',
+    text: 'Awards',
     color: '#ffd7b7',
     highlight: true,
 
@@ -376,6 +376,6 @@ module.exports = [
     dessert,
     milk,
     equipment,
-    achievements,
+    awards,
     fridge
 ]

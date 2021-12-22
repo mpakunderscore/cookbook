@@ -188,15 +188,24 @@ main {
     border-radius: 50%;
 }
 
+.container {
+    position: relative;
+}
+
+#pages {
+    z-index: 2;
+}
+
 #modal {
     background: gray;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    /*height: 100%;*/
-    z-index: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
     /*align-items: end;*/
 
     /*display: flex;*/

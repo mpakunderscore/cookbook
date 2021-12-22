@@ -18,7 +18,7 @@ function App() {
     let [modal, setModal] = useState(false)
 
     return (
-        <div>
+        <div className={'container'}>
             {modal && <Modal setModal={setModal}/>}
             <Pages setModal={setModal}/>
         </div>
