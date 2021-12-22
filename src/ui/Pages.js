@@ -140,7 +140,7 @@ export default function Pages(props) {
             )
         }
 
-        console.log(count)
+        // console.log(count)
         // console.log(user)
 
         return pages
