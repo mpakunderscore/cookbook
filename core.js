@@ -202,7 +202,7 @@ let bread = {
         {name: 'pizza'},
         {name: 'pie'},
         {name: 'dumplings'},
-        {name: 'paste'},
+        {name: 'pasta'},
         {name: 'cake'}
     ]
 }
@@ -333,6 +333,22 @@ let coffee = {
     list: []
 }
 
+let pasta = {
+    name: 'pasta',
+    title: 'Pasta',
+    text: 'Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking. ',
+    color: '#d2b46e',
+    highlight: true,
+
+    list: [
+        {name: 'puttanesca'},
+        {name: 'bolognese'},
+        {name: 'carbonara'},
+        {name: 'lasagne'},
+        {name: 'amatriciana'},
+    ]
+}
+
 let fridge = {
     name: 'fridge',
     title: 'Fridge',
@@ -379,6 +395,7 @@ module.exports = [
     rice,
     pickling,
     eggs,
+    pasta,
     coffee,
     dessert,
     milk,
