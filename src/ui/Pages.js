@@ -119,7 +119,11 @@ export default function Pages(props) {
 
             pages.push(
                 <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '')}
-                     onClick={(active === i ? null : () => {setActive(i)})}
+                     onClick={(active === i ? null : () => {
+                         let metaThemeColor = document.querySelector('meta[name=theme-color]')
+                         metaThemeColor.setAttribute('content', item.color)
+                         setActive(i)
+                     })}
                      style={{background: item.color}} key={item.name}>
 
                     <div className={'name'}>
