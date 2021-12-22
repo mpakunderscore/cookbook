@@ -6,7 +6,7 @@ const {USER} = require("./models")
 
 // console.log(process.env.DATABASE_URL)
 
-let sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_COBALT, {
+let sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_COBALT_URL, {
     dialect: 'postgres',
     protocol: 'postgres',
     dialectOptions: {
