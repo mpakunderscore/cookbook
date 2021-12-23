@@ -1,5 +1,5 @@
 const food = require("../core");
-const {getUsers, saveUser} = require("./database/database")
+const {getUsers, saveUser, getUser} = require("./database/database")
 
 
 let prefix = '/api'
@@ -10,12 +10,30 @@ let initAPI = async (app) => {
         response.json(food)
     })
 
+    app.get(prefix + '/user', async (request, response) => {
+
+        let email = request.query.email
+        let user = await getUser(email)
+        response.json(user)
+    })
+
     app.get(prefix + '/login', async (request, response) => {
+
+        let email = request.query.email
+        // let userData = JSON.parse(request.query.user)
+
+        // console.log(userData)
+
+        let user = await saveUser(email, {})
+        response.json(user)
+    })
+
+    app.get(prefix + '/update', async (request, response) => {
 
         let email = request.query.email
         let userData = JSON.parse(request.query.user)
 
-        console.log(userData)
+        // console.log(userData)
 
         let user = await saveUser(email, userData)
         response.json(user)
@@ -30,6 +48,11 @@ let initAPI = async (app) => {
 
         // let user = await saveUser(email, userData)
         response.json({})
+    })
+
+    app.get(prefix + '/messages', async (request, response) => {
+        const links = await getMessages()
+        response.json(links)
     })
 
     app.get(prefix + '/users', async (request, response) => {

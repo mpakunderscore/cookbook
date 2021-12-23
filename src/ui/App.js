@@ -16,11 +16,12 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme)
 
     let [modal, setModal] = useState(false)
+    let [email, setEmail] = useState(localStorage.getItem('email'))
 
     return (
         <div className={'container'}>
             {modal && <Modal setModal={setModal}/>}
-            <Pages setModal={setModal}/>
+            <Pages email={email} setModal={setModal}/>
         </div>
     )
 }

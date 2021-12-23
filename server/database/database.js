@@ -55,15 +55,28 @@ let getUsers = async (limit = '1000', order = 'createdAt') => {
     })
 }
 
+let getMessages = () => {
+
+}
+
+let getUser = async (email) => {
+    let user = USER.findOne({where: {email: email}})
+    return user
+}
+
 let saveUser = async (email, userData) => {
+
     let user = await USER.findOrCreate({where: {email: email}})
-    await user.save({user: userData})
-    await user.reload()
+    // if (!user[0].data.count && user[0].data.count < userData.count)
+
+    user[0].data = userData
+    await user[0].save()
+    await user[0].reload()
     return user
 }
 
 module.exports = {
-    saveUser, getUsers
+    getUser, saveUser, getUsers
 }
 
 initModels(sequelize)

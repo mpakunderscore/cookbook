@@ -6,27 +6,10 @@ let all = 145
 
 export default function Pages(props) {
 
-    // let [state, setState] = useState('')
-    //
-    // let [firstActive, setFirstActive] = useState(false)
-    //
-    // let [scroll, setScroll] = useState(0)
-    // let [newCount, setNewCount] = useState(0)
-    //
-    // // let [domainsOnly, setDomainsOnly] = useState([])
-    // let [domainsNot, setDomainsNot] = useState([])
-    //
-    // let [langOnly, setLangOnly] = useState({})
-    // // let [langNot, setLangNot] = useState([])
-    //
-    // let [linksArray, setLinksArray] = useState([])
-    //
-    // let [wordsFilter, setWordsFilter] = useState([])
-
     const [, updateState] = React.useState()
     const forceUpdate = React.useCallback(() => updateState({}), [])
 
-    let [user, setUser] = useState({})
+    let [userData, setUserData] = useState({})
     let [count, setCount] = useState(0)
 
     let [pages, setPages] = useState([])
@@ -36,7 +19,7 @@ export default function Pages(props) {
     let [login, setLogin] = useState(false)
     let [feedback, setFeedback] = useState(false)
 
-    let [profile, setProfile] = useState(false)
+    let [email, setEmail] = useState(props.email)
 
     const ref = useRef(null)
 
@@ -44,36 +27,14 @@ export default function Pages(props) {
 
         loadGraph()
 
-        // eventBus.on('tag', (data) => {
-        //         console.log(data.message);
-        //         if (data.message === 'crawler' || data.message === 'domains') {
-        //             loadGraph(api[data.message])
-        //         } else {
-        //             loadGraph(api[data.message + 'Pages'])
-        //         }
-        //     }
-        // )
-
-        // eventBus.on('lang', (data) => {
-        //         console.log(data.message);
-        //         if (data.message === 'en') {
-        //             setLangOnly({en: true})
-        //         } else {
-        //
-        //         }
-        //     }
-        // )
-
-        // eventBus.on('words', (data) => {
-        //         console.log(data.message);
-        //         setWords()
-        //     }
-        // )
-
-        // window.onscroll = () => {
-        //     setScroll(window.scrollY)
-        //     // console.log(window.scrollY)
-        // }
+        console.log(props.email)
+        if (props.email)
+            loadUser(props.email)
+        else {
+            let user = JSON.parse(localStorage.getItem('user') || '{}')
+            setUserData(user)
+            setCount(user.count ? user.count : 0)
+        }
 
     }, [])
 
@@ -85,12 +46,30 @@ export default function Pages(props) {
             .then(response => response.json())
             .then(data => {
                 setData(data)
+            })
+    }
 
+    let loadUser = (email) => {
+        fetch(prefix + '/user?email=' + email)
+            .then(response => response.json())
+            .then(serverUser => {
+
+                console.log(serverUser)
                 let user = JSON.parse(localStorage.getItem('user') || '{}')
+                // console.log(user)
+                if (!user || !user.count || serverUser.data.count > user.count)
+                    user = serverUser.data
+
+                // else
+                //     fetch(prefix + '/login?email=' + email + '&user=' + JSON.stringify(user))
+                //         .then(response => response.json())
+                //         .then(data => {
+                //             console.log(data)
+                //         })
+
                 console.log(user)
-                setUser(user)
+                setUserData(user)
                 setCount(user.count ? user.count : 0)
-                // console.log(data)
             })
     }
 
@@ -98,15 +77,30 @@ export default function Pages(props) {
 
         let email = document.getElementById('email').value
         console.log(email)
-        localStorage.setItem('email', email)
 
-        fetch(prefix + '/login?email=' + email + '&user=' + JSON.stringify(user))
+        fetch(prefix + '/user?email=' + email)
+            .then(response => response.json())
+            .then(serverUser => {
+
+                console.log(serverUser)
+
+                if (!userData || !userData.count || serverUser.data.count > userData.count) {
+                    setUserData(serverUser.data)
+                    setCount(serverUser.data.count)
+                }
+            })
+
+        localStorage.setItem('email', email)
+        setLogin(false)
+        setEmail(true)
+    }
+
+    let updateUser = () => {
+        fetch(prefix + '/update?email=' + props.email + '&user=' + JSON.stringify(userData))
             .then(response => response.json())
             .then(data => {
                 console.log(data)
             })
-
-        setLogin(false)
     }
 
     let sendMessage = () => {
@@ -131,7 +125,7 @@ export default function Pages(props) {
             count += item.list.length
             // user[item.name] = {}
 
-            let userSelected = (user[item.name] ? (Object.keys(user[item.name]).filter(key => user[item.name][key] === true)).length : 0)
+            let userSelected = (userData[item.name] ? (Object.keys(userData[item.name]).filter(key => userData[item.name][key] === true)).length : 0)
 
             pages.push(
                 <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '')}
@@ -153,7 +147,7 @@ export default function Pages(props) {
                     {item.name === 'eggs' ? <div className={'yolk'}></div> : ''}
 
                     {(login || feedback) ? '' : <div className={'list'}>
-                        {renderList(item.list, item.name)}
+                        {renderList(item.name, item.list)}
                         {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
                         {/*<div>{item.list[1].name}</div>*/}
                         {/*<div>{item.list[2].name}</div>*/}
@@ -188,14 +182,14 @@ export default function Pages(props) {
         return pages
     }
 
-    let renderList = (itemList, name) => {
+    let renderList = (groupName, itemList) => {
 
         let listLength = itemList.length >= 6 ? 6 : itemList.length
         //itemList.length
 
         let list = []
         for (let i = 0; i < listLength; i++) {
-            let active = user[name] && user[name][itemList[i].name]
+            let active = userData[groupName] && userData[groupName][itemList[i].name]
             if (active) {
                 if (itemList.length >= listLength) {
                     if (itemList.length > listLength  + 3)
@@ -204,12 +198,21 @@ export default function Pages(props) {
                         listLength = itemList.length
                 }
             }
+
+            let name = itemList[i].name
+            if (groupName === 'food' && name === 'login' && email)
+                name = 'profile'
+
+            if (groupName === 'food' && name === 'unlocked')
+                name += ' ' + count + '/' + all
+
+            // console.log(name)
+
             list.push(
-                <div key={itemList[i].name}
+                <div key={name}
                      className={(active ? 'active' : '')}
-                     onClick={() => selectItem(name, itemList[i].name)}>
-                    {itemList[i].name.toUpperCase()}
-                    {(name === 'food' && itemList[i].name === 'unlocked') ? (' ' + count + '/' + all) : ''}
+                     onClick={() => selectItem(groupName, name)}>
+                    {name.toUpperCase()}
                 </div>
             )
         }
@@ -217,10 +220,10 @@ export default function Pages(props) {
         return list
     }
 
-    let selectItem = (page, item) => {
+    let selectItem = (group, item) => {
 
         // console.log(page, item)
-        if (page === 'food') {
+        if (group === 'food') {
 
             if (item === 'feedback') {
                 setFeedback(true)
@@ -242,26 +245,35 @@ export default function Pages(props) {
                 setLogin(false)
             }
 
+            if (item === 'profile') {
+
+            }
+
         } else {
 
-            if (!user[page])
-                user[page] = {}
+            if (!userData[group])
+                userData[group] = {}
 
-            user[page][item] = !user[page][item]
-            user.count = count + (user[page][item] ? 1 : -1)
-            setUser(user)
-            setCount(user.count)
+            userData[group][item] = !userData[group][item]
+            userData.count = count + (userData[group][item] ? 1 : -1)
+            setUserData(userData)
+            setCount(userData.count)
 
-            localStorage.setItem('user', JSON.stringify(user))
-            console.log(user)
+            localStorage.setItem('user', JSON.stringify(userData))
+            console.log(userData)
             forceUpdate()
+
+            updateUser()
         }
     }
 
     let clear = () => {
+        localStorage.setItem('email', '')
         localStorage.setItem('user', JSON.stringify({}))
         setCount(0)
-        setUser({})
+        setUserData({})
+        setLogin(false)
+        setEmail(false)
     }
 
     // renderPages(data)
