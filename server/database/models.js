@@ -15,7 +15,7 @@ let initModels = (sequelize) => {
             type: DataTypes.STRING,
             unique: true
         },
-        user: {
+        data: {
             type: DataTypes.JSONB,
         },
     }, { sequelize, modelName: 'user', timestamps: true })
