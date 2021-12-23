@@ -64,19 +64,20 @@ let getUser = async (email) => {
     return user
 }
 
-let saveUser = async (email, userData) => {
+let updateUser = async (email, userData) => {
 
     let user = await USER.findOrCreate({where: {email: email}})
-    // if (!user[0].data.count && user[0].data.count < userData.count)
 
-    user[0].data = userData
+    if (userData.count && (!user[0].data || userData.count > user[0].data.count))
+        user[0].data = userData
+
     await user[0].save()
     await user[0].reload()
     return user
 }
 
 module.exports = {
-    getUser, saveUser, getUsers
+    getUser, updateUser, getUsers
 }
 
 initModels(sequelize)

@@ -19,7 +19,7 @@ export default function Pages(props) {
     let [login, setLogin] = useState(false)
     let [feedback, setFeedback] = useState(false)
 
-    let [email, setEmail] = useState(props.email)
+    let [email, setEmail] = useState(localStorage.getItem('email'))
 
     const ref = useRef(null)
 
@@ -27,9 +27,10 @@ export default function Pages(props) {
 
         loadGraph()
 
-        console.log(props.email)
-        if (props.email)
-            loadUser(props.email)
+        console.log(email)
+
+        if (email)
+            loadUser()
         else {
             let user = JSON.parse(localStorage.getItem('user') || '{}')
             setUserData(user)
@@ -49,15 +50,16 @@ export default function Pages(props) {
             })
     }
 
-    let loadUser = (email) => {
+    let loadUser = () => {
         fetch(prefix + '/user?email=' + email)
             .then(response => response.json())
             .then(serverUser => {
 
                 console.log(serverUser)
                 let user = JSON.parse(localStorage.getItem('user') || '{}')
+
                 // console.log(user)
-                if (!user || !user.count || serverUser.data.count > user.count)
+                if (serverUser && serverUser.data && (!user || !user.count || serverUser.data.count > user.count))
                     user = serverUser.data
 
                 // else
@@ -78,21 +80,25 @@ export default function Pages(props) {
         let email = document.getElementById('email').value
         console.log(email)
 
-        fetch(prefix + '/user?email=' + email)
+        fetch(prefix + '/login?email=' + email)
             .then(response => response.json())
             .then(serverUser => {
 
-                console.log(serverUser)
+                console.log(serverUser[0])
 
-                if (!userData || !userData.count || serverUser.data.count > userData.count) {
-                    setUserData(serverUser.data)
-                    setCount(serverUser.data.count)
+                if (!userData || !userData.count || serverUser[0].data.count > userData.count) {
+                    // localStorage.setItem('user', JSON.stringify(serverUser.data))
+
+                    setUserData(serverUser[0].data)
+                    setCount(serverUser[0].data.count ? serverUser[0].data.count : 0)
+                } else {
+
                 }
             })
 
         localStorage.setItem('email', email)
         setLogin(false)
-        setEmail(true)
+        setEmail(email)
     }
 
     let updateUser = () => {

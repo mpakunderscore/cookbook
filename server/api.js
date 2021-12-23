@@ -1,5 +1,5 @@
 const food = require("../core");
-const {getUsers, saveUser, getUser} = require("./database/database")
+const {getUsers, getUser, updateUser} = require("./database/database")
 
 
 let prefix = '/api'
@@ -20,11 +20,11 @@ let initAPI = async (app) => {
     app.get(prefix + '/login', async (request, response) => {
 
         let email = request.query.email
-        // let userData = JSON.parse(request.query.user)
+        let userData = JSON.parse(request.query.user)
 
         // console.log(userData)
 
-        let user = await saveUser(email, {})
+        let user = await updateUser(email, userData)
         response.json(user)
     })
 
@@ -35,7 +35,7 @@ let initAPI = async (app) => {
 
         // console.log(userData)
 
-        let user = await saveUser(email, userData)
+        let user = await updateUser(email, userData)
         response.json(user)
     })
 
