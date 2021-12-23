@@ -36,6 +36,8 @@ export default function Pages(props) {
     let [login, setLogin] = useState(false)
     let [feedback, setFeedback] = useState(false)
 
+    let [profile, setProfile] = useState(false)
+
     const ref = useRef(null)
 
     useEffect(() => {
@@ -96,6 +98,7 @@ export default function Pages(props) {
 
         let email = document.getElementById('email').value
         console.log(email)
+        localStorage.setItem('email', email)
 
         fetch(prefix + '/login?email=' + email + '&user=' + JSON.stringify(user))
             .then(response => response.json())
@@ -104,6 +107,19 @@ export default function Pages(props) {
             })
 
         setLogin(false)
+    }
+
+    let sendMessage = () => {
+
+        let message = document.getElementById('message').value
+
+        fetch(prefix + '/message?text=' + message)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+
+        setFeedback(false)
     }
 
     let renderPages = () => {
@@ -153,8 +169,15 @@ export default function Pages(props) {
                     </div>
                         : ''}
 
-                    {(item.name === 'food' && feedback) ? <input spellCheck={true} autoFocus={true} placeholder={'MESSAGE'} type={'text'}/> : ''}
-
+                    {(item.name === 'food' && feedback) ?
+                        <div>
+                            <input id={'message'} spellCheck={true} autoFocus={true} placeholder={'MESSAGE'} type={'text'}/>
+                            <div className={'list'}>
+                                <div onClick={() => setFeedback(false)}>BACK</div>
+                                <div onClick={sendMessage}>SEND</div>
+                            </div>
+                        </div>
+                        : ''}
                 </div>
             )
         }
@@ -228,6 +251,7 @@ export default function Pages(props) {
             user.count = count + (user[page][item] ? 1 : -1)
             setUser(user)
             setCount(user.count)
+
             localStorage.setItem('user', JSON.stringify(user))
             console.log(user)
             forceUpdate()

@@ -6,17 +6,24 @@ const {USER} = require("./models")
 
 // console.log(process.env.DATABASE_URL)
 
-let sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_COBALT_URL, {
-    dialect: 'postgres',
-    protocol: 'postgres',
-    dialectOptions: {
-        ssl: {
-            require: true,
-            rejectUnauthorized: false
-        }
-    },
-    logging: true,
-})
+let sequelize
+
+try {
+    sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_COBALT_URL, {
+        dialect: 'postgres',
+        protocol: 'postgres',
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
+        },
+        logging: true,
+    })
+} catch (e) {
+    console.log(e)
+}
+
 module.exports.sequelize = sequelize
 
 try {
