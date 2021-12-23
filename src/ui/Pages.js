@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
-import api from "../api";
+import api, {loadFood, loadUser} from "../api";
 import eventBus from "../EventBus";
 
 let all = 145
@@ -18,6 +18,7 @@ export default function Pages(props) {
 
     let [login, setLogin] = useState(false)
     let [feedback, setFeedback] = useState(false)
+    let [profile, setProfile] = useState(false)
 
     let [email, setEmail] = useState(localStorage.getItem('email'))
 
@@ -25,12 +26,14 @@ export default function Pages(props) {
 
     useEffect(() => {
 
-        loadGraph()
+        loadFood().then(data => {
+            setData(data)
+        })
 
         console.log(email)
 
         if (email)
-            loadUser()
+            loadUser(email)
         else {
             let user = JSON.parse(localStorage.getItem('user') || '{}')
             setUserData(user)
@@ -39,62 +42,15 @@ export default function Pages(props) {
 
     }, [])
 
-
-    const prefix = '/api'
-
-    let loadGraph = () => {
-        fetch(prefix + '/food')
-            .then(response => response.json())
-            .then(data => {
-                setData(data)
-            })
-    }
-
-    let loadUser = () => {
-        fetch(prefix + '/user?email=' + email)
-            .then(response => response.json())
-            .then(serverUser => {
-
-                console.log(serverUser)
-                let user = JSON.parse(localStorage.getItem('user') || '{}')
-
-                // console.log(user)
-                if (serverUser && serverUser.data && (!user || !user.count || serverUser.data.count > user.count))
-                    user = serverUser.data
-
-                // else
-                //     fetch(prefix + '/login?email=' + email + '&user=' + JSON.stringify(user))
-                //         .then(response => response.json())
-                //         .then(data => {
-                //             console.log(data)
-                //         })
-
-                console.log(user)
-                setUserData(user)
-                setCount(user.count ? user.count : 0)
-            })
-    }
-
     let submitLogin = () => {
 
         let email = document.getElementById('email').value
         console.log(email)
 
-        fetch(prefix + '/login?email=' + email)
-            .then(response => response.json())
-            .then(serverUser => {
+        let user = JSON.parse(localStorage.getItem('user') || '{}')
+        console.log(user)
 
-                console.log(serverUser[0])
-
-                if (!userData || !userData.count || serverUser[0].data.count > userData.count) {
-                    // localStorage.setItem('user', JSON.stringify(serverUser.data))
-
-                    setUserData(serverUser[0].data)
-                    setCount(serverUser[0].data.count ? serverUser[0].data.count : 0)
-                } else {
-
-                }
-            })
+        loadUser(email, user)
 
         localStorage.setItem('email', email)
         setLogin(false)
@@ -102,23 +58,12 @@ export default function Pages(props) {
     }
 
     let updateUser = () => {
-        fetch(prefix + '/update?email=' + props.email + '&user=' + JSON.stringify(userData))
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
+        loadUser(email, userData)
     }
 
     let sendMessage = () => {
-
         let message = document.getElementById('message').value
-
-        fetch(prefix + '/message?text=' + message)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
-
+        sendMessage(message)
         setFeedback(false)
     }
 
@@ -170,6 +115,16 @@ export default function Pages(props) {
                         : ''}
 
                     {(item.name === 'food' && feedback) ?
+                        <div>
+                            <input id={'message'} spellCheck={true} autoFocus={true} placeholder={'MESSAGE'} type={'text'}/>
+                            <div className={'list'}>
+                                <div onClick={() => setFeedback(false)}>BACK</div>
+                                <div onClick={sendMessage}>SEND</div>
+                            </div>
+                        </div>
+                        : ''}
+
+                    {(item.name === 'food' && profile) ?
                         <div>
                             <input id={'message'} spellCheck={true} autoFocus={true} placeholder={'MESSAGE'} type={'text'}/>
                             <div className={'list'}>

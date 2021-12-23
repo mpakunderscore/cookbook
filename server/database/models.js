@@ -2,6 +2,7 @@
 const {DataTypes, Model} = require("sequelize");
 
 class USER extends Model {}
+class MESSAGE extends Model {}
 
 let initModels = (sequelize) => {
 
@@ -19,6 +20,20 @@ let initModels = (sequelize) => {
             type: DataTypes.JSONB,
         },
     }, { sequelize, modelName: 'user', timestamps: true })
+
+    MESSAGE.init({
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        text: {
+            type: DataTypes.STRING,
+        },
+        data: {
+            type: DataTypes.JSONB,
+        },
+    }, { sequelize, modelName: 'message', timestamps: true })
 }
 
 module.exports = {

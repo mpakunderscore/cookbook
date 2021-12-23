@@ -17,24 +17,10 @@ let initAPI = async (app) => {
         response.json(user)
     })
 
-    app.get(prefix + '/login', async (request, response) => {
+    app.get(prefix + '/user/update', async (request, response) => {
 
         let email = request.query.email
         let userData = JSON.parse(request.query.user)
-
-        // console.log(userData)
-
-        let user = await updateUser(email, userData)
-        response.json(user)
-    })
-
-    app.get(prefix + '/update', async (request, response) => {
-
-        let email = request.query.email
-        let userData = JSON.parse(request.query.user)
-
-        // console.log(userData)
-
         let user = await updateUser(email, userData)
         response.json(user)
     })
