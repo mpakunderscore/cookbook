@@ -37,5 +37,5 @@ let initModels = (sequelize) => {
 }
 
 module.exports = {
-    USER, initModels
+    USER, MESSAGE, initModels
 }

@@ -1,5 +1,5 @@
 const food = require("../core");
-const {getUsers, getUser, updateUser, getMessages} = require("./database/database")
+const {getUsers, getUser, updateUser, getMessages, saveMessage} = require("./database/database")
 
 
 let prefix = '/api'
@@ -25,18 +25,20 @@ let initAPI = async (app) => {
 
     app.get(prefix + '/message', async (request, response) => {
 
-        let message = request.query.text
+        let messageText = request.query.text
         // let userData = JSON.parse(request.query.user)
 
-        console.log(message)
+        console.log(messageText)
+        const message = await saveMessage(messageText)
+        // const message = await getMessages()
 
         // let user = await saveUser(email, userData)
-        response.json({})
+        response.json(message)
     })
 
     app.get(prefix + '/messages', async (request, response) => {
-        const links = await getMessages()
-        response.json(links)
+        const messages = await getMessages()
+        response.json(messages)
     })
 }
 

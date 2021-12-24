@@ -18,7 +18,7 @@ try {
                 rejectUnauthorized: false
             }
         },
-        logging: true,
+        logging: false,
     })
 } catch (e) {
     console.log(e)
@@ -55,6 +55,11 @@ let getUsers = async (limit = '1000', order = 'createdAt') => {
     })
 }
 
+let saveMessage = async (text) => {
+    let message = (await MESSAGE.create({text: text}))
+    return message
+}
+
 let getMessages = async (limit = '1000', order = 'createdAt') => {
 
     return await MESSAGE.findAll({
@@ -87,7 +92,7 @@ let updateUser = async (email, clientData) => {
 }
 
 module.exports = {
-    getUser, updateUser, getUsers, getMessages
+    getUser, updateUser, getUsers, getMessages, saveMessage
 }
 
 initModels(sequelize)

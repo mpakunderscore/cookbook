@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
-import api, {loadFood, loadUser} from "../api";
+import api, {loadFood, loadUser, sendMessage} from "../api";
 import eventBus from "../EventBus";
 
 let all = 145
@@ -57,7 +57,7 @@ export default function Pages(props) {
         await loadUser(email)
     }
 
-    let sendMessage = () => {
+    let submitMessage = () => {
         let message = document.getElementById('message').value
         sendMessage(message)
         setFeedback(false)
@@ -115,18 +115,14 @@ export default function Pages(props) {
                             <input id={'message'} spellCheck={true} autoFocus={true} placeholder={'MESSAGE'} type={'text'}/>
                             <div className={'list'}>
                                 <div onClick={() => setFeedback(false)}>BACK</div>
-                                <div onClick={sendMessage}>SEND</div>
+                                <div onClick={submitMessage}>SEND</div>
                             </div>
                         </div>
                         : ''}
 
                     {(item.name === 'food' && profile) ?
                         <div>
-                            <input id={'message'} spellCheck={true} autoFocus={true} placeholder={'MESSAGE'} type={'text'}/>
-                            <div className={'list'}>
-                                <div onClick={() => setFeedback(false)}>BACK</div>
-                                <div onClick={sendMessage}>SEND</div>
-                            </div>
+
                         </div>
                         : ''}
                 </div>
