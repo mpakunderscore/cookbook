@@ -18,10 +18,15 @@ function App() {
     let [modal, setModal] = useState(false)
     // let [email, setEmail] = useState(localStorage.getItem('email'))
 
+    let changeTheme = (color) => {
+        let metaThemeColor = document.querySelector('meta[name=theme-color]')
+        metaThemeColor.setAttribute('content', color)
+    }
+
     return (
         <div className={'container'}>
             {modal && <Modal setModal={setModal}/>}
-            <Pages setModal={setModal}/>
+            <Pages changeTheme={changeTheme} setModal={setModal}/>
         </div>
     )
 }

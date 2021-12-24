@@ -3,7 +3,7 @@ import React, {useEffect, useState, useRef} from 'react'
 export default function Modal(props) {
 
     useEffect(() => {
-
+        props.changeTheme('gray')
     })
 
     let renderList = (itemList, name) => {
@@ -38,7 +38,7 @@ export default function Modal(props) {
                 <div className={'text'}>Group the ingredients and find the missing ones</div>
 
                 <div className={'list'}>
-                    {renderList([{name: 'close'}, {name: 'clear'}, {name: 'order'}], 'basket')}
+                    {renderList([{name: 'order'}, {name: 'clear'}, {name: 'close'}], 'basket')}
                     {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
                     {/*<div>{item.list[1].name}</div>*/}
                     {/*<div>{item.list[2].name}</div>*/}

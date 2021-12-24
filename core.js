@@ -1,7 +1,7 @@
 let core = {
     name: 'food',
-    title: 'Food',
-    text: 'This is a simple food organizer. Mark what have you already done or want to try and see tips and recipes. Compete and discover new products. And other useful things. (0.3.5)',
+    title: 'COOKBOOK',
+    text: 'This is a simple cookbook. Mark what have you already done or want to try and see tips and recipes. Compete and discover new products. And other useful things. (0.3.5)',
     color: '#361F1F',
 
     list: [

@@ -64,10 +64,13 @@ export default function Pages(props) {
     }
 
     let renderPages = () => {
+
         let count = 0
         let pages = []
         // let user = {}
+
         for (let i = 0; i < data.length; i++) {
+
             let item = data[i]
             count += item.list.length
             // user[item.name] = {}
@@ -77,15 +80,15 @@ export default function Pages(props) {
             pages.push(
                 <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '')}
                      onClick={(active === i ? null : () => {
-                         let metaThemeColor = document.querySelector('meta[name=theme-color]')
-                         metaThemeColor.setAttribute('content', item.color)
+                         props.changeTheme(item.color)
                          setActive(i)
                      })}
                      style={{background: item.color}} key={item.name}>
 
                     <div className={'name'}>
                         {active === i && item.name !== 'food' ? <span>{userSelected + '/' + item.list.length}</span> : ''}
-                        {item.name.toUpperCase()}
+                        {item.name === 'food' ? item.title.toUpperCase() :
+                        item.name.toUpperCase()}
                     </div>
 
                     {/*<div className={'title'}>{item.title}</div>*/}
@@ -122,7 +125,7 @@ export default function Pages(props) {
 
                     {(item.name === 'food' && profile) ?
                         <div>
-
+                            <input value={email} disabled={true}/>
                         </div>
                         : ''}
                 </div>
@@ -199,7 +202,9 @@ export default function Pages(props) {
             }
 
             if (item === 'profile') {
-
+                setProfile(true)
+            } else {
+                setProfile(false)
             }
 
         } else {
@@ -229,6 +234,7 @@ export default function Pages(props) {
         setUserData({})
         setLogin(false)
         setEmail(false)
+        setProfile(false)
     }
 
     // renderPages(data)
