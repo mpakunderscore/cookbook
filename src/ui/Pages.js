@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from 'react'
 import api, {loadFood, loadUser, sendMessage} from "../api";
 import eventBus from "../EventBus";
 
-let all = 145
+let all = 527
 
 export default function Pages(props) {
 
@@ -85,7 +85,7 @@ export default function Pages(props) {
                      })}
                      style={{background: item.color}} key={item.name}>
 
-                    <div className={'name'}>
+                    <div className={'name'} style={item.name === 'food' ? {textAlign: 'left'} : {}}>
                         {active === i && item.name !== 'food' ? <span>{userSelected + '/' + item.list.length}</span> : ''}
                         {item.name === 'food' ? item.title.toUpperCase() :
                         item.name.toUpperCase()}
