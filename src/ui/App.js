@@ -25,7 +25,7 @@ function App() {
 
     return (
         <div className={'container'}>
-            {modal && <Modal setModal={setModal}/>}
+            {modal && <Modal changeTheme={changeTheme} setModal={setModal}/>}
             <Pages changeTheme={changeTheme} setModal={setModal}/>
         </div>
     )
