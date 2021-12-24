@@ -8,15 +8,24 @@ let loadFood = () => {
         })
 }
 
-let loadUser = (email, userData) => {
-    return fetch(prefix + '/user?email=' + email + '&user='+ userData)
+let loadUser = (email) => {
+
+    let user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {count: 0}
+
+    console.log(user)
+
+    if (!user.count)
+        user.count = 0
+
+    console.log(user)
+
+    if (!email)
+        return user
+
+    return fetch(prefix + '/user?email=' + email + '&user=' + JSON.stringify(user))
         .then(response => response.json())
         .then(serverUser => {
-
-            console.log(serverUser)
-
-            let user = JSON.parse(localStorage.getItem('user') || '{}')
-            console.log(user)
+            return serverUser
         })
 }
 

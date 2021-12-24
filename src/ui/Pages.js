@@ -24,41 +24,37 @@ export default function Pages(props) {
 
     const ref = useRef(null)
 
-    useEffect(() => {
+    useEffect(async () => {
 
         loadFood().then(data => {
             setData(data)
         })
 
-        console.log(email)
+        console.log('email: ' + (email ? email : false))
 
-        if (email)
-            loadUser(email)
-        else {
-            let user = JSON.parse(localStorage.getItem('user') || '{}')
-            setUserData(user)
-            setCount(user.count ? user.count : 0)
-        }
+        let userData = await loadUser(email)
+        console.log(userData)
+        setUserData(userData)
+        setCount(userData.count)
 
     }, [])
 
-    let submitLogin = () => {
+    let submitLogin = async () => {
 
         let email = document.getElementById('email').value
+        localStorage.setItem('email', email)
         console.log(email)
 
-        let user = JSON.parse(localStorage.getItem('user') || '{}')
-        console.log(user)
+        let userData = await loadUser(email)
+        setUserData(userData)
+        setCount(userData.count)
 
-        loadUser(email, user)
-
-        localStorage.setItem('email', email)
         setLogin(false)
         setEmail(email)
     }
 
-    let updateUser = () => {
-        loadUser(email, userData)
+    let updateUser = async () => {
+        await loadUser(email)
     }
 
     let sendMessage = () => {
@@ -217,20 +213,22 @@ export default function Pages(props) {
 
             userData[group][item] = !userData[group][item]
             userData.count = count + (userData[group][item] ? 1 : -1)
+
             setUserData(userData)
             setCount(userData.count)
-
             localStorage.setItem('user', JSON.stringify(userData))
             console.log(userData)
+
+
             forceUpdate()
 
-            updateUser()
+            updateUser().then()
         }
     }
 
     let clear = () => {
         localStorage.setItem('email', '')
-        localStorage.setItem('user', JSON.stringify({}))
+        localStorage.setItem('user', JSON.stringify({count: 0}))
         setCount(0)
         setUserData({})
         setLogin(false)

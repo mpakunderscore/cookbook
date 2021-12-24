@@ -2,7 +2,7 @@ const { Sequelize, Op} = require('sequelize')
 const { Model, DataTypes } = require('sequelize')
 const {initModels} = require("./models");
 // const {memoryWords} = require("./engine");
-const {USER} = require("./models")
+const {USER, MESSAGE} = require("./models")
 
 // console.log(process.env.DATABASE_URL)
 
@@ -55,8 +55,14 @@ let getUsers = async (limit = '1000', order = 'createdAt') => {
     })
 }
 
-let getMessages = () => {
+let getMessages = async (limit = '1000', order = 'createdAt') => {
 
+    return await MESSAGE.findAll({
+        order: [
+            [order, 'DESC'],
+        ],
+        limit: parseInt(limit),
+    })
 }
 
 let getUser = async (email) => {
@@ -64,20 +70,24 @@ let getUser = async (email) => {
     return user
 }
 
-let updateUser = async (email, userData) => {
+let updateUser = async (email, clientData) => {
 
-    let user = await USER.findOrCreate({where: {email: email}})
+    let user = (await USER.findOrCreate({where: {email: email}}))[0]
+    if (!user.data)
+        user.data = {count: 0}
 
-    if (userData.count && (!user[0].data || userData.count > user[0].data.count))
-        user[0].data = userData
+    if (clientData.count > 0 && user.data.count >= 0 && clientData.count > user.data.count) {
+        user.data = clientData
+        console.log('UPDATE DATA')
+    }
 
-    await user[0].save()
-    await user[0].reload()
-    return user
+    await user.save()
+    await user.reload()
+    return user.data
 }
 
 module.exports = {
-    getUser, updateUser, getUsers
+    getUser, updateUser, getUsers, getMessages
 }
 
 initModels(sequelize)
