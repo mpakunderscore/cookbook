@@ -2,7 +2,7 @@
   "name": "COOKBOOK",
   "short_name": "COOKBOOK",
   "description": "COOKBOOK",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "manifest_version": 2,
   "start_url": "/?source=pwa",
   "scope": "/",
@@ -11,12 +11,12 @@
   "theme_color": "#361F1F",
   "icons": [
     {
-      "src": "images/192.black.png",
+      "src": "images/192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "images/512.png",
+      "src": "images/512.black.png",
       "type": "image/png",
       "sizes": "512x512"
     }

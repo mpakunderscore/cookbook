@@ -1,7 +1,7 @@
 let core = {
     name: 'food',
     title: 'COOKBOOK',
-    text: 'This is a simple cookbook. Mark what have you already done or want to try and see tips and recipes. Compete and discover new products. And other useful things. (0.4.0)',
+    text: 'This is a simple cookbook. Mark what have you already done or want to try and see tips and recipes. Compete and discover new products. And other useful things. (0.4.1)',
     color: '#361F1F',
 
     list: [
@@ -10,6 +10,9 @@ let core = {
         {name: 'feedback', index: 0},
         {name: 'unlocked', index: 0},
         {name: 'restart', index: 0},
+        {name: 'vegan', index: 0},
+        {name: '', index: 0},
+        {name: '', index: 0},
         {name: 'basket', index: 0},
     ]
 }

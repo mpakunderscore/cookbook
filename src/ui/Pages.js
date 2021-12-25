@@ -141,7 +141,9 @@ export default function Pages(props) {
     let renderList = (groupName, itemList) => {
 
         let listLength = itemList.length >= 6 ? 6 : itemList.length
-        //itemList.length
+
+        if (groupName === 'food')
+            listLength = 9
 
         let list = []
         for (let i = 0; i < listLength; i++) {
