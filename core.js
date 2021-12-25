@@ -1,7 +1,7 @@
 let core = {
     name: 'food',
     title: 'COOKBOOK',
-    text: 'This is a simple cookbook. Mark what have you already done or want to try and see tips and recipes. Compete and discover new products. And other useful things. (0.4.1)',
+    text: 'This App is a collection of simple recipes in 20 categories. And a fridge with a lot of items. And in the basket you can pick up a recipe. This is a test version.',
     color: '#361F1F',
 
     list: [
@@ -9,10 +9,7 @@ let core = {
         {name: 'about', index: 0},
         {name: 'feedback', index: 0},
         {name: 'unlocked', index: 0},
-        {name: 'restart', index: 0},
-        {name: 'vegan', index: 0},
-        {name: '', index: 0},
-        {name: '', index: 0},
+        {name: 'settings', index: 0},
         {name: 'basket', index: 0},
     ]
 }
@@ -106,10 +103,10 @@ let drinks = {
     color: 'rgba(75, 160, 210, 0.8)',
 
     list: [
+        {name: 'water'},
         {name: 'coffee'},
         {name: 'tea'},
         {name: 'lemonade'},
-        {name: 'water'},
         {name: 'juice'},
         {name: 'smoothie'},
         {name: 'chocolate'},
@@ -364,7 +361,7 @@ let fridge = {
 let awards = {
     name: 'awards',
     title: 'Awards',
-    text: 'Awards',
+    text: 'You can get different rewards for completing recipes and discovering ingredients. And for something else',
     color: '#ffd7b7',
     highlight: true,
 
@@ -373,12 +370,26 @@ let awards = {
         {name: 'fisherman', index: 0},
         {name: 'gardener', index: 0},
 
-        {name: 'grandpa', index: 0},
         {name: 'chef', index: 0},
-        {name: 'salt bae', index: 0},
         {name: 'druid', index: 0},
-        {name: 'monkey', index: 0},
         {name: 'grandma', index: 0},
+
+        {name: 'monkey', index: 0},
+        {name: 'grandpa', index: 0},
+        {name: 'salt bae', index: 0},
+
+        {name: 'king', index: 0},
+        {name: 'sommelier', index: 0},
+        {name: 'craftsman', index: 0},
+
+        {name: 'healthy', index: 0},
+        {name: 'vegan', index: 0},
+        {name: 'cheater', index: 0},
+
+        {name: 'contributor', index: 0},
+        {name: 'lazy', index: 0},
+        {name: 'top', index: 0},
+
     ]
 }
 
@@ -404,27 +415,26 @@ let space = {
 
 module.exports = [
     core,
-    meat,
-    fish,
     vegetables,
+    meat,
     drinks,
-    // soup,
-    // chicken,
-    // sauce,
-    // bread,
-    // spice,
-    // herbs,
-    // fruits,
-    // rice,
-    // pickling,
-    // eggs,
-    // pasta,
-    // coffee,
-    // dessert,
-    // milk,
-    // equipment,
     awards,
-    // chain,
-    // space,
-    fridge
+    fridge,
+    fish,
+    soup,
+    chicken,
+    sauce,
+    bread,
+    spice,
+    herbs,
+    fruits,
+    rice,
+    pickling,
+    eggs,
+    pasta,
+    coffee,
+    dessert,
+    milk,
+    equipment,
+
 ]

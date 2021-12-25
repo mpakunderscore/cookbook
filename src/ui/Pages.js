@@ -63,11 +63,23 @@ export default function Pages(props) {
         setFeedback(false)
     }
 
+    // let shuffleArray = (array) => {
+    //     for (var i = array.length - 1; i > 0; i--) {
+    //         var j = Math.floor(Math.random() * (i + 1));
+    //         var temp = array[i];
+    //         array[i] = array[j];
+    //         array[j] = temp;
+    //     }
+    //     return array
+    // }
+
     let renderPages = () => {
 
         let count = 0
         let pages = []
         // let user = {}
+
+        let unlockedPages = true
 
         for (let i = 0; i < data.length; i++) {
 
@@ -77,9 +89,30 @@ export default function Pages(props) {
 
             let userSelected = (userData[item.name] ? (Object.keys(userData[item.name]).filter(key => userData[item.name][key] === true)).length : 0)
 
+            // if (!unlockedPages) {
+            //
+            //     let pagesLayers = []
+            //
+            //     for (let j = i; j < data.length; j++) {
+            //         pagesLayers.push(
+            //             <div key={data[j].name} style={{background: data[j].color}}></div>
+            //         )
+            //     }
+            //
+            //     pages.push(
+            //         <div className={'card locked'} key={'locked'}>
+            //             {/*<div className={'name'}></div>*/}
+            //             {shuffleArray(pagesLayers)}
+            //         </div>
+            //     )
+            //
+            //     i = data.length
+            //     continue
+            // }
+
             pages.push(
-                <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '')}
-                     onClick={(active === i ? null : () => {
+                <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '') + (!unlockedPages ? ' locked' : '')}
+                     onClick={(active === i || (!unlockedPages) ? null : () => {
                          props.changeTheme(item.color)
                          setActive(i)
                      })}
@@ -87,8 +120,7 @@ export default function Pages(props) {
 
                     <div className={'name'} style={item.name === 'food' ? {textAlign: 'left'} : {}}>
                         {active === i && item.name !== 'food' ? <span>{userSelected + '/' + item.list.length}</span> : ''}
-                        {item.name === 'food' ? item.title.toUpperCase() :
-                        item.name.toUpperCase()}
+                        {item.name === 'food' ? item.title.toUpperCase() : (unlockedPages ? item.name.toUpperCase() : '')}
                     </div>
 
                     {/*<div className={'title'}>{item.title}</div>*/}
@@ -125,11 +157,20 @@ export default function Pages(props) {
 
                     {(item.name === 'food' && profile) ?
                         <div>
-                            <input value={email} disabled={true}/>
+                            <input value={email} disabled={true} style={{'text-align': 'center'}}/>
                         </div>
                         : ''}
                 </div>
             )
+
+            if (item.name === 'fridge') {
+                unlockedPages = false
+                pages.push(
+                    <div key={'locked'} className={'card highlight'}>
+                        <div className={'name'}>LOCKED</div>
+                    </div>
+                )
+            }
         }
 
         // console.log(count)
@@ -143,7 +184,7 @@ export default function Pages(props) {
         let listLength = itemList.length >= 6 ? 6 : itemList.length
 
         if (groupName === 'food')
-            listLength = 9
+            listLength = 6
 
         let list = []
         for (let i = 0; i < listLength; i++) {
@@ -169,7 +210,10 @@ export default function Pages(props) {
             list.push(
                 <div key={name}
                      className={(active ? 'active' : '')}
-                     onClick={() => selectItem(groupName, name)}>
+                     onClick={() => {
+                         if (groupName !== 'awards')
+                             selectItem(groupName, name)
+                     }}>
                     {name.toUpperCase()}
                 </div>
             )
