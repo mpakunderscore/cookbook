@@ -435,7 +435,7 @@ let fridge = {
     name: 'fridge',
     title: 'Fridge',
     text: 'You have to store your food in the fridge and it will advise you what else to put there',
-    color: '#1c5ad5',
+    color: '#D1D1D1',
 
     list: []
 }

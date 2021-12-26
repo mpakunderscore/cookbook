@@ -171,12 +171,16 @@ export default function Pages(props) {
                      onClick={(active === i || (!unlockedPages && !item.unlocked) ? null : () => {
                          setCardActive(i, data)
                      })}
-                     style={{background: item.color}} key={item.name}>
+                     style={{background: (item.name === 'fridge' && active !== i ? '#2c2c2c' : item.color)}} key={item.name}>
 
                     <div className={'name'} style={item.name === 'cookbook' ? {textAlign: 'left'} : {}}>
                         {active === i && item.name !== 'cookbook' ? <span className={'count'}>{userSelected + '/' + item.list.length}</span> : ''}
                         {!unlockedPages && !item.unlocked ? <span className={'lock'}>🔒</span> : ''}
-                        {item.name === 'cookbook' ? item.title.toUpperCase() : item.name.toUpperCase()}
+                        {item.name === 'cookbook' ?
+                            item.title.toUpperCase()
+                            :
+                            (item.name === 'fridge' && active === i ? '💡' : item.name.toUpperCase())
+                        }
                     </div>
 
                     {/*<div className={'title'}>{item.title}</div>*/}
