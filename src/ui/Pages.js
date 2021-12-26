@@ -283,7 +283,7 @@ export default function Pages(props) {
 
             list.push(
                 <div key={i + name}
-                     className={(active ? 'active' : '')}
+                     className={(active || groupName === 'fridge' ? 'active' : '')}
                      style={groupName === 'fridge' ? {color: itemList[i].color} : {}}
                      onClick={() => {
                          if (groupName !== 'awards' && groupName !== 'fridge')

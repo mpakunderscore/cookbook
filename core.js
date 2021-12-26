@@ -92,10 +92,10 @@ let chicken = {
     highlight: true,
 
     list: [
-        {name: 'fried'},
-        {name: 'fries'},
-        {name: 'soup'},
-        {name: 'eggs'},
+        {name: 'fried', recipe: true},
+        {name: 'fries', recipe: true},
+        {name: 'soup', recipe: true},
+        {name: 'eggs', page: true},
         {name: 'turkey'},
         {name: 'duck'},
 
@@ -167,7 +167,7 @@ let drinks = {
         {name: 'juice'},
         {name: 'smoothie', recipe: true},
         {name: 'chocolate'},
-        {name: 'mulled'},
+        {name: 'mulled', recipe: true},
         {name: 'cocktail', recipe: true},
         {name: 'cider'},
         {name: 'wine'},
@@ -182,15 +182,15 @@ let soup = {
     color: '#E6B43C',
 
     list: [
-        {name: 'broth'},
-        {name: 'stew'},
-        {name: 'cream'},
-        {name: 'tom yum'},
-        {name: 'fish'},
-        {name: 'chicken'},
-        {name: 'onion'},
-        {name: 'gazpacho'},
-        {name: 'pho'},
+        {name: 'broth', recipe: true},
+        {name: 'stew', recipe: true},
+        {name: 'cream', recipe: true},
+        {name: 'tom yum', recipe: true},
+        {name: 'fish', recipe: true},
+        {name: 'chicken', recipe: true},
+        {name: 'onion', recipe: true},
+        {name: 'gazpacho', recipe: true},
+        {name: 'pho', recipe: true},
 
     ]
 }
@@ -234,14 +234,14 @@ let sauce = {
     color: '#E86515',
 
     list: [
-        {name: 'guacamole'},
-        {name: 'salsa'},
-        {name: 'mayo nnaise'},
-        {name: 'teriyaki'},
-        {name: 'creamy'},
-        {name: 'bolognese'},
-        {name: 'pesto'},
-        {name: 'holland aise'},
+        {name: 'guacamole', recipe: true},
+        {name: 'salsa', recipe: true},
+        {name: 'mayo nnaise', recipe: true},
+        {name: 'teriyaki', recipe: true},
+        {name: 'creamy', recipe: true},
+        {name: 'bolognese', recipe: true},
+        {name: 'pesto', recipe: true},
+        {name: 'holland aise', recipe: true},
     ]
 }
 
@@ -274,9 +274,9 @@ let rice = {
     highlight: true,
 
     list: [
-        {name: 'plant'},
-        {name: 'sushi'},
-        {name: 'onigiri'},
+        {name: 'plant', recipe: true},
+        {name: 'sushi', recipe: true},
+        {name: 'onigiri', recipe: true},
     ]
 }
 
@@ -415,11 +415,11 @@ let pasta = {
     highlight: true,
 
     list: [
-        {name: 'puttanesca'},
-        {name: 'bolognese'},
-        {name: 'carbonara'},
-        {name: 'lasagne'},
-        {name: 'amatri ciana'},
+        {name: 'puttanesca', recipe: true},
+        {name: 'bolognese', recipe: true},
+        {name: 'carbonara', recipe: true},
+        {name: 'lasagne', recipe: true},
+        {name: 'amatri ciana', recipe: true},
     ]
 }
 
