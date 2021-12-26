@@ -105,6 +105,7 @@ main {
 
 .card .name span.count {
     font-size: 10px;
+    margin-top: 6px;
 }
 
 .card .text {
@@ -183,7 +184,7 @@ main {
 
 .highlight .list > div {
     color: gray;
-    border: 1px dashed gray;
+    border: 1px dashed rgba(128, 128, 128, 0.5);
 }
 
 .list > div {
@@ -193,7 +194,7 @@ main {
     height: 64px;
     text-align: center;
     /*line-height: 60px;*/
-    border: 1px dashed ghostwhite;
+    border: 1px dashed rgba(255, 255, 255, 0.5);
     font-weight: 600;
 
     display: flex;

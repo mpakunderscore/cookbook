@@ -12,12 +12,12 @@ let loadUser = (email) => {
 
     let user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {count: 0}
 
-    console.log(user)
+    // console.log(user)
 
     if (!user.count)
         user.count = 0
 
-    console.log(user)
+    // console.log(user)
 
     if (!email)
         return user
