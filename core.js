@@ -236,12 +236,12 @@ let sauce = {
     list: [
         {name: 'guacamole'},
         {name: 'salsa'},
-        {name: 'mayonnaise'},
+        {name: 'mayo nnaise'},
         {name: 'teriyaki'},
         {name: 'creamy'},
         {name: 'bolognese'},
         {name: 'pesto'},
-        {name: 'hollandaise'},
+        {name: 'holland aise'},
     ]
 }
 
@@ -259,7 +259,7 @@ let bread = {
         {name: 'flour'},
         {name: 'yeast'},
         {name: 'pizza', recipe: true},
-        {name: 'pie, recipe: true'},
+        {name: 'pie', recipe: true},
         {name: 'dumplings', recipe: true},
         {name: 'pasta', recipe: true, page: true},
         {name: 'cake', recipe: true},
@@ -419,7 +419,7 @@ let pasta = {
         {name: 'bolognese'},
         {name: 'carbonara'},
         {name: 'lasagne'},
-        {name: 'amatriciana'},
+        {name: 'amatri ciana'},
     ]
 }
 

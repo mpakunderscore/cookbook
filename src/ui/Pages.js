@@ -25,6 +25,8 @@ export default function Pages(props) {
 
     let [href, setHref] = useState(location.href.split('#')[1])
 
+    let [fridge, setFridge] = useState([])
+
     const ref = useRef(null)
 
     useEffect(async () => {
@@ -40,6 +42,8 @@ export default function Pages(props) {
             setData(data)
             // console.log(data)
             setCardActive(loadActivePage(), data)
+
+            loadFridge(data)
         })
 
         console.log('email: ' + (email ? email : false))
@@ -50,6 +54,23 @@ export default function Pages(props) {
         setCount(userData.count)
 
     }, [])
+
+    let loadFridge = (data) => {
+        let fridge = []
+        for (let i = 0; i < data.length; i++) {
+            for (let j = 0; j < data[i].list.length; j++) {
+
+                if (['cookbook', 'awards', 'equipment'].includes(data[i].name))
+                    continue
+
+                if (!data[i].list[j].recipe)
+                    fridge.push({name: data[i].list[j].name, color: data[i].color})
+            }
+        }
+
+        setFridge(fridge)
+        console.log(fridge)
+    }
 
     let submitLogin = async () => {
 
@@ -202,6 +223,8 @@ export default function Pages(props) {
 
             if (item.name === 'fridge') {
 
+                item.list = fridge
+
                 // ADD UNLOCKED PAGES
                 for (let j = i; j < data.length; j++) {
                     if (userData[data[j].name]) {
@@ -228,8 +251,11 @@ export default function Pages(props) {
 
         let listLength = itemList.length >= 6 ? 6 : itemList.length
 
-        if (groupName === 'cookbook')
+        if (groupName === 'cookbook' || groupName === 'fridge')
             listLength = itemList.length
+
+        if (groupName === 'awards')
+            listLength = 3
 
         let list = []
         for (let i = 0; i < listLength; i++) {
@@ -258,8 +284,9 @@ export default function Pages(props) {
             list.push(
                 <div key={i + name}
                      className={(active ? 'active' : '')}
+                     style={groupName === 'fridge' ? {color: itemList[i].color} : {}}
                      onClick={() => {
-                         if (groupName !== 'awards')
+                         if (groupName !== 'awards' && groupName !== 'fridge')
                              selectItem(groupName, itemList[i])
                      }}>
                     {name.toUpperCase()}
