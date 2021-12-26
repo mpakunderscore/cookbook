@@ -161,17 +161,17 @@ let drinks = {
 
     list: [
         {name: 'water'},
-        {name: 'coffee', recipe: true, page: true},
-        {name: 'tea', recipe: true},
+        {name: 'coffee', recipe: true, page: true, item: true},
+        {name: 'tea', recipe: true, item: true},
         {name: 'lemonade', recipe: true},
         {name: 'juice'},
         {name: 'smoothie', recipe: true},
-        {name: 'chocolate'},
+        {name: 'chocolate', recipe: true},
         {name: 'mulled', recipe: true},
         {name: 'cocktail', recipe: true},
-        {name: 'cider'},
-        {name: 'wine'},
-        {name: 'mors'},
+        {name: 'cider', recipe: true, item: true},
+        {name: 'wine', recipe: true, item: true},
+        {name: 'mors', recipe: true, item: true},
     ]
 }
 
@@ -261,7 +261,7 @@ let bread = {
         {name: 'pizza', recipe: true},
         {name: 'pie', recipe: true},
         {name: 'dumplings', recipe: true},
-        {name: 'pasta', recipe: true, page: true},
+        {name: 'pasta', recipe: true, page: true, item: true},
         {name: 'cake', recipe: true},
     ]
 }
@@ -274,6 +274,7 @@ let rice = {
     highlight: true,
 
     list: [
+        {name: 'rice'},
         {name: 'plant', recipe: true},
         {name: 'sushi', recipe: true},
         {name: 'onigiri', recipe: true},
@@ -376,7 +377,14 @@ let milk = {
     color: 'rgba(255, 255, 255, 0.8)',
     highlight: true,
 
-    list: []
+    list: [
+        {name: 'milk'},
+        {name: 'butter', recipe: true, item: true},
+        {name: 'cream', recipe: true, item: true},
+        {name: 'sour cream', recipe: true, item: true},
+        {name: 'yogurt', recipe: true, item: true},
+        {name: 'ice cream', recipe: true, item: true},
+    ]
 }
 
 let dessert = {
@@ -428,7 +436,6 @@ let fridge = {
     title: 'Fridge',
     text: 'You have to store your food in the fridge and it will advise you what else to put there',
     color: '#1c5ad5',
-    highlight: true,
 
     list: []
 }
@@ -466,26 +473,6 @@ let awards = {
         {name: 'top', index: 0},
 
     ]
-}
-
-let chain = {
-    name: 'chain',
-    title: 'Chain',
-    text: 'Chain',
-    color: '#707070',
-    highlight: true,
-
-    list: []
-}
-
-let space = {
-    name: 'space',
-    title: 'Space',
-    text: 'Space',
-    color: '#181818',
-    highlight: false,
-
-    list: []
 }
 
 module.exports = [

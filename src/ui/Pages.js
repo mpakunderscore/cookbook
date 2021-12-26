@@ -63,8 +63,8 @@ export default function Pages(props) {
                 if (['cookbook', 'awards', 'equipment'].includes(data[i].name))
                     continue
 
-                if (!data[i].list[j].recipe)
-                    fridge.push({name: data[i].list[j].name, color: data[i].color})
+                if (!data[i].list[j].recipe || data[i].list[j].item)
+                    fridge.push({name: data[i].list[j].name, color: data[i].color, highlight: data[i].highlight})
             }
         }
 
@@ -289,7 +289,7 @@ export default function Pages(props) {
             list.push(
                 <div key={i + name}
                      className={(active || groupName === 'fridge' ? 'active' : '')}
-                     style={groupName === 'fridge' ? {background: itemList[i].color} : {}}
+                     style={groupName === 'fridge' ? {background: itemList[i].color, color: itemList[i].highlight ? '#4c4c4c' : 'white'} : {}}
                      onClick={() => {
                          if (groupName !== 'awards' && groupName !== 'fridge')
                              selectItem(groupName, itemList[i])
