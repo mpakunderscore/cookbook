@@ -253,8 +253,8 @@ let bread = {
     highlight: true,
 
     list: [
-        {name: 'white', recipe: true},
-        {name: 'brown', recipe: true},
+        {name: 'loaf', recipe: true, item: true},
+        {name: 'rye bread', recipe: true, item: true},
         {name: 'pancakes', recipe: true},
         {name: 'flour'},
         {name: 'yeast'},
