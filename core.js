@@ -87,12 +87,34 @@ let vegetables = {
         {name: 'baked'},
         {name: 'broth'},
         {name: 'soup'},
+
         {name: 'onion'},
         {name: 'potato'},
         {name: 'garlic'},
         {name: 'tomato'},
         {name: 'cucumber'},
+        {name: 'avocado'},
         {name: 'carrot'},
+        {name: 'garlic'},
+        {name: 'pepper'},
+        {name: 'lettuce'},
+        {name: 'spinach'},
+        {name: 'cabbage'},
+        {name: 'eggplant'},
+        {name: 'broccoli'},
+        {name: 'pumpkin'},
+        {name: 'corn'},
+        {name: 'beetroot'},
+        {name: 'radish'},
+        {name: 'asparagus'},
+        {name: 'cauliflower'},
+        {name: 'peas'},
+        {name: 'leek'},
+        {name: 'zucchini'},
+        {name: 'celery'},
+        {name: 'chili'},
+        {name: 'sweet potato'},
+
     ]
 }
 
@@ -250,7 +272,21 @@ let herbs = {
         {name: 'mint'},
         {name: 'cilantro'},
         {name: 'basil'},
-        {name: 'spinach'},
+
+
+        // {name: 'anise'},
+        // {name: 'caraway'},
+        // {name: 'coriander'},
+        // {name: 'chamomile'},
+        // {name: 'daikon'},
+        // {name: 'fennel'},
+        // {name: 'lavender'},
+        // {name: 'lemongrass'},
+        // {name: 'marjoram'},
+        // {name: 'oregano'},
+        // {name: 'rosemary'},
+        // {name: 'thyme'},
+
     ]
 }
 

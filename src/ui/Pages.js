@@ -114,6 +114,7 @@ export default function Pages(props) {
                 <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '') + (!unlockedPages ? ' locked' : '')}
                      onClick={(active === i || (!unlockedPages) ? null : () => {
                          props.changeTheme(item.color)
+                         window.scroll(0, 86 * i)
                          setActive(i)
                      })}
                      style={{background: item.color}} key={item.name}>
