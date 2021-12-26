@@ -38,6 +38,7 @@ export default function Pages(props) {
 
         loadFood().then(data => {
             setData(data)
+            // console.log(data)
             setCardActive(loadActivePage(), data)
         })
 
@@ -162,6 +163,8 @@ export default function Pages(props) {
 
                     {item.name === 'eggs' ? <div className={'yolk'}></div> : ''}
 
+                    {item.name === 'fridge' && active !== i ? <div className={'fridge'}>🧊</div> : ''}
+
                     {(login || feedback) ? '' : <div className={'list'}>
                         {renderList(item.name, item.list)}
                         {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
@@ -226,7 +229,7 @@ export default function Pages(props) {
         let listLength = itemList.length >= 6 ? 6 : itemList.length
 
         if (groupName === 'cookbook')
-            listLength = 6
+            listLength = 9
 
         let list = []
         for (let i = 0; i < listLength; i++) {
@@ -246,6 +249,9 @@ export default function Pages(props) {
 
             if (groupName === 'cookbook' && name === 'unlocked')
                 name += ' ' + count + '/' + all
+
+            if (groupName === 'awards')
+                name = '🏆'
 
             // console.log(name)
 
@@ -300,6 +306,10 @@ export default function Pages(props) {
                 setProfile(true)
             } else {
                 setProfile(false)
+            }
+
+            if (name === 'install') {
+                props.installPWA()
             }
 
         } else {

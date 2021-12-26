@@ -264,6 +264,20 @@ main {
     border-radius: 50%;
 }
 
+.fridge {
+    position: absolute;
+    font-size: 34px;
+    top: 0;
+    left: 20px;
+    width: 100px;
+    height: 86px;
+    line-height: 86px;
+    /*background: rgba(28, 90, 213, 0.5);*/
+    /*top: -50px;*/
+    /*left: -50px;*/
+    /*border-radius: 50%;*/
+}
+
 .container {
     position: relative;
 }
