@@ -94,7 +94,7 @@ main {
     letter-spacing: 5px;
     font-weight: 600;
     text-align: right;
-    height: 46px;
+    min-height: 46px;
 }
 
 .card .name span {
@@ -372,4 +372,9 @@ input:-webkit-autofill {
             border-radius: 10px;
         }
     }
+}
+
+.separator {
+    width: 100%;
+    height: 20px;
 }

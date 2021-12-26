@@ -6,15 +6,15 @@ let core = {
 
     list: [
         {name: 'login', index: 0},
-        {name: 'about', index: 0},
+        // {name: 'about', index: 0},
         {name: 'feedback', index: 0},
+        {name: 'install', index: 0},
         {name: 'unlocked', index: 0},
         {name: 'settings', index: 0},
         {name: 'basket', index: 0},
 
-        {name: 'what', index: 0},
-        {name: 'restart', index: 0},
-        {name: 'install', index: 0},
+        // {name: 'what', index: 0},
+        // {name: 'restart', index: 0},
     ]
 }
 
@@ -288,7 +288,7 @@ let spice = {
 
     list: [
         {name: 'salt'},
-        {name: 'pepper'},
+        {name: 'black pepper'},
         {name: 'paprika'},
         {name: 'ginger'},
         {name: 'garlic'},

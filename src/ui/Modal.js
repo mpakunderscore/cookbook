@@ -16,7 +16,9 @@ export default function Modal(props) {
 
     let renderList = (itemList) => {
 
-        let listLength = itemList.length >= 6 ? 6 : itemList.length
+        let listLength = itemList.length
+
+        // >= 6 ? 6 : itemList.length
         //itemList.length
 
         let list = []
@@ -43,15 +45,17 @@ export default function Modal(props) {
             <div className={'card active'}
                  style={{background: backgroundColor}}>
                 <div className={'name'}>
-                    {props.modal.name ? props.modal.name.toUpperCase() : 'BASKET'}
-                    {props.modal.group ? <span>{props.modal.group.toUpperCase()}</span> : ''}
+                    {props.modal.name ? props.modal.name.toUpperCase() + ' ' + props.modal.group.toUpperCase() : 'BASKET'}
+                    {/*{props.modal.group ? <span>{props.modal.group.toUpperCase() + ''}</span> : ''}*/}
                 </div>
+
+                {/*<div className={'separator'}/>*/}
 
                 <div className={'text'}>
                     {!props.modal.name ?
                         'Group the ingredients and find the missing ones'
                         :
-                        'RECIPE'
+                        'For this recipe we’ll be chopping up a few colorful veggies and tossing them with a zesty garlic dressing for a simple and delicious light salad.'
                     }
                 </div>
 
@@ -67,6 +71,24 @@ export default function Modal(props) {
                 </div>
 
             </div>
+
+            <div className={'separator'}/>
+
+            <div className={'list'}>
+                {renderList([
+                    {name: 'cucumber'},
+                    {name: 'pepper'},
+                    {name: 'tomato'},
+                    {name: 'onion'},
+                    {name: 'garlic'},
+                    {name: 'lemon'},
+                    {name: 'mustard'},
+                    {name: 'olive oil'},
+                    {name: 'salt'},
+                    {name: 'black pepper'},
+                ])}
+            </div>
+
         </div>
 
     )

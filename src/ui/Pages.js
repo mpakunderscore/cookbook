@@ -229,7 +229,7 @@ export default function Pages(props) {
         let listLength = itemList.length >= 6 ? 6 : itemList.length
 
         if (groupName === 'cookbook')
-            listLength = 9
+            listLength = itemList.length
 
         let list = []
         for (let i = 0; i < listLength; i++) {
@@ -256,7 +256,7 @@ export default function Pages(props) {
             // console.log(name)
 
             list.push(
-                <div key={name}
+                <div key={i + name}
                      className={(active ? 'active' : '')}
                      onClick={() => {
                          if (groupName !== 'awards')
