@@ -69,7 +69,7 @@ export default function Pages(props) {
         }
 
         setFridge(fridge)
-        console.log(fridge)
+        // console.log(fridge)
     }
 
     let submitLogin = async () => {
@@ -215,7 +215,7 @@ export default function Pages(props) {
 
                     {(item.name === 'cookbook' && profile) ?
                         <div>
-                            <input value={email} disabled={true} style={{'text-align': 'center'}}/>
+                            <input value={email.toUpperCase()} disabled={true} style={{'text-align': 'center'}}/>
                         </div>
                         : ''}
                 </div>
@@ -270,8 +270,13 @@ export default function Pages(props) {
             }
 
             let name = itemList[i].name
+
+            console.log(groupName)
+            console.log(name)
+            console.log(email)
+
             if (groupName === 'cookbook' && name === 'login' && email)
-                name = 'profile'
+                itemList[i].name = 'profile'
 
             if (groupName === 'cookbook' && name === 'unlocked')
                 name += ' ' + count + '/' + all
@@ -301,6 +306,8 @@ export default function Pages(props) {
 
     let selectItem = (group, item) => {
 
+        console.log(item)
+
         let name = item.name
         let unlockPage = item.page
         let isRecipe = item.recipe
@@ -316,7 +323,7 @@ export default function Pages(props) {
             }
 
             if (name === 'basket') {
-                props.setModal(true)
+                // props.setModal(true)
             }
 
             if (name === 'restart') {
@@ -330,6 +337,7 @@ export default function Pages(props) {
             }
 
             if (name === 'profile') {
+                console.log('PROFILE')
                 setProfile(true)
             } else {
                 setProfile(false)
