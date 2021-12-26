@@ -184,6 +184,7 @@ main {
 }
 
 .list > div {
+    position: relative;
     width: calc((100% - 40px)/3 - 10px);
 
     height: 64px;
@@ -204,6 +205,8 @@ main {
     /*margin-right: 10px;*/
     /*margin-left: 10px;*/
     font-size: 10px;
+
+    overflow: hidden;
 }
 
 .list > div:active {
@@ -215,6 +218,32 @@ main {
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid ghostwhite;
     color: gray;
+}
+
+.list > div > .recipe {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 30px;
+    margin-top: -15px;
+    margin-right: -10px;
+    transform: rotate(30deg);
+    transform-origin: right;
+    background: white;
+}
+
+.list > div > .page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -10px;
+    transform: rotate(-30deg);
+    transform-origin: left;
+    background: white;
 }
 
 .highlight .name {

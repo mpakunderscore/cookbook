@@ -21,18 +21,33 @@ let meat = {
     color: '#A42E2F',
 
     list: [
-        {name: 'steak', index: 394},
-        {name: 'stew', index: 126},
-        {name: 'slow', index: 600},
-        {name: 'grill', index: 300},
-        {name: 'bonfire', index: 0},
-        {name: 'baked', index: 385},
-        {name: 'chicken', index: 0},
-        {name: 'ground', index: 0},
-        {name: 'bolognese', index: 0},
-        {name: 'kebab', index: 0},
-        {name: 'meatball', index: 0},
-        {name: 'smoked', index: 0}
+        {name: 'steak', index: 394, recipe: true},
+        {name: 'stew', index: 126, recipe: true},
+        {name: 'slow', index: 600, recipe: true},
+
+        {name: 'beef'},
+        {name: 'chicken', page: true},
+        {name: 'fish', page: true},
+
+        {name: 'grill', index: 300, recipe: true},
+        {name: 'bonfire', index: 0, recipe: true},
+        {name: 'baked', index: 385, recipe: true},
+
+        {name: 'ribeye'},
+        {name: 'pork'},
+        {name: 'mutton'},
+
+        {name: 'ground', index: 0, recipe: true},
+        {name: 'bolognese', index: 0, recipe: true},
+        {name: 'kebab', index: 0, recipe: true},
+
+        {name: 'meatball', index: 0, recipe: true},
+        {name: 'smoked', index: 0, recipe: true},
+        {name: 'sausages', index: 0, recipe: true},
+
+        {name: 'chili', index: 0, recipe: true},
+        {name: 'wellington', index: 0, recipe: true},
+        {name: 'bacon', index: 0, recipe: true},
     ]
 }
 
@@ -70,7 +85,9 @@ let chicken = {
         {name: 'fried'},
         {name: 'fries'},
         {name: 'soup'},
-        {name: 'eggs'}
+        {name: 'eggs'},
+        {name: 'turkey'},
+
     ]
 }
 
@@ -81,12 +98,13 @@ let vegetables = {
     color: '#62bb69',
 
     list: [
-        {name: 'salad'},
-        {name: 'pickled'},
-        {name: 'fries'},
-        {name: 'baked'},
-        {name: 'broth'},
-        {name: 'soup'},
+        {name: 'salad', recipe: true},
+        {name: 'fried', recipe: true},
+        {name: 'fries', recipe: true},
+        {name: 'baked', recipe: true},
+        {name: 'broth', recipe: true},
+        {name: 'soup', recipe: true, page: true},
+        {name: 'pickled', recipe: true, page: true},
 
         {name: 'onion'},
         {name: 'potato'},
@@ -95,13 +113,13 @@ let vegetables = {
         {name: 'cucumber'},
         {name: 'avocado'},
         {name: 'carrot'},
-        {name: 'garlic'},
         {name: 'pepper'},
         {name: 'lettuce'},
         {name: 'spinach'},
         {name: 'cabbage'},
         {name: 'eggplant'},
         {name: 'broccoli'},
+        {name: 'ginger'},
         {name: 'pumpkin'},
         {name: 'corn'},
         {name: 'beetroot'},
@@ -126,14 +144,14 @@ let drinks = {
 
     list: [
         {name: 'water'},
-        {name: 'coffee'},
-        {name: 'tea'},
-        {name: 'lemonade'},
+        {name: 'coffee', recipe: true, page: true},
+        {name: 'tea', recipe: true},
+        {name: 'lemonade', recipe: true},
         {name: 'juice'},
-        {name: 'smoothie'},
+        {name: 'smoothie', recipe: true},
         {name: 'chocolate'},
         {name: 'mulled'},
-        {name: 'cocktail'},
+        {name: 'cocktail', recipe: true},
         {name: 'cider'},
         {name: 'wine'},
         {name: 'mors'},
@@ -218,14 +236,16 @@ let bread = {
     highlight: true,
 
     list: [
-        {name: 'white'},
-        {name: 'brown'},
-        {name: 'pancakes'},
-        {name: 'pizza'},
-        {name: 'pie'},
-        {name: 'dumplings'},
-        {name: 'pasta'},
-        {name: 'cake'}
+        {name: 'white', recipe: true},
+        {name: 'brown', recipe: true},
+        {name: 'pancakes', recipe: true},
+        {name: 'flour'},
+        {name: 'yeast'},
+        {name: 'pizza', recipe: true},
+        {name: 'pie, recipe: true'},
+        {name: 'dumplings', recipe: true},
+        {name: 'pasta', recipe: true, page: true},
+        {name: 'cake', recipe: true},
     ]
 }
 
@@ -257,6 +277,7 @@ let spice = {
         {name: 'garlic'},
         {name: 'curry'},
         {name: 'cinnamon'},
+        {name: 'sugar'},
     ]
 }
 

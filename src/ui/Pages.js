@@ -216,6 +216,8 @@ export default function Pages(props) {
                              selectItem(groupName, name)
                      }}>
                     {name.toUpperCase()}
+                    {itemList[i].recipe ? <div className={'recipe'}></div> : ''}
+                    {itemList[i].page ? <div className={'page'}></div> : ''}
                 </div>
             )
         }
