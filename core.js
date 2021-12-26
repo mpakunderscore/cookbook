@@ -103,8 +103,13 @@ let vegetables = {
         {name: 'fries', recipe: true},
         {name: 'baked', recipe: true},
         {name: 'broth', recipe: true},
+        {name: 'ratatouille', recipe: true},
+        {name: 'relish', recipe: true},
         {name: 'soup', recipe: true, page: true},
-        {name: 'pickled', recipe: true, page: true},
+        {name: 'pickling', recipe: true, page: true},
+
+
+
 
         {name: 'onion'},
         {name: 'potato'},
@@ -130,7 +135,7 @@ let vegetables = {
         {name: 'leek'},
         {name: 'zucchini'},
         {name: 'celery'},
-        {name: 'chili'},
+        {name: 'chilli'},
         {name: 'sweet potato'},
 
     ]

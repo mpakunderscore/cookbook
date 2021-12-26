@@ -3,6 +3,7 @@ import api, {loadFood, loadUser, sendMessage} from "../api";
 import eventBus from "../EventBus";
 
 let all = 527
+let colors = {}
 
 export default function Pages(props) {
 
@@ -80,6 +81,10 @@ export default function Pages(props) {
         // let user = {}
 
         let unlockedPages = true
+
+        for (let i = 0; i < data.length; i++) {
+            colors[data[i].name] = data[i].color
+        }
 
         for (let i = 0; i < data.length; i++) {
 
@@ -217,7 +222,7 @@ export default function Pages(props) {
                      }}>
                     {name.toUpperCase()}
                     {itemList[i].recipe ? <div className={'recipe'}></div> : ''}
-                    {itemList[i].page ? <div className={'page'}></div> : ''}
+                    {/*{itemList[i].page ? <div className={'page'} style={{background: colors[name]}}></div> : ''}*/}
                 </div>
             )
         }
