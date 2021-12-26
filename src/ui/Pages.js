@@ -173,7 +173,7 @@ export default function Pages(props) {
                 unlockedPages = false
                 pages.push(
                     <div key={'locked'} className={'card highlight'}>
-                        <div className={'name'}>LOCKED</div>
+                        <div className={'name'}>🔒</div>
                     </div>
                 )
             }

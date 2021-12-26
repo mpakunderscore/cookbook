@@ -335,8 +335,8 @@ input:-webkit-autofill {
 
     main {
         max-width: 600px;
-        max-height: 670px;
-        border-radius: 10px;
+        /*max-height: 670px;*/
+        /*border-radius: 10px;*/
 
         margin: auto;
         width: 50%;
@@ -346,4 +346,11 @@ input:-webkit-autofill {
     /*    margin-left: -200px;*/
     /*    color: var(--color-black);*/
     /*}*/
+
+    @media screen and (min-height: 1000px) {
+        main {
+            max-height: 1000px;
+            border-radius: 10px;
+        }
+    }
 }

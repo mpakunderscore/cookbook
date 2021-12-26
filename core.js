@@ -26,15 +26,15 @@ let meat = {
         {name: 'slow', index: 600, recipe: true},
 
         {name: 'beef'},
+        {name: 'pork'},
         {name: 'chicken', page: true},
-        {name: 'fish', page: true},
 
         {name: 'grill', index: 300, recipe: true},
         {name: 'bonfire', index: 0, recipe: true},
         {name: 'baked', index: 385, recipe: true},
 
         {name: 'ribeye'},
-        {name: 'pork'},
+        {name: 'rabbit'},
         {name: 'mutton'},
 
         {name: 'ground', index: 0, recipe: true},
@@ -45,9 +45,13 @@ let meat = {
         {name: 'smoked', index: 0, recipe: true},
         {name: 'sausages', index: 0, recipe: true},
 
+        {name: 'dumplings', index: 0, recipe: true},
+
         {name: 'chili', index: 0, recipe: true},
         {name: 'wellington', index: 0, recipe: true},
         {name: 'bacon', index: 0, recipe: true},
+
+
     ]
 }
 
@@ -60,17 +64,19 @@ let fish = {
     color: '#FA8072',
 
     list: [
-        {name: 'raw'},
-        {name: 'fried'},
-        {name: 'baked'},
-        {name: 'grill'},
-        {name: 'fries'},
-        {name: 'sushi'},
+        {name: 'raw', recipe: true},
+        {name: 'fried', recipe: true},
+        {name: 'baked', recipe: true},
+        {name: 'grill', recipe: true},
+        {name: 'fries', recipe: true},
+        {name: 'sushi', recipe: true},
         {name: 'shrimps'},
         {name: 'octopus'},
         {name: 'mussels'},
-        {name: 'pickled'},
-        {name: 'smoked'},
+        {name: 'pickled', recipe: true},
+        {name: 'smoked', recipe: true},
+        {name: 'salmon'},
+        {name: 'tuna'},
     ]
 }
 
@@ -87,6 +93,7 @@ let chicken = {
         {name: 'soup'},
         {name: 'eggs'},
         {name: 'turkey'},
+        {name: 'duck'},
 
     ]
 }
@@ -103,7 +110,6 @@ let vegetables = {
         {name: 'fries', recipe: true},
         {name: 'baked', recipe: true},
         {name: 'broth', recipe: true},
-        {name: 'ratatouille', recipe: true},
         {name: 'relish', recipe: true},
         {name: 'soup', recipe: true, page: true},
         {name: 'pickling', recipe: true, page: true},
@@ -130,13 +136,15 @@ let vegetables = {
         {name: 'beetroot'},
         {name: 'radish'},
         {name: 'asparagus'},
-        {name: 'cauliflower'},
+        {name: 'cauli flower'},
         {name: 'peas'},
         {name: 'leek'},
         {name: 'zucchini'},
         {name: 'celery'},
         {name: 'chilli'},
         {name: 'sweet potato'},
+
+        {name: 'rata touille', recipe: true},
 
     ]
 }
@@ -479,10 +487,10 @@ module.exports = [
     core,
     vegetables,
     meat,
+    fish,
     drinks,
     awards,
     fridge,
-    fish,
     soup,
     chicken,
     sauce,
