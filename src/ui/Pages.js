@@ -289,7 +289,7 @@ export default function Pages(props) {
             list.push(
                 <div key={i + name}
                      className={(active || groupName === 'fridge' ? 'active' : '')}
-                     style={groupName === 'fridge' ? {color: itemList[i].color} : {}}
+                     style={groupName === 'fridge' ? {background: itemList[i].color} : {}}
                      onClick={() => {
                          if (groupName !== 'awards' && groupName !== 'fridge')
                              selectItem(groupName, itemList[i])
