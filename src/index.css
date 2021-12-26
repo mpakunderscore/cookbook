@@ -98,10 +98,13 @@ main {
 }
 
 .card .name span {
-    font-size: 10px;
     float: left;
     font-weight: 600;
     letter-spacing: 2px;
+}
+
+.card .name span.count {
+    font-size: 10px;
 }
 
 .card .text {
@@ -134,7 +137,7 @@ main {
     /*top: 0;*/
     /*!*color: black;*!*/
     /*z-index: 1;*/
-    opacity: .1;
+    opacity: .2;
 }
 
 .card.locked > div:not(.name) {

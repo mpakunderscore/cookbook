@@ -23,9 +23,13 @@ export default function Pages(props) {
 
     let [email, setEmail] = useState(localStorage.getItem('email'))
 
+    let [href, setHref] = useState(location.href.split('#')[1])
+
     const ref = useRef(null)
 
     useEffect(async () => {
+
+        // console.log(href)
 
         loadFood().then(data => {
             setData(data)
@@ -74,6 +78,14 @@ export default function Pages(props) {
     //     return array
     // }
 
+    let setCardActive = (i, item) => {
+        setActive(i)
+        props.changeTheme(item.color)
+        // location.href = '#' + item.name
+        window.scroll(0, 86 * i)
+
+    }
+
     let renderPages = () => {
 
         let count = 0
@@ -91,6 +103,9 @@ export default function Pages(props) {
             let item = data[i]
             count += item.list.length
             // user[item.name] = {}
+
+            if (item.name === href && active !== i)
+                setActive(i)
 
             let userSelected = (userData[item.name] ? (Object.keys(userData[item.name]).filter(key => userData[item.name][key] === true)).length : 0)
 
@@ -118,15 +133,14 @@ export default function Pages(props) {
             pages.push(
                 <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '') + (!unlockedPages ? ' locked' : '')}
                      onClick={(active === i || (!unlockedPages) ? null : () => {
-                         props.changeTheme(item.color)
-                         window.scroll(0, 86 * i)
-                         setActive(i)
+                         setCardActive(i, item)
                      })}
                      style={{background: item.color}} key={item.name}>
 
                     <div className={'name'} style={item.name === 'food' ? {textAlign: 'left'} : {}}>
-                        {active === i && item.name !== 'food' ? <span>{userSelected + '/' + item.list.length}</span> : ''}
-                        {item.name === 'food' ? item.title.toUpperCase() : (unlockedPages ? item.name.toUpperCase() : '')}
+                        {active === i && item.name !== 'food' ? <span className={'count'}>{userSelected + '/' + item.list.length}</span> : ''}
+                        {!unlockedPages ? <span className={'lock'}>🔒</span> : ''}
+                        {item.name === 'food' ? item.title.toUpperCase() : (unlockedPages ? item.name.toUpperCase() : item.name.toUpperCase())}
                     </div>
 
                     {/*<div className={'title'}>{item.title}</div>*/}
@@ -171,11 +185,11 @@ export default function Pages(props) {
 
             if (item.name === 'fridge') {
                 unlockedPages = false
-                pages.push(
-                    <div key={'locked'} className={'card highlight'}>
-                        <div className={'name'}>🔒</div>
-                    </div>
-                )
+                // pages.push(
+                //     <div key={'locked'} className={'card highlight'}>
+                //         <div className={'name'}>🔒</div>
+                //     </div>
+                // )
             }
         }
 
@@ -294,7 +308,7 @@ export default function Pages(props) {
     // renderPages(data)
 
     return (
-        <div id={'pages'}>
+        <div id={'pages'} style={{visibility: props.display ? 'visible' : 'hidden'}}>
             {renderPages()}
         </div>
     )

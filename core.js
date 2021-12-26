@@ -506,5 +506,4 @@ module.exports = [
     dessert,
     milk,
     equipment,
-
 ]

@@ -23,10 +23,13 @@ function App() {
         metaThemeColor.setAttribute('content', color)
     }
 
+    console.log(modal)
+
     return (
         <div className={'container'}>
+
+            <Pages changeTheme={changeTheme} setModal={setModal} display={!modal} />
             {modal ? <Modal changeTheme={changeTheme} setModal={setModal}/> : ''}
-            <Pages changeTheme={changeTheme} setModal={setModal}/>
 
         </div>
     )
