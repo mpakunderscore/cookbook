@@ -273,7 +273,7 @@ main {
 }
 
 #modal {
-    background: gray;
+    /*background: gray;*/
     position: fixed;
     overscroll-behavior-y: none;
     top: 0;

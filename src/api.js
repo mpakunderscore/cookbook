@@ -1,5 +1,14 @@
 const prefix = '/api'
 
+let loadActivePage = (selected) => {
+
+    if (selected || selected === 0)
+        localStorage.setItem('active', selected)
+
+    let active = localStorage.getItem('active') ? parseInt(localStorage.getItem('active')) : 0
+    return active
+}
+
 let loadFood = () => {
     return fetch(prefix + '/food')
         .then(response => response.json())
@@ -38,5 +47,5 @@ let sendMessage = (message) => {
 }
 
 module.exports = {
-    loadFood, loadUser, sendMessage
+    loadFood, loadUser, sendMessage, loadActivePage
 }

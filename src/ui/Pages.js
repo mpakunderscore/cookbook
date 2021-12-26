@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
-import api, {loadFood, loadUser, sendMessage} from "../api";
+import api, {loadActivePage, loadFood, loadUser, sendMessage} from "../api";
 import eventBus from "../EventBus";
 
 let all = 527
@@ -31,8 +31,14 @@ export default function Pages(props) {
 
         // console.log(href)
 
+        // props.changeTheme(item.color)
+        // setActive()
+
+        console.log(loadActivePage())
+
         loadFood().then(data => {
             setData(data)
+            setCardActive(loadActivePage(), data)
         })
 
         console.log('email: ' + (email ? email : false))
@@ -78,12 +84,13 @@ export default function Pages(props) {
     //     return array
     // }
 
-    let setCardActive = (i, item) => {
+    let setCardActive = (i, data) => {
+        // console.log(i)
         setActive(i)
-        props.changeTheme(item.color)
+        props.changeTheme(data[i].color)
         // location.href = '#' + item.name
         window.scroll(0, 86 * i)
-
+        loadActivePage(i)
     }
 
     let renderPages = () => {
@@ -140,7 +147,7 @@ export default function Pages(props) {
 
                 <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '') + (!unlockedPages && !item.unlocked ? ' locked' : '')}
                      onClick={(active === i || (!unlockedPages && !item.unlocked) ? null : () => {
-                         setCardActive(i, item)
+                         setCardActive(i, data)
                      })}
                      style={{background: item.color}} key={item.name}>
 
@@ -247,7 +254,7 @@ export default function Pages(props) {
                      className={(active ? 'active' : '')}
                      onClick={() => {
                          if (groupName !== 'awards')
-                             selectItem(groupName, name, itemList[i].page)
+                             selectItem(groupName, itemList[i])
                      }}>
                     {name.toUpperCase()}
                     {itemList[i].recipe ? <div className={'recipe'}></div> : ''}
@@ -259,32 +266,37 @@ export default function Pages(props) {
         return list
     }
 
-    let selectItem = (group, item, page) => {
+    let selectItem = (group, item) => {
+
+        let name = item.name
+        let unlockPage = item.page
+        let isRecipe = item.recipe
+
 
         // console.log(page, item)
         if (group === 'cookbook') {
 
-            if (item === 'feedback') {
+            if (name === 'feedback') {
                 setFeedback(true)
             } else {
                 setFeedback(false)
             }
 
-            if (item === 'basket') {
+            if (name === 'basket') {
                 props.setModal(true)
             }
 
-            if (item === 'restart') {
+            if (name === 'restart') {
                 clear()
             }
 
-            if (item === 'login') {
+            if (name === 'login') {
                 setLogin(true)
             } else {
                 setLogin(false)
             }
 
-            if (item === 'profile') {
+            if (name === 'profile') {
                 setProfile(true)
             } else {
                 setProfile(false)
@@ -292,20 +304,27 @@ export default function Pages(props) {
 
         } else {
 
-            if (page && !userData[item]) {
-                userData[item] = {}
+            if (unlockPage && !userData[name]) {
+                userData[name] = {}
             }
 
             if (!userData[group])
                 userData[group] = {}
 
-            userData[group][item] = !userData[group][item]
-            userData.count = count + (userData[group][item] ? 1 : -1)
+            if (isRecipe) {
 
-            setUserData(userData)
-            setCount(userData.count)
-            localStorage.setItem('user', JSON.stringify(userData))
-            console.log(userData)
+                props.setModal({color: data[active].color, name: name, group: group})
+
+            } else {
+
+                userData[group][name] = !userData[group][name]
+                userData.count = count + (userData[group][name] ? 1 : -1)
+
+                setUserData(userData)
+                setCount(userData.count)
+                localStorage.setItem('user', JSON.stringify(userData))
+                console.log(userData)
+            }
 
             forceUpdate()
 

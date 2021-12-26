@@ -30,7 +30,7 @@ function App() {
         <div className={'container'}>
 
             <Pages changeTheme={changeTheme} setModal={setModal} display={!modal} />
-            {modal ? <Modal changeTheme={changeTheme} setModal={setModal}/> : ''}
+            {modal ? <Modal changeTheme={changeTheme} modal={modal} setModal={setModal}/> : ''}
 
         </div>
     )

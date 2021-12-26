@@ -2,11 +2,19 @@ import React, {useEffect, useState, useRef} from 'react'
 
 export default function Modal(props) {
 
+    let [backgroundColor, setBackgroundColor] = useState('gray')
+
     useEffect(() => {
-        props.changeTheme('gray')
+        console.log(props.modal.color)
+        if (props.modal.color) {
+            props.changeTheme(props.modal.color)
+            setBackgroundColor(props.modal.color)
+        } else {
+            props.changeTheme(backgroundColor)
+        }
     })
 
-    let renderList = (itemList, name) => {
+    let renderList = (itemList) => {
 
         let listLength = itemList.length >= 6 ? 6 : itemList.length
         //itemList.length
@@ -16,7 +24,7 @@ export default function Modal(props) {
             list.push(
                 <div key={itemList[i].name}
                      onClick={() => {
-                         selectItem(name, itemList[i].name)
+                         selectItem()
                      }}>
                     {itemList[i].name.toUpperCase()}
                 </div>
@@ -26,19 +34,33 @@ export default function Modal(props) {
         return list
     }
 
-    let selectItem = (page, item) => {
+    let selectItem = () => {
         props.setModal(false)
     }
 
     return (
-        <div id={'modal'}>
+        <div id={'modal'} style={{background: backgroundColor}}>
             <div className={'card active'}
-                 style={{background: 'gray'}}>
-                <div className={'name'}>BASKET</div>
-                <div className={'text'}>Group the ingredients and find the missing ones</div>
+                 style={{background: backgroundColor}}>
+                <div className={'name'}>
+                    {props.modal.name ? props.modal.name.toUpperCase() : 'BASKET'}
+                    {props.modal.group ? <span>{props.modal.group.toUpperCase()}</span> : ''}
+                </div>
+
+                <div className={'text'}>
+                    {!props.modal.name ?
+                        'Group the ingredients and find the missing ones'
+                        :
+                        'RECIPE'
+                    }
+                </div>
 
                 <div className={'list'}>
-                    {renderList([{name: 'order'}, {name: 'clear'}, {name: 'close'}], 'basket')}
+                    {!props.modal.name ?
+                        renderList([{name: 'order'}, {name: 'clear'}, {name: 'close'}])
+                        :
+                        renderList([{name: 'want'}, {name: 'did'}, {name: 'master'}])
+                    }
                     {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
                     {/*<div>{item.list[1].name}</div>*/}
                     {/*<div>{item.list[2].name}</div>*/}
