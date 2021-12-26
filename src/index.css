@@ -270,7 +270,8 @@ main {
 
 #modal {
     background: gray;
-    position: absolute;
+    position: fixed;
+    overscroll-behavior-y: none;
     top: 0;
     left: 0;
     right: 0;

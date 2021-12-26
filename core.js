@@ -1,7 +1,7 @@
 let core = {
     name: 'food',
     title: 'COOKBOOK',
-    text: 'This App is a collection of simple recipes in 20 categories. And a fridge with a lot of items. And in the basket you can pick up a recipe. This is a test version.',
+    text: 'This App is a collection of simple recipes in 20 categories. And a fridge with a lot of items. And in the basket you can pick up a recipe.',
     color: '#361F1F',
 
     list: [
