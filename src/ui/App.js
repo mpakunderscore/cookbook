@@ -21,6 +21,7 @@ function App() {
     let changeTheme = (color) => {
         let metaThemeColor = document.querySelector('meta[name=theme-color]')
         metaThemeColor.setAttribute('content', color)
+        // document.body.style.background = color
     }
 
     console.log(modal)
