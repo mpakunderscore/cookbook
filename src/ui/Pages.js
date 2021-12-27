@@ -75,7 +75,7 @@ export default function Pages(props) {
                     continue
 
                 if (!data[i].list[j].recipe || data[i].list[j].item)
-                    fridge.push({name: data[i].list[j].name, color: data[i].color, highlight: data[i].highlight})
+                    fridge.push({name: data[i].list[j].name, color: (data[i].list[j].color ? data[i].list[j].color : data[i].color), highlight: data[i].highlight})
             }
         }
 

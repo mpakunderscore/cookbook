@@ -2,6 +2,7 @@ let recipes = {
 
     vegetables: {
         salad: {
+            name: 'salad',
             text: 'For this recipe we’ll be chopping up a few colorful veggies and tossing them with a zesty garlic dressing.',
             list: [
                 {name: 'cucumber', color: '#62bb69'},
@@ -15,8 +16,23 @@ let recipes = {
                 {name: 'salt', color: '#4b4848'},
                 {name: 'black pepper', color: '#4b4848'},
             ]
-        }
-    }
+        },
+        fried: {
+            text: ''
+        },
+        fries: {
+            text: ''
+        },
+        baked: {
+            text: ''
+        },
+        broth: {
+            text: ''
+        },
+        relish: {
+            text: ''
+        },
+    },
 }
 
 module.exports = recipes

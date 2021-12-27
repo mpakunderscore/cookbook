@@ -433,6 +433,34 @@ let pasta = {
     ]
 }
 
+let mushrooms = {
+    name: 'mushrooms',
+    title: 'Mushrooms',
+    text: '🍄',
+    color: '#B3AA9A',
+    highlight: true,
+
+    list: [
+        {name: 'champion'},
+        {name: 'shiitake'},
+    ]
+}
+
+let oil = {
+    name: 'oil',
+    title: 'Oil',
+    text: 'OIL',
+    color: '#dbcf5c',
+    highlight: true,
+
+    list: [
+        {name: 'olive oil'},
+        {name: 'vegetable oil'},
+        {name: 'canola oil'},
+
+    ]
+}
+
 let fridge = {
     name: 'fridge',
     title: 'Fridge',
@@ -498,9 +526,11 @@ module.exports = [
     rice,
     pickling,
     eggs,
+    mushrooms,
     pasta,
     coffee,
     dessert,
     milk,
+    oil,
     equipment,
 ]
