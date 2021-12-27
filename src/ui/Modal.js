@@ -59,7 +59,10 @@ export default function Modal(props) {
                     {/*<div className={'separator'}/>*/}
 
                     <div className={'text'}>
-                        {recipes.vegetables.salad.text}
+                        {recipes[props.modal.group] && recipes[props.modal.group][props.modal.name] && recipes[props.modal.group][props.modal.name].text && recipes[props.modal.group][props.modal.name].text.length > 0 ?
+                            recipes[props.modal.group][props.modal.name].text
+                            :
+                            'NO RECIPE HERE'}
                     </div>
 
                     <div className={'list'}>
@@ -83,7 +86,11 @@ export default function Modal(props) {
 
                 <div className={''}>
                     <div className={'list'}>
-                        {renderList(recipes.vegetables.salad.list, true)}
+                        {recipes[props.modal.group] && recipes[props.modal.group][props.modal.name] && recipes[props.modal.group][props.modal.name].list ?
+                            renderList(recipes[props.modal.group][props.modal.name].list)
+                            :
+                            ''
+                        }
                     </div>
                 </div>
 

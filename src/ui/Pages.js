@@ -129,6 +129,8 @@ export default function Pages(props) {
     let renderPages = () => {
 
         let allItemsCounter = 0
+        let allFridgeItemsCounter = 0
+        let allRecipesCounter = 0
 
         let pages = []
         // let user = {}
@@ -145,7 +147,12 @@ export default function Pages(props) {
 
             let item = data[i]
 
-            allItemsCounter += item.list.length
+
+            // if (item.name !== 'awards' && item.name !== 'cookbook' && item.name !== 'fridge' && item.name !== 'equipment') {
+            //     allItemsCounter += item.list.length
+            //     allFridgeItemsCounter += item.list.filter(card => (!card.recipe && card.item !== false) || card.item === true).length
+            //     allRecipesCounter += item.list.filter(card => card.recipe === true).length
+            // }
 
             // user[item.name] = {}
 
@@ -257,6 +264,9 @@ export default function Pages(props) {
         }
 
         // console.log(allItemsCounter)
+        // console.log(allFridgeItemsCounter)
+        // console.log(allRecipesCounter)
+
         // console.log(user)
 
         return pages

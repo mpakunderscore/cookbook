@@ -111,16 +111,13 @@ let vegetables = {
 
     list: [
         {name: 'salad', recipe: true},
-        {name: 'fried', recipe: true},
-        {name: 'fries', recipe: true},
         {name: 'baked', recipe: true},
         {name: 'broth', recipe: true},
+        {name: 'fries', recipe: true},
+        {name: 'fried', recipe: true},
         {name: 'relish', recipe: true},
         {name: 'soup', recipe: true, page: true},
         {name: 'pickling', recipe: true, page: true},
-
-
-
 
         {name: 'onion'},
         {name: 'potato'},
@@ -443,16 +440,16 @@ let mushrooms = {
     highlight: true,
 
     list: [
-        {name: 'champignon'},
+        {name: 'champi gnon'},
         {name: 'shiitake'},
-        {name: 'chanterelles'},
+        {name: 'chante relles'},
     ]
 }
 
 let oil = {
-    name: 'oil',
-    title: 'Oil',
-    text: 'OIL',
+    name: 'oil vinegar',
+    title: 'Oil Vinegar',
+    text: 'Oil and Vinegar',
     color: '#dbcf5c',
     highlight: true,
 
@@ -460,7 +457,8 @@ let oil = {
         {name: 'olive oil'},
         {name: 'vegetable oil'},
         {name: 'canola oil'},
-
+        {name: 'balsamic vinegar'},
+        {name: 'vinegar'},
     ]
 }
 
