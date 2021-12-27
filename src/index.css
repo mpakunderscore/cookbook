@@ -309,6 +309,29 @@ main {
     /*margin-top: auto;*/
 }
 
+#modal .card .name {
+    /*background: red;*/
+    position: relative;
+}
+
+#modal .card .name > div:first-child {
+    font-size: 10px;
+    margin-right: 2px;
+}
+
+#modal .card .name > div.close {
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    top: 0;
+    left: 0;
+    /*left: 36px;*/
+    height: 100px;
+    line-height: 100px;
+    font-size: 34px;
+    /*background: red;*/
+}
+
 input {
     width: calc(100% - 40px);
     margin: 20px;
