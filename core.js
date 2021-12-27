@@ -171,7 +171,7 @@ let drinks = {
         {name: 'cocktail', recipe: true},
         {name: 'cider', recipe: true, item: true},
         {name: 'wine', recipe: true, item: true},
-        {name: 'mors', recipe: true, item: true},
+        {name: 'mors', recipe: true},
     ]
 }
 
@@ -243,7 +243,6 @@ let sauce = {
         {name: 'pesto', recipe: true},
         {name: 'holland aise', recipe: true},
         {name: 'mustard', recipe: true},
-        {name: 'olive oil', color: '#dbcf5c'},
     ]
 }
 
