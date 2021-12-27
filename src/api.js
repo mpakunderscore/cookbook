@@ -28,6 +28,9 @@ let loadUser = (email) => {
 
     // console.log(user)
 
+    if (!user['awards'])
+        user['awards'] = {}
+
     if (!email)
         return user
 

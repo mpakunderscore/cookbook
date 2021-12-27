@@ -450,6 +450,9 @@ let awards = {
     highlight: true,
 
     list: [
+        {name: 'postal', index: 0},
+        {name: 'elder', index: 0},
+
         {name: 'hunter', index: 0},
         {name: 'fisherman', index: 0},
         {name: 'gardener', index: 0},

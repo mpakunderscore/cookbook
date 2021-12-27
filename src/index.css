@@ -390,6 +390,7 @@ input:-webkit-autofill {
 
     #modal {
         max-width: 600px;
+        max-height: 1000px;
         margin: auto;
     }
 

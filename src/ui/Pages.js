@@ -46,10 +46,21 @@ export default function Pages(props) {
             loadFridge(data)
         })
 
-        console.log('email: ' + (email ? email : false))
+        if (email) {
+            console.log('email: ' + email)
+        }
 
         let userData = await loadUser(email)
         console.log(userData)
+
+        if (email && !userData['awards']['postal']) {
+            userData['awards']['postal'] = true
+        }
+
+        if (!userData['awards']['elder']) {
+            userData['awards']['elder'] = true
+        }
+
         setUserData(userData)
         setCount(userData.count)
 
@@ -219,7 +230,7 @@ export default function Pages(props) {
 
                     {(item.name === 'cookbook' && profile) ?
                         <div>
-                            <input value={email.toUpperCase()} disabled={true} style={{'text-align': 'center'}}/>
+                            <input value={email} disabled={true} style={{textAlign: 'center'}}/>
                         </div>
                         : ''}
                 </div>
@@ -255,11 +266,13 @@ export default function Pages(props) {
 
         let listLength = itemList.length >= 6 ? 6 : itemList.length
 
-        if (groupName === 'cookbook' || groupName === 'fridge')
+        if (groupName === 'cookbook' || groupName === 'fridge' || groupName === 'awards')
             listLength = itemList.length
 
-        if (groupName === 'awards')
-            listLength = 3
+        if (groupName === 'awards') {
+            // itemList.push({name: 'competition', active: true})
+            listLength = itemList.length
+        }
 
         let list = []
         for (let i = 0; i < listLength; i++) {
@@ -285,7 +298,7 @@ export default function Pages(props) {
             if (groupName === 'cookbook' && name === 'unlocked')
                 name += ' ' + count + '/' + all
 
-            if (groupName === 'awards')
+            if (groupName === 'awards' && !active && !itemList[i].active)
                 name = '🏆'
 
             // console.log(name)
