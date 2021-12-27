@@ -242,6 +242,8 @@ let sauce = {
         {name: 'bolognese', recipe: true},
         {name: 'pesto', recipe: true},
         {name: 'holland aise', recipe: true},
+        {name: 'mustard', recipe: true},
+        {name: 'olive oil', color: '#dbcf5c'},
     ]
 }
 

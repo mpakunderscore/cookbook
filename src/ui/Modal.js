@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
+import recipes from "../../recipes";
 
 export default function Modal(props) {
 
@@ -58,11 +59,7 @@ export default function Modal(props) {
                     {/*<div className={'separator'}/>*/}
 
                     <div className={'text'}>
-                        {!props.modal.name ?
-                            ''
-                            :
-                            'For this recipe we’ll be chopping up a few colorful veggies and tossing them with a zesty garlic dressing for a simple and delicious light salad.'
-                        }
+                        {recipes.vegetables.salad.text}
                     </div>
 
                     <div className={'list'}>
@@ -86,22 +83,7 @@ export default function Modal(props) {
 
                 <div className={''}>
                     <div className={'list'}>
-                        {renderList([
-                            {name: 'cucumber', color: '#62bb69'},
-                            {name: 'pepper', color: '#62bb69'},
-                            {name: 'tomato', color: '#62bb69'},
-                            {name: 'onion', color: '#62bb69'},
-                            {name: 'garlic', color: '#62bb69'},
-                            {name: 'lemon', color: '#FFD658'},
-                            {name: 'mustard', color: ''},
-                            {name: 'olive oil', color: ''},
-                            {name: 'salt', color: '#4b4848'},
-                            {name: 'black pepper', color: '#4b4848'},
-                            // {name: '1', color: '#4b4848'},
-                            // {name: '2', color: '#4b4848'},
-                            // {name: '3', color: '#4b4848'},
-                            // {name: '4', color: '#4b4848'},
-                        ], true)}
+                        {renderList(recipes.vegetables.salad.list, true)}
                     </div>
                 </div>
 
