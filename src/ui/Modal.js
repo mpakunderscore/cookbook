@@ -26,7 +26,7 @@ export default function Modal(props) {
             list.push(
                 <div key={itemList[i].name}
                      className={(active || itemList[i].active ? 'active' : '')}
-                     style={itemList[i].color ? {background: itemList[i].color} : {}}
+                     style={itemList[i].color ? {background: itemList[i].color, color: itemList[i].highlight ? '#4c4c4c' : 'white'} : {}}
                      onClick={() => {
                          selectItem()
                      }}>
@@ -52,7 +52,7 @@ export default function Modal(props) {
                     <div className={'name'}>
                         <div>{props.modal.group.toUpperCase()}</div>
                         <div>{props.modal.name.toUpperCase()}</div>
-                        <div className={'close'} onClick={() => props.setModal(false)}>❮</div>
+                        <div className={'close'} onClick={() => props.setModal(false)}>✖</div>
                     </div>
 
                     {/*<div className={'separator'}/>*/}
@@ -70,7 +70,7 @@ export default function Modal(props) {
                             renderList([{name: 'order'}, {name: 'clear'}, {name: 'close'}])
                             :
                             renderList([
-                                {name: '🏆'}, {name: 'expert'}, {name: 'amateur', active: true},
+                                {name: '🏆'}, {name: 'expert'}, {name: 'amateur'},
                             ])
                         }
                         {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
