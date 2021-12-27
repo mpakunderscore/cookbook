@@ -74,7 +74,7 @@ export default function Pages(props) {
                 if (['cookbook', 'awards', 'equipment'].includes(data[i].name))
                     continue
 
-                if (!data[i].list[j].recipe || data[i].list[j].item)
+                if ((!data[i].list[j].recipe && data[i].list[j].item !== false) || data[i].list[j].item === true)
                     fridge.push({name: data[i].list[j].name, color: (data[i].list[j].color ? data[i].list[j].color : data[i].color), highlight: data[i].highlight})
             }
         }

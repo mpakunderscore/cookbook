@@ -31,7 +31,7 @@ let meat = {
 
         {name: 'beef'},
         {name: 'pork'},
-        {name: 'chicken', page: true},
+        {name: 'chicken', page: true, item: false},
 
         {name: 'grill', index: 300, recipe: true},
         {name: 'bonfire', index: 0, recipe: true},
@@ -95,7 +95,8 @@ let chicken = {
         {name: 'fried', recipe: true},
         {name: 'fries', recipe: true},
         {name: 'soup', recipe: true},
-        {name: 'eggs', page: true},
+        // {name: 'eggs', page: true, item: false},
+        {name: 'chicken'},
         {name: 'turkey'},
         {name: 'duck'},
 
@@ -404,7 +405,9 @@ let eggs = {
     color: '#fff',
     highlight: true,
 
-    list: []
+    list: [
+        {name: 'chicken eggs'},
+    ]
 }
 
 let coffee = {
@@ -440,8 +443,9 @@ let mushrooms = {
     highlight: true,
 
     list: [
-        {name: 'champion'},
+        {name: 'champignon'},
         {name: 'shiitake'},
+        {name: 'chanterelles'},
     ]
 }
 
