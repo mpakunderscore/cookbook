@@ -199,7 +199,7 @@ let fruits = {
     name: 'fruits',
     title: 'Fruits',
     text: 'Fruits',
-    color: '#ffd658',
+    color: '#FFD658',
     highlight: true,
 
     list: [

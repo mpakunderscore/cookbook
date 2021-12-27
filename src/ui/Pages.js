@@ -275,9 +275,9 @@ export default function Pages(props) {
 
             let name = itemList[i].name
 
-            console.log(groupName)
-            console.log(name)
-            console.log(email)
+            // console.log(groupName)
+            // console.log(name)
+            // console.log(email)
 
             if (groupName === 'cookbook' && name === 'login' && email)
                 itemList[i].name = 'profile'

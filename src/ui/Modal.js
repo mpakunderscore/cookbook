@@ -14,7 +14,7 @@ export default function Modal(props) {
         }
     })
 
-    let renderList = (itemList) => {
+    let renderList = (itemList, active) => {
 
         let listLength = itemList.length
 
@@ -25,6 +25,8 @@ export default function Modal(props) {
         for (let i = 0; i < listLength; i++) {
             list.push(
                 <div key={itemList[i].name}
+                     className={(active ? 'active' : '')}
+                     style={itemList[i].color ? {background: itemList[i].color} : {}}
                      onClick={() => {
                          selectItem()
                      }}>
@@ -41,19 +43,22 @@ export default function Modal(props) {
     }
 
     return (
-        <div id={'modal'} style={{background: backgroundColor}}>
+        <div id={'modal'}>
+
+            <div>
+
             <div className={'card active'}
                  style={{background: backgroundColor}}>
                 <div className={'name'}>
-                    {props.modal.name ? props.modal.name.toUpperCase() + ' ' + props.modal.group.toUpperCase() : 'BASKET'}
-                    {/*{props.modal.group ? <span>{props.modal.group.toUpperCase() + ''}</span> : ''}*/}
+                    {props.modal.group ? <span className={'count'}>{props.modal.group.toUpperCase()}</span> : ''}
+                    {props.modal.name ? props.modal.name.toUpperCase() : 'BASKET'}
                 </div>
 
                 {/*<div className={'separator'}/>*/}
 
                 <div className={'text'}>
                     {!props.modal.name ?
-                        'Group the ingredients and find the missing ones'
+                        ''
                         :
                         'For this recipe we’ll be chopping up a few colorful veggies and tossing them with a zesty garlic dressing for a simple and delicious light salad.'
                     }
@@ -63,7 +68,10 @@ export default function Modal(props) {
                     {!props.modal.name ?
                         renderList([{name: 'order'}, {name: 'clear'}, {name: 'close'}])
                         :
-                        renderList([{name: 'want'}, {name: 'did'}, {name: 'master'}])
+                        renderList([
+                            {name: 'close'}, {name: '🏆'}, {name: ''},
+                            {name: 'expert'}, {name: 'home cook'}, {name: 'amateur'},
+                        ])
                     }
                     {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
                     {/*<div>{item.list[1].name}</div>*/}
@@ -74,19 +82,27 @@ export default function Modal(props) {
 
             <div className={'separator'}/>
 
+            {/*highlight*/}
+
             <div className={'list'}>
                 {renderList([
-                    {name: 'cucumber'},
-                    {name: 'pepper'},
-                    {name: 'tomato'},
-                    {name: 'onion'},
-                    {name: 'garlic'},
-                    {name: 'lemon'},
-                    {name: 'mustard'},
-                    {name: 'olive oil'},
-                    {name: 'salt'},
-                    {name: 'black pepper'},
-                ])}
+                    {name: 'cucumber', color: '#62bb69'},
+                    {name: 'pepper', color: '#62bb69'},
+                    {name: 'tomato', color: '#62bb69'},
+                    {name: 'onion', color: '#62bb69'},
+                    {name: 'garlic', color: '#62bb69'},
+                    {name: 'lemon', color: '#FFD658'},
+                    {name: 'mustard', color: ''},
+                    {name: 'olive oil', color: ''},
+                    {name: 'salt', color: '#4b4848'},
+                    {name: 'black pepper', color: '#4b4848'},
+                    // {name: '1', color: '#4b4848'},
+                    // {name: '2', color: '#4b4848'},
+                    // {name: '3', color: '#4b4848'},
+                    // {name: '4', color: '#4b4848'},
+                ], true)}
+            </div>
+
             </div>
 
         </div>
