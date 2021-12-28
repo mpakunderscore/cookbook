@@ -51,15 +51,15 @@ let meat = {
         {name: 'bolognese', index: 0, recipe: true},
         {name: 'kebab', index: 0, recipe: true},
 
-        {name: 'meatball', index: 0, recipe: true},
+        {name: 'meatballs', index: 0, recipe: true},
         {name: 'smoked', index: 0, recipe: true},
         {name: 'sausages', index: 0, recipe: true},
 
         {name: 'dumplings', index: 0, recipe: true},
-
         {name: 'chili', index: 0, recipe: true},
-        {name: 'wellington', index: 0, recipe: true},
         {name: 'bacon', index: 0, recipe: true},
+
+        {name: 'wellington', index: 0, recipe: true},
 
 
     ]
@@ -198,7 +198,7 @@ let soup = {
         {name: 'onion', recipe: true},
         {name: 'gazpacho', recipe: true},
         {name: 'pho', recipe: true},
-
+        {name: 'ramen', recipe: true},
     ]
 }
 
@@ -270,7 +270,6 @@ let bread = {
         {name: 'pie', recipe: true},
         {name: 'dumplings', recipe: true},
         {name: 'pasta', recipe: true, page: true, item: true},
-        {name: 'cake', recipe: true},
     ]
 }
 
@@ -401,7 +400,11 @@ let dessert = {
     text: 'Dessert',
     color: 'rgba(255,55,116,0.8)',
 
-    list: []
+    list: [
+        {name: 'cake', recipe: true},
+        {name: 'waffles', recipe: true},
+        {name: 'muffins', recipe: true},
+    ]
 }
 
 let eggs = {
@@ -422,7 +425,11 @@ let coffee = {
     text: 'Coffee',
     color: '#6F4E37',
 
-    list: []
+    list: [
+        {name: 'cappuccino'},
+        {name: 'latte'},
+        {name: 'americano'},
+    ]
 }
 
 let pasta = {

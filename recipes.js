@@ -57,6 +57,14 @@ let recipes = {
             text: ''
         },
     },
+
+    exampleGroup: {
+        exampleRecipe: {
+            name: 'name',
+            text: 'Big text here.',
+            list: []
+        }
+    }
 }
 
 module.exports = recipes
