@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react'
 import api, {loadActivePage, loadFood, loadUser, sendMessage} from "../api";
 import eventBus from "../EventBus";
+import {is} from "cheerio/lib/api/traversing";
 
 let all = 527
 let colors = {}
@@ -36,12 +37,15 @@ export default function Pages(props) {
         // props.changeTheme(item.color)
         // setActive()
 
-        console.log(loadActivePage())
+        let pageIndex = loadActivePage()
+        console.log(pageIndex)
 
         loadFood().then(data => {
+
             setData(data)
             // console.log(data)
-            setCardActive(loadActivePage(), data)
+
+            setCardActive(pageIndex, data, pageIndex)
 
             loadFridge(data)
         })
@@ -117,12 +121,12 @@ export default function Pages(props) {
     //     return array
     // }
 
-    let setCardActive = (i, data) => {
+    let setCardActive = (i, data, j) => {
         // console.log(i)
         setActive(i)
         props.changeTheme(data[i].color)
         // location.href = '#' + item.name
-        window.scroll(0, 86 * i)
+        window.scroll(0, 86 * j)
         loadActivePage(i)
     }
 
@@ -139,129 +143,38 @@ export default function Pages(props) {
 
         // COLORS
         for (let i = 0; i < data.length; i++) {
+            data[i].i = i
             colors[data[i].name] = data[i].color
         }
 
+
+
+
+        let unlockedData = data.filter(item => item.unlocked === true || userData[item.name])
+
+        let lockedData = data.filter(item => !item.unlocked && !userData[item.name])
+
         // PAGES HERE
-        for (let i = 0; i < data.length; i++) {
+        for (let i = 0; i < unlockedData.length; i++) {
 
-            let item = data[i]
+            if (unlockedData[i].name === 'awards') {
+                lockedData.push(unlockedData[i])
+                continue
+            }
 
+            pages.push(generateCard(unlockedData[i], true, i))
 
-            // if (item.name !== 'awards' && item.name !== 'cookbook' && item.name !== 'fridge' && item.name !== 'equipment') {
-            //     allItemsCounter += item.list.length
-            //     allFridgeItemsCounter += item.list.filter(card => (!card.recipe && card.item !== false) || card.item === true).length
-            //     allRecipesCounter += item.list.filter(card => card.recipe === true).length
-            // }
-
-            // user[item.name] = {}
-
-            // SET ACTIVE BY ROUTE
-            // if (item.name === href && active !== i)
-            //     setActive(i)
-
-            let userSelected = (userData[item.name] ? (Object.keys(userData[item.name]).filter(key => userData[item.name][key] === true)).length : 0)
-
-            // if (!unlockedPages) {
-            //
-            //     let pagesLayers = []
-            //
-            //     for (let j = i; j < data.length; j++) {
-            //         pagesLayers.push(
-            //             <div key={data[j].name} style={{background: data[j].color}}></div>
-            //         )
-            //     }
-            //
-            //     pages.push(
-            //         <div className={'card locked'} key={'locked'}>
-            //             {/*<div className={'name'}></div>*/}
-            //             {shuffleArray(pagesLayers)}
-            //         </div>
-            //     )
-            //
-            //     i = data.length
-            //     continue
-            // }
-
-            pages.push(
-
-                <div className={'card ' + (active === i ? 'active' : '') + (item.highlight ? ' highlight' : '') + (!unlockedPages && !item.unlocked ? ' locked' : '')}
-                     onClick={(active === i || (!unlockedPages && !item.unlocked) ? null : () => {
-                         setCardActive(i, data)
-                     })}
-                     style={{background: (item.name === 'fridge' && active !== i ? '#2c2c2c' : item.color)}} key={item.name}>
-
-                    <div className={'name'} style={item.name === 'cookbook' ? {textAlign: 'left'} : {}}>
-                        {active === i && item.name !== 'cookbook' ? <span className={'count'}>{userSelected + '/' + item.list.length}</span> : ''}
-                        {!unlockedPages && !item.unlocked ? <span className={'lock'}>🔒</span> : ''}
-                        {item.name === 'cookbook' ?
-                            item.title.toUpperCase()
-                            :
-                            (item.name === 'fridge' && active === i ? '💡' : item.name.toUpperCase())
-                        }
-                    </div>
-
-                    {/*<div className={'title'}>{item.title}</div>*/}
-                    <div className={'text'}>{item.text}</div>
-
-                    {item.name === 'eggs' ? <div className={'yolk'}></div> : ''}
-
-                    {item.name === 'fridge' && active !== i ? <div className={'fridge'}>🧊</div> : ''}
-
-                    {(login || feedback) ? '' : <div className={'list'}>
-                        {renderList(item.name, item.list)}
-                        {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
-                        {/*<div>{item.list[1].name}</div>*/}
-                        {/*<div>{item.list[2].name}</div>*/}
-                    </div>}
-
-                    {(item.name === 'cookbook' && login) ?
-                    <div>
-                        <input id={'email'} spellCheck={false} autoFocus={true} placeholder={'E-MAIL'} type={'email'}/>
-                        <div className={'list'}>
-                            <div onClick={() => setLogin(false)}>BACK</div>
-                            <div onClick={submitLogin}>SUBMIT</div>
-                        </div>
-                    </div>
-                        : ''}
-
-                    {(item.name === 'cookbook' && feedback) ?
-                        <div>
-                            <input id={'message'} spellCheck={true} autoFocus={true} placeholder={'MESSAGE'} type={'text'}/>
-                            <div className={'list'}>
-                                <div onClick={() => setFeedback(false)}>BACK</div>
-                                <div onClick={submitMessage}>SEND</div>
-                            </div>
-                        </div>
-                        : ''}
-
-                    {(item.name === 'cookbook' && profile) ?
-                        <div>
-                            <input value={email} disabled={true} style={{textAlign: 'center'}}/>
-                        </div>
-                        : ''}
-                </div>
-            )
-
-            if (item.name === 'fridge') {
-
-                item.list = fridge
-
-                // ADD UNLOCKED PAGES
-                for (let j = i; j < data.length; j++) {
-                    if (userData[data[j].name]) {
-                        data[j].unlocked = true
-                    }
-                }
-
-                unlockedPages = false
-                // pages.push(
-                //     <div key={'locked'} className={'card highlight'}>
-                //         <div className={'name'}>🔒</div>
-                //     </div>
-                // )
+            if (unlockedData[i].name === 'fridge') {
+                unlockedData[i].list = fridge
             }
         }
+
+        for (let i = 0; i < lockedData.length; i++) {
+
+            pages.push(generateCard(lockedData[i], !!lockedData[i].unlocked,unlockedData.length + i - 1))
+        }
+
+        // pages.push(generateCard(data.find(item => item.name === 'awards'), true, 0))
 
         // console.log(allItemsCounter)
         // console.log(allFridgeItemsCounter)
@@ -270,6 +183,72 @@ export default function Pages(props) {
         // console.log(user)
 
         return pages
+    }
+
+    let generateCard = (item, unlockedPage, j) => {
+
+        // console.log(item)
+
+        let userSelected = (userData[item.name] ? (Object.keys(userData[item.name]).filter(key => userData[item.name][key] === true)).length : 0)
+
+        let isActive = data[active].name === item.name
+
+        return <div className={'card ' + (isActive ? 'active' : '') + (item.highlight ? ' highlight' : '') + (!unlockedPage && !item.unlocked ? ' locked' : '')}
+                    onClick={(!isActive && (unlockedPage || item.unlocked) ? () => {setCardActive(item.i, data, j)} : () => {})}
+                    style={{background: (item.name === 'fridge' && !isActive ? '#2c2c2c' : item.color)}} key={item.name}>
+
+            <div className={'name'} style={item.name === 'cookbook' ? {textAlign: 'left'} : {}} onClick={() => {}}>
+                {isActive && item.name !== 'cookbook' ? <span className={'count'}>{userSelected + '/' + item.list.length}</span> : ''}
+                {!unlockedPage && !item.unlocked ? <span className={'lock'}>🔒</span> : ''}
+                {item.name === 'cookbook' ?
+                    item.title.toUpperCase()
+                    :
+                    (item.name === 'fridge' && isActive ? '💡' : item.name.toUpperCase())
+                }
+            </div>
+
+            {/*<div className={'title'}>{item.title}</div>*/}
+            <div className={'text'}>{item.text}</div>
+
+            {item.name === 'eggs' ? <div className={'yolk'}></div> : ''}
+
+            {item.name === 'fridge' && !isActive ? <div className={'categoryIcon'}>🧊</div> : ''}
+
+            {/*{item.name === 'awards' && !isActive ? <div className={'categoryIcon'}>🏆</div> : ''}*/}
+
+            {(login || feedback) ? '' : <div className={'list'}>
+                {renderList(item.name, item.list)}
+                {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
+                {/*<div>{item.list[1].name}</div>*/}
+                {/*<div>{item.list[2].name}</div>*/}
+            </div>}
+
+            {(item.name === 'cookbook' && login) ?
+                <div>
+                    <input id={'email'} spellCheck={false} autoFocus={true} placeholder={'E-MAIL'} type={'email'}/>
+                    <div className={'list'}>
+                        <div onClick={() => setLogin(false)}>BACK</div>
+                        <div onClick={submitLogin}>SUBMIT</div>
+                    </div>
+                </div>
+                : ''}
+
+            {(item.name === 'cookbook' && feedback) ?
+                <div>
+                    <input id={'message'} spellCheck={true} autoFocus={true} placeholder={'MESSAGE'} type={'text'}/>
+                    <div className={'list'}>
+                        <div onClick={() => setFeedback(false)}>BACK</div>
+                        <div onClick={submitMessage}>SEND</div>
+                    </div>
+                </div>
+                : ''}
+
+            {(item.name === 'cookbook' && profile) ?
+                <div>
+                    <input value={email} disabled={true} style={{textAlign: 'center'}}/>
+                </div>
+                : ''}
+        </div>
     }
 
     let renderList = (groupName, itemList) => {
@@ -373,6 +352,13 @@ export default function Pages(props) {
             if (name === 'install') {
                 props.installPWA()
             }
+
+            // if (name === 'awards' || name === '🏆') {
+            //     // console.log(data)
+            //     let awards = data.find(item => item.name === 'awards')
+            //     let awardsModal = {...awards, group: 'user'}
+            //     props.setModal(awardsModal)
+            // }
 
         } else {
 

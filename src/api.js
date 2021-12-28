@@ -1,6 +1,6 @@
 const prefix = '/api'
 
-let loadActivePage = (selected) => {
+let loadActivePageIndex = (selected) => {
 
     if (selected || selected === 0)
         localStorage.setItem('active', selected)
@@ -50,5 +50,5 @@ let sendMessage = (message) => {
 }
 
 module.exports = {
-    loadFood, loadUser, sendMessage, loadActivePage
+    loadFood, loadUser, sendMessage, loadActivePage: loadActivePageIndex
 }

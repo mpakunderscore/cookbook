@@ -19,7 +19,7 @@ export default function Modal(props) {
 
     let renderList = (itemList, active) => {
 
-        console.log(itemList)
+        // console.log(itemList)
 
         let listLength = itemList.length
 

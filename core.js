@@ -3,6 +3,7 @@ let core = {
     title: 'COOKBOOK',
     text: 'This App is a collection of simple recipes at 20 categories. A fridge with a lot of items. And the basket where you can craft a recipe.',
     color: '#361F1F',
+    unlocked: true,
 
     list: [
         {name: 'login', index: 0},
@@ -11,8 +12,9 @@ let core = {
         {name: 'install', index: 0},
         {name: 'unlocked', index: 0},
         {name: 'settings', index: 0},
-        {name: 'basket', index: 0},
         // {name: '🏆', index: 0},
+        {name: 'basket', index: 0},
+
         // {name: '', index: 0},
         // {name: 'fridge 🧊', index: 0},
 
@@ -26,6 +28,7 @@ let meat = {
     title: 'Meat',
     text: 'Humans have hunted animals for meat since prehistoric times. Meat is mainly composed of water, protein, and fat. It is edible raw, but is normally eaten after it has been cooked and seasoned or processed in a variety of ways.',
     color: '#A42E2F',
+    unlocked: true,
 
     list: [
         {name: 'steak', index: 394, recipe: true},
@@ -69,6 +72,7 @@ let fish = {
     title: 'Fish',
     text: 'Many species of fish are consumed as food in virtually all regions around the world. Fish has been an important source of protein and other nutrients for humans throughout history.',
     color: '#FA8072',
+    unlocked: true,
 
     list: [
         {name: 'raw', recipe: true},
@@ -111,6 +115,7 @@ let vegetables = {
     title: 'Vegetables',
     text: 'Vegetables are parts of plants that are consumed by humans or other animals as food.',
     color: '#62bb69',
+    unlocked: true,
 
     list: [
         {name: 'salad', recipe: true},
@@ -159,6 +164,7 @@ let drinks = {
     title: 'Drinks',
     text: 'A drink (or beverage) is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture.',
     color: 'rgba(75, 160, 210, 0.8)',
+    unlocked: true,
 
     list: [
         {name: 'water'},
@@ -470,6 +476,7 @@ let fridge = {
     title: 'Fridge',
     text: 'You have to store your food in the fridge and it will advise you what else to put there',
     color: '#D1D1D1',
+    unlocked: true,
 
     list: []
 }
@@ -480,6 +487,7 @@ let awards = {
     text: 'You can get different rewards for completing recipes and discovering ingredients. And for something else',
     color: '#ffd7b7',
     highlight: true,
+    unlocked: true,
 
     list: [
         {name: 'postal', index: 0},
@@ -518,8 +526,6 @@ module.exports = [
     meat,
     fish,
     drinks,
-    awards,
-    fridge,
     soup,
     chicken,
     sauce,
@@ -537,4 +543,6 @@ module.exports = [
     milk,
     oil,
     equipment,
+    fridge,
+    awards,
 ]
