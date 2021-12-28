@@ -82,6 +82,10 @@ main {
 }
 
 .card.active {
+    cursor: auto;
+}
+
+.card.active {
     /*height: 318px;*/
     /*height: 396px;*/
     height: auto;
@@ -188,6 +192,7 @@ main {
 }
 
 .list > div {
+    cursor: pointer;
     position: relative;
     width: calc((100% - 40px)/3 - 10px);
 
