@@ -385,23 +385,31 @@ export default function Pages(props) {
 
             if (isRecipe) {
 
-                props.setModal({color: data[active].color, name: name, group: group})
+                props.setModal({color: data[active].color, name: name, group: group, state: !!userData[group][name], accept: () => {
+                        setUserAccept(group, name)
+                    }
+                })
 
             } else {
 
-                userData[group][name] = !userData[group][name]
-                userData.count = count + (userData[group][name] ? 1 : -1)
+                setUserAccept(group, name)
 
-                setUserData(userData)
-                setCount(userData.count)
-                localStorage.setItem('user', JSON.stringify(userData))
-                console.log(userData)
             }
 
             forceUpdate()
 
             updateUser().then()
         }
+    }
+
+    let setUserAccept = (group, name) => {
+        userData[group][name] = !userData[group][name]
+        userData.count = count + (userData[group][name] ? 1 : -1)
+
+        setUserData(userData)
+        setCount(userData.count)
+        localStorage.setItem('user', JSON.stringify(userData))
+        console.log(userData)
     }
 
     let clear = () => {

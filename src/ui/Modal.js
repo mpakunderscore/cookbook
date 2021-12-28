@@ -5,6 +5,8 @@ export default function Modal(props) {
 
     let [backgroundColor, setBackgroundColor] = useState('gray')
 
+    let [amateur, setAmateur] = useState(props.modal.state)
+
     useEffect(() => {
         console.log(props.modal.color)
         if (props.modal.color) {
@@ -17,6 +19,8 @@ export default function Modal(props) {
 
     let renderList = (itemList, active) => {
 
+        console.log(itemList)
+
         let listLength = itemList.length
 
         // >= 6 ? 6 : itemList.length
@@ -26,10 +30,15 @@ export default function Modal(props) {
         for (let i = 0; i < listLength; i++) {
             list.push(
                 <div key={itemList[i].name}
-                     className={(active || itemList[i].active ? 'active' : '')}
+                     className={(active || itemList[i].active || (amateur && itemList[i].name === 'amateur') ? 'active' : '')}
                      style={itemList[i].color ? {background: itemList[i].color, color: itemList[i].highlight ? '#4c4c4c' : 'white'} : {}}
                      onClick={() => {
-                         selectItem()
+
+                         if (itemList[i].name === 'amateur') {
+                             props.modal.accept()
+                             setAmateur(!amateur)
+                         } else
+                            selectItem()
                      }}>
                     {itemList[i].name.toUpperCase()}
                 </div>
@@ -70,7 +79,7 @@ export default function Modal(props) {
                             renderList([{name: 'order'}, {name: 'clear'}, {name: 'close'}])
                             :
                             renderList([
-                                {name: '🏆'}, {name: 'expert'}, {name: 'amateur'},
+                                {name: '🏆'}, {name: 'expert'}, {name: 'amateur', active: amateur},
                             ])
                         }
                         {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
