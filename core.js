@@ -215,6 +215,7 @@ let fruits = {
         {name: 'banana'},
         {name: 'orange'},
         {name: 'lemon'},
+        {name: 'lime'},
         {name: 'dragon'},
         {name: 'mango'},
         {name: 'avocado'},
@@ -298,11 +299,24 @@ let spice = {
         {name: 'salt'},
         {name: 'black pepper'},
         {name: 'paprika'},
+        {name: 'chili powder'},
         {name: 'ginger'},
+        {name: 'turmeric'},
         {name: 'garlic'},
         {name: 'curry'},
         {name: 'cinnamon'},
+        {name: 'coriander'},
+        {name: 'cumin'},
+        {name: 'star anise'},
         {name: 'sugar'},
+        {name: 'lime'},
+        {name: 'mustard'},
+        {name: 'mint'},
+        {name: 'oregano'},
+        {name: 'thyme'},
+        // {name: ''},
+        // {name: ''},
+        // {name: ''},
     ]
 }
 
@@ -318,6 +332,7 @@ let herbs = {
         {name: 'mint'},
         {name: 'cilantro'},
         {name: 'basil'},
+        {name: 'rosemary'},
 
 
         // {name: 'anise'},
