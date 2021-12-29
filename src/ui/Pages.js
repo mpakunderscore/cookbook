@@ -3,7 +3,7 @@ import api, {loadActivePage, loadFood, loadUser, sendMessage} from "../api";
 import eventBus from "../EventBus";
 import {is} from "cheerio/lib/api/traversing";
 
-let all = 527
+let all = 210
 let colors = {}
 
 export default function Pages(props) {
@@ -141,14 +141,16 @@ export default function Pages(props) {
 
         let unlockedPages = true
 
+
+
         // COLORS
         for (let i = 0; i < data.length; i++) {
             data[i].i = i
             colors[data[i].name] = data[i].color
+
+            if (data[i].name !== 'awards' && data[i].name !== 'cookbook' && data[i].name !== 'fridge')
+                allItemsCounter += data[i].list.length
         }
-
-
-
 
         let unlockedData = data.filter(item => item.unlocked === true || userData[item.name])
 
@@ -191,13 +193,13 @@ export default function Pages(props) {
 
         let userSelected = (userData[item.name] ? (Object.keys(userData[item.name]).filter(key => userData[item.name][key] === true)).length : 0)
 
-        let isActive = data[active].name === item.name
+        let isActive = active !== -1 && data[active].name === item.name
 
         return <div className={'card ' + (isActive ? 'active' : '') + (item.highlight ? ' highlight' : '') + (!unlockedPage && !item.unlocked ? ' locked' : '')}
                     onClick={(!isActive && (unlockedPage || item.unlocked) ? () => {setCardActive(item.i, data, j)} : () => {})}
                     style={{background: (item.name === 'fridge' && !isActive ? '#2c2c2c' : item.color)}} key={item.name}>
 
-            <div className={'name'} style={item.name === 'cookbook' ? {textAlign: 'left'} : {}} onClick={() => {}}>
+            <div className={'name'} style={item.name === 'cookbook' ? {textAlign: 'left'} : {}} onClick={!isActive ? null : () => {setActive(-1)}}>
                 {isActive && item.name !== 'cookbook' ? <span className={'count'}>{userSelected + '/' + item.list.length}</span> : ''}
                 {!unlockedPage && !item.unlocked ? <span className={'lock'}>🔒</span> : ''}
                 {item.name === 'cookbook' ?
@@ -363,7 +365,11 @@ export default function Pages(props) {
         } else {
 
             if (unlockPage && !userData[name]) {
-                userData[name] = {}
+
+                if (typeof unlockPage === 'string')
+                    userData[unlockPage] = {}
+                else
+                    userData[name] = {}
             }
 
             if (!userData[group])

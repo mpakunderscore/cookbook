@@ -99,6 +99,8 @@ main {
     font-weight: 600;
     text-align: right;
     min-height: 46px;
+
+    cursor: pointer;
 }
 
 .card .name span {

@@ -39,6 +39,9 @@ let meat = {
         {name: 'pork'},
         {name: 'chicken', page: true, item: false},
 
+        {name: 'pate', index: 0, recipe: true},
+        {name: 'shawarma', index: 0, recipe: true, page: 'bread'},
+
         {name: 'grill', index: 300, recipe: true},
         {name: 'bonfire', index: 0, recipe: true},
         {name: 'baked', index: 385, recipe: true},
@@ -102,10 +105,14 @@ let chicken = {
         {name: 'fried', recipe: true},
         {name: 'fries', recipe: true},
         {name: 'soup', recipe: true},
+
         // {name: 'eggs', page: true, item: false},
         {name: 'chicken'},
         {name: 'turkey'},
         {name: 'duck'},
+
+        {name: 'broth', recipe: true},
+        {name: 'pate', index: 0, recipe: true},
 
     ]
 }
@@ -126,6 +133,7 @@ let vegetables = {
         {name: 'relish', recipe: true},
         {name: 'soup', recipe: true, page: true},
         {name: 'pickling', recipe: true, page: true},
+        {name: 'coleslaw', recipe: true, page: true},
 
         {name: 'onion'},
         {name: 'potato'},
@@ -199,6 +207,8 @@ let soup = {
         {name: 'gazpacho', recipe: true},
         {name: 'pho', recipe: true},
         {name: 'ramen', recipe: true},
+        {name: 'borsch', recipe: true},
+
     ]
 }
 
