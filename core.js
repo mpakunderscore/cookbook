@@ -1,7 +1,7 @@
 let core = {
     name: 'cookbook',
     title: 'COOKBOOK',
-    text: 'This App is a collection of simple recipes at 20 categories. A fridge with a lot of items. And the basket where you can craft a recipe.',
+    text: 'This App is a collection of simple recipes at 20 categories. A fridge with a lot of items. And the basket where you can craft a recipe. You can open this page on iOS or Android',
     color: '#361F1F',
     unlocked: true,
 
