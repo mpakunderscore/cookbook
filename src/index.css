@@ -305,9 +305,10 @@ main {
 
 #modal {
     background: #D1D1D1;
+
     position: fixed;
 
-    overflow: scroll;
+    /*overflow: scroll;*/
     /*overscroll-behavior-y: none;*/
     top: 0;
     left: 0;

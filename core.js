@@ -281,6 +281,7 @@ let bread = {
         {name: 'pie', recipe: true},
         {name: 'dumplings', recipe: true},
         {name: 'pasta', recipe: true, page: true, item: true},
+        {name: 'egg rolls', recipe: true},
     ]
 }
 
