@@ -427,6 +427,9 @@ input:-webkit-autofill {
             /*max-height: 1000px;*/
             /*border-radius: 10px;*/
         }
+        #modal {
+            padding-top: 30vh;
+        }
     }
 }
 
