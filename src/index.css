@@ -62,8 +62,12 @@ main {
     /*padding-bottom: 20px;*/
     /*margin-bottom: 20px;*/
 
-    background: white;
+    /*background: white;*/
     z-index: 1;
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }
 
 .card {
@@ -399,7 +403,7 @@ input:-webkit-autofill {
 
     main {
         max-width: 600px;
-        /*max-height: 670px;*/
+        max-height: 100vh;
         /*border-radius: 10px;*/
 
         margin: auto;
@@ -419,8 +423,9 @@ input:-webkit-autofill {
 
     @media screen and (min-height: 1000px) {
         main {
-            max-height: 1000px;
-            border-radius: 10px;
+            padding-top: 30vh;
+            /*max-height: 1000px;*/
+            /*border-radius: 10px;*/
         }
     }
 }
