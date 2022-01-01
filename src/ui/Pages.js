@@ -199,7 +199,7 @@ export default function Pages(props) {
                     onClick={(!isActive && (unlockedPage || item.unlocked) ? () => {setCardActive(item.i, data, j)} : () => {})}
                     style={{background: (item.name === 'fridge' && !isActive ? '#2c2c2c' : item.color)}} key={item.name}>
 
-            <div className={'name'} style={item.name === 'cookbook' ? {textAlign: 'left'} : {}} onClick={!isActive ? null : () => {setActive(-1)}}>
+            <div className={'name'} style={item.name === 'cookbook' ? {textAlign: 'left'} : {}} onClick={!isActive ? null : () => {setActive(0)}}>
                 {isActive && item.name !== 'cookbook' ? <span className={'count'}>{userSelected + '/' + item.list.length}</span> : ''}
                 {!unlockedPage && !item.unlocked ? <span className={'lock'}>🔒</span> : ''}
                 {item.name === 'fridge' && !isActive ? <span className={'lock'}>🧊</span> : ''}
