@@ -28,6 +28,8 @@ export default function Pages(props) {
 
     let [fridge, setFridge] = useState([])
 
+    let [light, setLight] = useState(true)
+
     const ref = useRef(null)
 
     useEffect(async () => {
@@ -195,13 +197,26 @@ export default function Pages(props) {
 
         let isActive = active !== -1 && data[active].name === item.name
 
-        return <div className={'card ' + (isActive ? 'active' : '') + (item.highlight ? ' highlight' : '') + (!unlockedPage && !item.unlocked ? ' locked' : '')}
+        return <div className={'card ' +
+        (isActive ? 'active' : '') +
+        (item.highlight ? ' highlight' : '') +
+        (!unlockedPage && !item.unlocked ? ' locked' : '')
+        }
+                    id={'card_' + item.name}
                     onClick={(!isActive && (unlockedPage || item.unlocked) ? () => {setCardActive(item.i, data, j)} : () => {})}
-                    style={{background: (item.name === 'fridge' && !isActive ? '#2c2c2c' : item.color)}} key={item.name}>
+                    style={{background:
+                            (item.name !== 'fridge' ? item.color : !isActive ? '#2c2c2c' : (light ? item.color : item.color2))
+
+                    }} key={item.name}>
 
             <div className={'name'} style={item.name === 'cookbook' ? {textAlign: 'left'} : {}} onClick={!isActive ? null : () => {
-                setActive(0)
-                props.changeTheme(data[0].color)
+
+                if (item.name === 'fridge') {
+                    setLight(!light)
+                } else {
+                    setActive(0)
+                    props.changeTheme(data[0].color)
+                }
             }}>
                 {isActive && item.name !== 'cookbook' ? <span className={'count'}>{userSelected + '/' + item.list.length}</span> : ''}
                 {!unlockedPage && !item.unlocked ? <span className={'lock'}>🔒</span> : ''}
