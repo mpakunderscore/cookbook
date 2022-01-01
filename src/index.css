@@ -106,7 +106,7 @@ main {
 
 .card .name {
     padding: 30px 30px 20px;
-    font-size: 34px;
+    font-size: 32px;
     color: ghostwhite;
     letter-spacing: 5px;
     font-weight: 600;
@@ -121,17 +121,19 @@ main {
     float: left;
     font-weight: 600;
     letter-spacing: 2px;
+    font-size: 30px;
 }
 
 .card .name span.count {
     font-size: 10px;
-    /*margin-top: 6px;*/
+    margin-top: 6px;
+    margin-left: -10px;
 
-    transform: rotate(90deg);
-    transform-origin: left;
-    position: absolute;
-    left: 26px;
-    top: 33px;
+    /*transform: rotate(90deg);*/
+    /*transform-origin: left;*/
+    /*position: absolute;*/
+    /*left: 26px;*/
+    /*top: 33px;*/
 
 }
 
