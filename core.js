@@ -1,7 +1,7 @@
 let core = {
     name: 'cookbook',
     title: 'COOKBOOK',
-    text: 'This App is a collection of simple recipes at 20 categories. A fridge with a lot of items. And the basket where you can craft a recipe. You can open this page on iOS or Android',
+    text: 'Unlock new CARDS with tasty recipes and unique groceries. Explore FRIDGE with all this combinations. Pick items in BASKET for the best individual recipe. Competitions & tips.',
     color: '#361F1F',
     unlocked: true,
 
@@ -120,7 +120,10 @@ let chicken = {
 let vegetables = {
     name: 'vegetables',
     title: 'Vegetables',
-    text: 'Vegetables are parts of plants that are consumed by humans or other animals as food.',
+    text: 'Vegetables are parts of plants that are consumed by humans or other animals as food. Bell peppers are usually sold green, but they can also be red, purple or yellow.\n' +
+        'Tomatoes are very high in the carotenoid, and can lower your risk of cancer.\n' +
+        'Other vegetables high in carotenoids are carrots, spinach, sweet potatoes, and collard greens.\n' +
+        'Most of the nutrients in a potato reside just below the skin layer.\n',
     color: '#62bb69',
     unlocked: true,
 
