@@ -308,6 +308,9 @@ export default function Pages(props) {
             if (groupName === 'cookbook' && name === 'unlocked')
                 name += ' ' + count + '/' + all
 
+            if (groupName === 'cookbook' && name === 'settings')
+                name = VERSION.substring(0, 7)
+
             if (groupName === 'awards' && !active && !itemList[i].active)
                 name = '🏆'
 
