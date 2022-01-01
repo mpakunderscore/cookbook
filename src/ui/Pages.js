@@ -220,6 +220,7 @@ export default function Pages(props) {
 
                 if (item.name === 'fridge') {
                     setLight(!light)
+                    props.changeTheme(light ? data[0].color : data[0].color2)
                 } else {
                     setActive(0)
                     props.changeTheme(data[0].color)
