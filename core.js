@@ -171,7 +171,7 @@ let drinks = {
     name: 'drinks',
     title: 'Drinks',
     text: 'A drink (or beverage) is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture.',
-    color: 'rgba(75, 160, 210, 0.8)',
+    color: 'rgba(75, 160, 210, 1)',
     unlocked: true,
 
     list: [
@@ -335,7 +335,7 @@ let herbs = {
     name: 'herbs',
     title: 'Herbs',
     text: 'Herbs',
-    color: 'rgba(80, 140, 50, 0.8)',
+    color: 'rgba(80, 140, 50, 1)',
 
     list: [
         {name: 'dill'},
@@ -389,7 +389,7 @@ let pickling = {
     name: 'pickling',
     title: 'Pickling',
     text: 'Pickling',
-    color: 'rgba(100, 60, 100, 0.8)',
+    color: 'rgba(100, 60, 100, 1)',
 
     list: []
 }
@@ -407,7 +407,7 @@ let milk = {
     name: 'milk',
     title: 'Milk',
     text: 'Milk',
-    color: 'rgba(255, 255, 255, 0.8)',
+    color: 'rgba(255, 255, 255, 1)',
     highlight: true,
 
     list: [
@@ -424,7 +424,7 @@ let dessert = {
     name: 'dessert',
     title: 'Dessert',
     text: 'Dessert',
-    color: 'rgba(255,55,116,0.8)',
+    color: 'rgba(255, 55, 116, 1)',
 
     list: [
         {name: 'cake', recipe: true},

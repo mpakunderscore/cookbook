@@ -202,6 +202,7 @@ export default function Pages(props) {
             <div className={'name'} style={item.name === 'cookbook' ? {textAlign: 'left'} : {}} onClick={!isActive ? null : () => {setActive(-1)}}>
                 {isActive && item.name !== 'cookbook' ? <span className={'count'}>{userSelected + '/' + item.list.length}</span> : ''}
                 {!unlockedPage && !item.unlocked ? <span className={'lock'}>🔒</span> : ''}
+                {item.name === 'fridge' && !isActive ? <span className={'lock'}>🧊</span> : ''}
                 {item.name === 'cookbook' ?
                     item.title.toUpperCase()
                     :
@@ -214,7 +215,7 @@ export default function Pages(props) {
 
             {item.name === 'eggs' ? <div className={'yolk'}></div> : ''}
 
-            {item.name === 'fridge' && !isActive ? <div className={'categoryIcon'}>🧊</div> : ''}
+            {/*{item.name === 'fridge' && !isActive ? <div className={'categoryIcon'}>🧊</div> : ''}*/}
 
             {/*{item.name === 'awards' && !isActive ? <div className={'categoryIcon'}>🏆</div> : ''}*/}
 
