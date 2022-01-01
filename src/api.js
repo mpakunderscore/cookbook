@@ -50,5 +50,5 @@ let sendMessage = (message) => {
 }
 
 module.exports = {
-    loadFood, loadUser, sendMessage, loadActivePage: loadActivePageIndex
+    loadFood, loadUser, sendMessage, loadActivePageIndex
 }

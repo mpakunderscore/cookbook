@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
-import api, {loadActivePage, loadFood, loadUser, sendMessage} from "../api";
+import api, {loadActivePageIndex, loadFood, loadUser, sendMessage} from "../api";
 import eventBus from "../EventBus";
 import {is} from "cheerio/lib/api/traversing";
 
@@ -29,7 +29,7 @@ export default function Pages(props) {
     let [fridge, setFridge] = useState([])
 
     let [light, setLight] = useState(true)
-    let [position, setPosition] = useState()
+    // let [position, setPosition] = useState()
 
     const ref = useRef(null)
 
@@ -40,7 +40,7 @@ export default function Pages(props) {
         // props.changeTheme(item.color)
         // setActive()
 
-        let pageIndex = loadActivePage()
+        let pageIndex = loadActivePageIndex()
         console.log(pageIndex)
 
         loadFood().then(data => {
@@ -71,7 +71,7 @@ export default function Pages(props) {
         setUserData(userData)
         setCount(userData.count)
 
-    }, [position])
+    }, [])
 
     let loadFridge = (data) => {
         let fridge = []
@@ -124,9 +124,9 @@ export default function Pages(props) {
     //     return array
     // }
 
-    let setCardActive = (i, data, j) => {
+    let setCardActive = (i, data, j = loadActivePageIndex()) => {
 
-        setPosition(j)
+        // setPosition(j)
         console.warn(j)
         console.log(data[i].name)
 
@@ -134,10 +134,9 @@ export default function Pages(props) {
         props.changeTheme(data[i].color)
         // location.href = '#' + item.name
 
-        loadActivePage(i)
+        loadActivePageIndex(i)
 
-        if (j)
-            window.scroll(0, 86 * j)
+        window.scroll(0, 86 * j)
     }
 
     let renderPages = () => {
