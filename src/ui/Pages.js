@@ -35,9 +35,6 @@ export default function Pages(props) {
 
     useEffect(async () => {
 
-        if (position)
-            window.scroll(0, 86 * position)
-
         // console.log(href)
 
         // props.changeTheme(item.color)
@@ -136,7 +133,11 @@ export default function Pages(props) {
         setActive(i)
         props.changeTheme(data[i].color)
         // location.href = '#' + item.name
+
         loadActivePage(i)
+
+        if (j)
+            window.scroll(0, 86 * j)
     }
 
     let renderPages = () => {
