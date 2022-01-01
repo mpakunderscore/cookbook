@@ -364,6 +364,10 @@ main {
     /*margin-top: auto;*/
 }
 
+#modal .card {
+    padding-bottom: 0;
+}
+
 #modal .card .name {
     /*background: red;*/
     position: relative;
@@ -376,12 +380,13 @@ main {
 
 #modal .card .name > div.close {
     position: absolute;
-    width: 100px;
+    width: 101px;
+    height: 101px;
     text-align: center;
     top: 0;
     left: 0;
     /*left: 36px;*/
-    height: 100px;
+
     line-height: 100px;
     font-size: 34px;
     font-weight: 600;
