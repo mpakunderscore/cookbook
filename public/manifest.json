@@ -2,7 +2,7 @@
   "name": "COOKBOOK",
   "short_name": "COOKBOOK",
   "description": "COOKBOOK",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "manifest_version": 2,
   "start_url": "/?source=pwa",
   "scope": "/",
