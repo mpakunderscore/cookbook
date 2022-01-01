@@ -162,7 +162,7 @@ main {
     /*color: transparent;*/
 }
 
-.card.locked > div {
+.card.locked > div:not(.yolk) {
     opacity: 0;
 }
 

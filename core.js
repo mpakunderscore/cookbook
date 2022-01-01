@@ -267,7 +267,7 @@ let sauce = {
 let bread = {
     name: 'bread',
     title: 'Bread',
-    text: 'Bread',
+    text: 'Bread is a staple food prepared from a dough of flour and water, usually by baking. Throughout recorded history and around the world, it has been an important part of many cultures\' diet.',
     color: '#FAD69E',
     highlight: true,
 
@@ -388,7 +388,7 @@ let equipment = {
 let pickling = {
     name: 'pickling',
     title: 'Pickling',
-    text: 'Pickling',
+    text: 'Pickling is the process of preserving or extending the shelf life of food by either anaerobic fermentation in brine or immersion in vinegar. The pickling procedure typically affects the food\'s texture and flavor. The resulting food is called a pickle, or, to prevent ambiguity, prefaced with pickled.',
     color: 'rgba(100, 60, 100, 1)',
 
     list: []
@@ -448,11 +448,11 @@ let eggs = {
 let coffee = {
     name: 'coffee',
     title: 'Coffee',
-    text: 'Coffee',
+    text: 'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee.',
     color: '#6F4E37',
 
     list: [
-        {name: 'cappuccino'},
+        {name: 'cappu ccino'},
         {name: 'latte'},
         {name: 'americano'},
     ]
