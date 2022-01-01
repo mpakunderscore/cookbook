@@ -29,10 +29,14 @@ export default function Pages(props) {
     let [fridge, setFridge] = useState([])
 
     let [light, setLight] = useState(true)
+    let [position, setPosition] = useState()
 
     const ref = useRef(null)
 
     useEffect(async () => {
+
+        if (position)
+            window.scroll(0, 86 * position)
 
         // console.log(href)
 
@@ -47,7 +51,7 @@ export default function Pages(props) {
             setData(data)
             // console.log(data)
 
-            setCardActive(pageIndex, data, pageIndex)
+            setCardActive(pageIndex, data)
 
             loadFridge(data)
         })
@@ -70,7 +74,7 @@ export default function Pages(props) {
         setUserData(userData)
         setCount(userData.count)
 
-    }, [])
+    }, [position])
 
     let loadFridge = (data) => {
         let fridge = []
@@ -124,11 +128,14 @@ export default function Pages(props) {
     // }
 
     let setCardActive = (i, data, j) => {
-        // console.log(i)
+
+        setPosition(j)
+        console.warn(j)
+        console.log(data[i].name)
+
         setActive(i)
         props.changeTheme(data[i].color)
         // location.href = '#' + item.name
-        window.scroll(0, 86 * j)
         loadActivePage(i)
     }
 
@@ -175,7 +182,7 @@ export default function Pages(props) {
 
         for (let i = 0; i < lockedData.length; i++) {
 
-            pages.push(generateCard(lockedData[i], !!lockedData[i].unlocked,unlockedData.length + i - 1))
+            pages.push(generateCard(lockedData[i], !!lockedData[i].unlocked,unlockedData.length + i))
         }
 
         // pages.push(generateCard(data.find(item => item.name === 'awards'), true, 0))
