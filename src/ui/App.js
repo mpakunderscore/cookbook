@@ -62,9 +62,10 @@ function App() {
     return (
         <div className={'container'}>
 
-            {!modal ? <Pages installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal} /> : ''}
-            {modal ? <Modal changeTheme={changeTheme} modal={modal} setModal={setModal}/> : ''}
-
+            {!modal ?
+                <Pages installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal} />
+                :
+                <Modal changeTheme={changeTheme} modal={modal} setModal={setModal}/>}
         </div>
     )
 }
