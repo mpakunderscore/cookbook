@@ -79,7 +79,8 @@ main {
     cursor: pointer;
     user-select: none;
 
-    height: 86px;
+    height: 89px;
+    /*min-height: 89px;*/
     /*overflow: hidden;*/
 
     /*transition: .5s height;*/
@@ -90,11 +91,11 @@ main {
     padding-bottom: 40px;
 
     -webkit-transition: border-radius 1s ease-out;
-    transition: border-radius 1s ease-out;
+    transition: border-radius 1s ease-out, height 1s ease-out;
 }
 
 .card:first-child {
-    margin-top: 100px;
+    margin-top: 500px;
 }
 
 .card.active {
@@ -104,7 +105,8 @@ main {
 .card.active {
     /*height: 318px;*/
     /*height: 396px;*/
-    height: auto;
+    height: 500px;
+    /*min-height: 100px;*/
 }
 
 .card .name {
