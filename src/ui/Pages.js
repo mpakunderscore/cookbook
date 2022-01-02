@@ -141,7 +141,7 @@ export default function Pages(props) {
 
         setTimeout(function () {
             window.scroll({left: 0, top: 89 * j, behavior: 'smooth'})
-        }, 200)
+        }, 400)
     }
 
     let renderPages = () => {
