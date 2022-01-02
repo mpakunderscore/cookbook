@@ -1,19 +1,19 @@
 let core = {
     name: 'cookbook',
     title: 'COOKBOOK',
-    text: 'Unlock new CARDS with tasty recipes and unique groceries. Explore FRIDGE with all this combinations. Pick items in BASKET for the best individual recipe. Competitions & tips.',
+    text: 'Learn to cook. Unlock new cards with tasty recipes and unique groceries. Use fridge function for shopping and recipe generation. Compete with others, get rewards and find helpful tips',
     color: '#361F1F',
     unlocked: true,
 
     list: [
-        {name: 'login', index: 0},
+        {name: 'sync', index: 0},
         // {name: 'about', index: 0},
         {name: 'feedback', index: 0},
         {name: 'install', index: 0},
         {name: 'unlocked', index: 0},
         {name: 'settings', index: 0},
         // {name: '🏆', index: 0},
-        {name: 'basket', index: 0},
+        {name: 'fridge', index: 0},
 
         // {name: '', index: 0},
         // {name: 'fridge 🧊', index: 0},
@@ -581,6 +581,6 @@ module.exports = [
     milk,
     oil,
     equipment,
-    fridge,
+    // fridge,
     awards,
 ]

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Pages from "./Pages"
 import Modal from "./Modal";
+import Fridge from "./Fridge";
 
 function App() {
 
@@ -63,9 +64,13 @@ function App() {
         <div className={'container'}>
 
             {!modal ?
-                <Pages installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal} />
+                <Pages installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal}/>
                 :
-                <Modal changeTheme={changeTheme} modal={modal} setModal={setModal}/>}
+                (modal.name === 'fridge' ?
+                    <Fridge changeTheme={changeTheme} modal={modal} setModal={setModal}/>
+                    :
+                    <Modal changeTheme={changeTheme} modal={modal} setModal={setModal}/>)
+            }
         </div>
     )
 }

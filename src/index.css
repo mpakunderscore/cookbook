@@ -429,6 +429,10 @@ input:-webkit-autofill {
     color: ghostwhite;
 }
 
+#fridge {
+    color: #fff4d8;
+}
+
 @media screen and (max-width: 1000px) {
     .card.active {
         border-radius: 0;

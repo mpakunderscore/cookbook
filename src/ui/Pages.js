@@ -81,6 +81,9 @@ export default function Pages(props) {
                 if (['cookbook', 'awards', 'equipment'].includes(data[i].name))
                     continue
 
+                // if ((!data[i].list[j].recipe && data[i].list[j].item !== false) || data[i].list[j].item === true)
+                //     fridge.push({name: data[i].list[j].name, color: (data[i].list[j].color ? data[i].list[j].color : data[i].color), highlight: data[i].highlight})
+
                 if ((!data[i].list[j].recipe && data[i].list[j].item !== false) || data[i].list[j].item === true)
                     fridge.push({name: data[i].list[j].name, color: (data[i].list[j].color ? data[i].list[j].color : data[i].color), highlight: data[i].highlight})
             }
@@ -229,10 +232,9 @@ export default function Pages(props) {
                 {isActive && item.name !== 'cookbook' ? <span className={'count'}>{userSelected + '/' + item.list.length}</span> : ''}
                 {!unlockedPage && !item.unlocked ? <span className={'lock'}>🔒</span> : ''}
                 {item.name === 'fridge' && !isActive ? <span className={'lock'}>🧊</span> : ''}
-                {item.name === 'cookbook' ?
-                    item.title.toUpperCase()
-                    :
-                    (item.name === 'fridge' && isActive ? '💡' : item.name.toUpperCase())
+                {item.name.toUpperCase()
+                    // :
+                    // (item.name === 'fridge' && isActive ? '💡' : item.name.toUpperCase())
                 }
             </div>
 
@@ -310,7 +312,7 @@ export default function Pages(props) {
             // console.log(name)
             // console.log(email)
 
-            if (groupName === 'cookbook' && name === 'login' && email)
+            if (groupName === 'cookbook' && name === 'sync' && email)
                 itemList[i].name = 'profile'
 
             if (groupName === 'cookbook' && name === 'unlocked')
@@ -327,7 +329,6 @@ export default function Pages(props) {
             list.push(
                 <div key={i + name}
                      className={(active || groupName === 'fridge' ? 'active' : '')}
-                     style={groupName === 'fridge' ? {background: itemList[i].color, color: itemList[i].highlight ? '#4c4c4c' : 'white'} : {}}
                      onClick={() => {
                          if (groupName !== 'awards' && groupName !== 'fridge')
                              selectItem(groupName, itemList[i])
@@ -368,7 +369,7 @@ export default function Pages(props) {
                 clear()
             }
 
-            if (name === 'login') {
+            if (name === 'sync') {
                 setLogin(true)
             } else {
                 setLogin(false)
@@ -391,6 +392,18 @@ export default function Pages(props) {
             //     let awardsModal = {...awards, group: 'user'}
             //     props.setModal(awardsModal)
             // }
+
+            if (name === 'fridge') {
+                let fridgeModal = {
+                    name: 'fridge',
+                    group: 'kitchen',
+                    list: fridge,
+                    color: item.color,
+                }
+
+                console.log(fridgeModal)
+                props.setModal(fridgeModal)
+            }
 
         } else {
 
