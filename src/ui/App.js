@@ -63,14 +63,17 @@ function App() {
     return (
         <div className={'container'}>
 
-            {!modal ?
-                <Pages installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal}/>
-                :
-                (modal.name === 'fridge' ?
+            <Pages installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal}/>
+
+            {modal ?
+                modal.name === 'fridge' ?
                     <Fridge changeTheme={changeTheme} modal={modal} setModal={setModal}/>
                     :
-                    <Modal changeTheme={changeTheme} modal={modal} setModal={setModal}/>)
+                    <Modal changeTheme={changeTheme} modal={modal} setModal={setModal}/>
+
+                : ''
             }
+
         </div>
     )
 }
