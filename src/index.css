@@ -102,9 +102,9 @@ main {
     cursor: auto;
     /*height: 318px;*/
     /*height: 396px;*/
-    /*height: auto;*/
+    height: auto;
     /*min-height: 100px;*/
-    height: 500px;
+    /*height: 500px;*/
 }
 
 .card .name {
