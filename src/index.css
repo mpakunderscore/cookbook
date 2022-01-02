@@ -80,7 +80,7 @@ main {
     user-select: none;
 
     height: 89px;
-    /*min-height: 89px;*/
+    /*max-height: 89px;*/
     /*overflow: hidden;*/
 
     /*transition: .5s height;*/
@@ -90,23 +90,21 @@ main {
     margin-top: -40px;
     padding-bottom: 40px;
 
-    -webkit-transition: border-radius 1s ease-out;
-    transition: border-radius 1s ease-out, height 1s ease-out;
+    -webkit-transition: border-radius 1s ease-out, height .4s ease-out;;
+    transition: border-radius 1s ease-out, height .4s ease-out;
 }
 
 .card:first-child {
-    margin-top: 500px;
+    margin-top: 200px;
 }
 
 .card.active {
     cursor: auto;
-}
-
-.card.active {
     /*height: 318px;*/
     /*height: 396px;*/
-    height: 500px;
+    /*height: auto;*/
     /*min-height: 100px;*/
+    height: 500px;
 }
 
 .card .name {

@@ -139,7 +139,9 @@ export default function Pages(props) {
 
         loadActivePageIndex(i)
 
-        window.scroll({left: 0, top: 89 * j, behavior: 'smooth'})
+        setTimeout(function () {
+            window.scroll({left: 0, top: 89 * j, behavior: 'smooth'})
+        }, 200)
     }
 
     let renderPages = () => {
