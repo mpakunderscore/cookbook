@@ -318,6 +318,7 @@ export default function Pages(props) {
             if (groupName === 'cookbook' && name === 'unlocked')
                 name += ' ' + count + '/' + all
 
+
             if (groupName === 'cookbook' && name === 'settings')
                 name = VERSION.substring(0, 7)
 
@@ -403,6 +404,17 @@ export default function Pages(props) {
 
                 console.log(fridgeModal)
                 props.setModal(fridgeModal)
+            }
+
+            if (name === 'settings') {
+                var cookies = document.cookie.split(";");
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i];
+                    var eqPos = cookie.indexOf("=");
+                    var cookieName = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                    document.cookie = cookieName + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+                }
+                location.reload()
             }
 
         } else {
