@@ -136,7 +136,7 @@ export default function Pages(props) {
 
         loadActivePageIndex(i)
 
-        window.scroll(0, 86 * j)
+        window.scroll({left: 0, top: 86 * j, behavior: 'smooth'})
     }
 
     let renderPages = () => {
