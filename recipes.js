@@ -3,7 +3,7 @@ let recipes = {
     vegetables: {
         salad: {
             name: 'salad',
-            text: 'For this recipe we’ll be chopping up a few colorful veggies and tossing them with a zesty garlic dressing.',
+            text: 'Grind dry seasonings and sesame seeds in a mortar, mix with liquid ingredients for dressing. The bottom and sides of the salad bowl are lined with arugula leaves, you can leave them intact, or you can tear them into several parts with your hands, then lay out the onion cut into rings, cucumber slices and thin tomato slices. Top with dressing, sprinkle with pine nuts.',
             list: [
                 {name: 'cucumber', color: '#62bb69'},
                 {name: 'pepper', color: '#62bb69'},

@@ -7,6 +7,8 @@ export default function Fridge(props) {
 
     let [amateur, setAmateur] = useState(props.modal.state)
 
+    let [light, setLight] = useState(true)
+
     useEffect(() => {
         // console.log(props.modal.color)
         if (props.modal.color) {
@@ -30,15 +32,26 @@ export default function Fridge(props) {
         for (let i = 0; i < listLength; i++) {
             list.push(
                 <div key={itemList[i].name + i}
-                     className={(active || itemList[i].active || (amateur && itemList[i].name === 'amateur') ? 'active' : '')}
-                     style={{background: itemList[i].color, color: itemList[i].highlight ? '#4c4c4c' : 'white'}}
+                     className={
+                         (active ||
+                         itemList[i].active ||
+                         (amateur && itemList[i].name === 'amateur') ||
+                         (itemList[i].name === '💡' && light) ?
+                             'active' : '')
+                     }
+                     style={{
+                         background: itemList[i].color,
+                         color: itemList[i].highlight ? '#4c4c4c' : 'white',
+                         ...(itemList[i].name === '💡' ? {fontSize: '26px'} : {})}}
                      onClick={() => {
 
-                         if (itemList[i].name === 'amateur') {
-                             props.modal.accept()
-                             setAmateur(!amateur)
-                         } else
-                             selectItem()
+                         selectItem()
+
+                         if (itemList[i].name === '💡') {
+                             setLight(!light)
+                             // props.changeTheme(!light ? item.color : item.color2)
+                         }
+
                      }}>
                     {itemList[i].name.toUpperCase()}
                 </div>
@@ -72,16 +85,15 @@ export default function Fridge(props) {
                     </div>
 
                     <div className={'list'}>
-                        {renderList([{name: 'shopping list'}, {name: 'generate recipe'}, {name: ''}])}
+                        {renderList([{name: 'shopping list'}, {name: 'generate recipe'}, {name: '💡'}])}
                     </div>
 
                 </div>
 
-                <div className={'separator'}/>
-
                 {/*highlight*/}
 
-                <div className={''}>
+                <div className={''} style={{backgroundColor: light ? '#D1D1D1' : '#424240'}}>
+                    <div className={'separator'}/>
                     <div className={'list'}>
                         {renderList(props.modal.list)}
                     </div>
