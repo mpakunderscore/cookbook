@@ -156,7 +156,7 @@ export default function Pages(props) {
         //     window.scroll({left: 0, top: 89 * j, behavior: 'smooth'})
         // }, 400)
 
-        // window.scroll({left: 0, top: 89 * j})
+        window.scroll({left: 0, top: 89 * j})
     }
 
     let setCardHeight = (i, data, userData) => {
@@ -174,7 +174,7 @@ export default function Pages(props) {
             // // console.log()
             // // console.log()
             let active = userData[data[i].name] && userData[data[i].name][data[i].list[j].name]
-            console.log(active)
+            // console.log(active)
             if (active) {
                 if (cardList.length >= listLength) {
                     if (cardList.length > listLength + 3)
