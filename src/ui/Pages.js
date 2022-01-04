@@ -493,6 +493,7 @@ export default function Pages(props) {
                 props.setModal({color: data[active].color, name: name, group: group, state: !!userData[group][name], accept: () => {
                         setUserAccept(group, name)
                         setCardHeight(active, data, userData)
+                        props.changeTheme(data[active].color)
                 }})
 
             } else {
