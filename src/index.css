@@ -1,11 +1,24 @@
 @font-face {
     font-family: 'Open Sans';
-    src: url('fonts/OpenSans-Light.ttf') format('truetype'), url('fonts/OpenSans-Regular.ttf') format('truetype'), url('fonts/OpenSans-SemiBold.ttf') format('truetype'), url('fonts/OpenSans-Bold.ttf') format('truetype');
+    src: url('fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
 }
 
 @font-face {
     font-family: 'Lato';
     src: url('fonts/Lato-Bold.ttf') format('truetype');
+    font-weight: 600;
 }
 
 html, body {
@@ -19,7 +32,7 @@ html, body {
     -webkit-user-select: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-    font-display: optional;
+    /*font-display: optional;*/
 }
 
 body {
@@ -245,9 +258,7 @@ main {
 
     height: 64px;
     text-align: center;
-    /*line-height: 60px;*/
     border: 1px dashed rgba(255, 255, 255, 0.5);
-    font-weight: 600;
 
     display: flex;
     flex-direction: column;
@@ -256,11 +267,9 @@ main {
     border-radius: 10px;
     padding-left: 5px;
     padding-right: 5px;
-    /*margin-left: 10px;*/
     margin-bottom: 20px;
-    /*margin-right: 10px;*/
-    /*margin-left: 10px;*/
     font-size: 10px;
+    font-weight: 600;
 
     overflow: hidden;
 }

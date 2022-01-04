@@ -131,16 +131,12 @@ export default function Pages(props) {
 
         // setPosition(j)
         console.warn(j)
-        console.log(data[i].name)
+        console.log(data)
         let oldCard = document.getElementById('card_' + data[active].name)
         oldCard.style.height = '89px'
 
         setActive(i)
-        let card = document.getElementById('card_' + data[i].name)
-        let textHeight = card.getElementsByClassName('text')[0].clientHeight
-        console.log(textHeight)
-        card.style.height = 89 + textHeight + 20 + 2 * 86 + 'px'
-        console.log(card.style.height)
+        setCardHeight(i, data)
         props.changeTheme(data[i].color)
         // location.href = '#' + item.name
 
@@ -151,6 +147,36 @@ export default function Pages(props) {
         // }, 400)
 
         window.scroll({left: 0, top: 89 * j})
+    }
+
+    let setCardHeight = (i, data) => {
+
+        let cardList = data[i].list
+        let listLength = cardList.length >= 6 ? 6 : cardList.length
+
+        for (let j = 0; j < listLength; j++) {
+            // console.log(userData)
+            // console.log(data[i].name)
+            // console.log(data[i].list[j].name)
+            // // console.log()
+            // // console.log()
+            let active = userData[data[i].name] && userData[data[i].name][data[i].list[j].name]
+            console.log(active)
+            if (active) {
+                if (cardList.length >= listLength) {
+                    if (cardList.length > listLength + 3)
+                        listLength = listLength + 3
+                    else
+                        listLength = cardList.length
+                }
+            }
+        }
+
+        let card = document.getElementById('card_' + data[i].name)
+        let textHeight = card.getElementsByClassName('text')[0].clientHeight
+        console.log(listLength)
+        card.style.height = 89 + textHeight + 20 + Math.ceil(listLength/3) * 86 + 'px'
+        console.log(card.style.height)
     }
 
     let renderPages = () => {
@@ -293,6 +319,8 @@ export default function Pages(props) {
     }
 
     let renderList = (groupName, itemList) => {
+
+        // console.warn(i)
 
         let listLength = itemList.length >= 6 ? 6 : itemList.length
 
