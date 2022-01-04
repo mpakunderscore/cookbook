@@ -125,7 +125,7 @@ main {
     cursor: auto;
     /*height: 318px;*/
     /*height: 396px;*/
-    height: auto;
+    /*height: auto;*/
     /*min-height: 100px;*/
     /*height: 500px;*/
 }
@@ -493,7 +493,7 @@ input:-webkit-autofill {
         max-width: 600px;
         padding-left: calc(50% - 300px);
         padding-right: calc(50% - 300px);
-        max-height: 100vh;
+        /*max-height: 100vh;*/
         /*border-radius: 10px;*/
 
         margin: auto;

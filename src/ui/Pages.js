@@ -1,7 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react'
 import api, {loadActivePageIndex, loadFood, loadUser, sendMessage} from "../api";
 import eventBus from "../EventBus";
-import {is} from "cheerio/lib/api/traversing";
 
 let all = 210
 let colors = {}
@@ -41,35 +40,39 @@ export default function Pages(props) {
         // setActive()
 
         let pageIndex = loadActivePageIndex()
+
         console.log(pageIndex)
 
-        loadFood().then(data => {
+        loadFood().then(async data => {
 
             setData(data)
             // console.log(data)
 
             loadFridge(data)
 
-            setCardActive(pageIndex, data)
+            if (email) {
+                console.log('email: ' + email)
+            }
+
+            let userData = await loadUser(email)
+
+            console.log(userData)
+
+            if (email && !userData['awards']['postal']) {
+                userData['awards']['postal'] = true
+            }
+
+            if (!userData['awards']['elder']) {
+                userData['awards']['elder'] = true
+            }
+
+            setUserData(userData)
+            setCount(userData.count)
+
+            setCardActive(pageIndex, data, loadActivePageIndex(), userData)
         })
 
-        if (email) {
-            console.log('email: ' + email)
-        }
-
-        let userData = await loadUser(email)
-        console.log(userData)
-
-        if (email && !userData['awards']['postal']) {
-            userData['awards']['postal'] = true
-        }
-
-        if (!userData['awards']['elder']) {
-            userData['awards']['elder'] = true
-        }
-
-        setUserData(userData)
-        setCount(userData.count)
+        // setCardHeight(active, data)
 
     }, [])
 
@@ -127,7 +130,13 @@ export default function Pages(props) {
     //     return array
     // }
 
-    let setCardActive = (i, data, j = loadActivePageIndex()) => {
+    let setCardActive = (i, data, j = loadActivePageIndex(), userData) => {
+
+        if (!data)
+            return
+
+        if (!userData)
+            return
 
         // setPosition(j)
         console.warn(j)
@@ -136,20 +145,24 @@ export default function Pages(props) {
         oldCard.style.height = '89px'
 
         setActive(i)
-        setCardHeight(i, data)
         props.changeTheme(data[i].color)
         // location.href = '#' + item.name
 
         loadActivePageIndex(i)
 
+        setCardHeight(i, data, userData)
+
         // setTimeout(function () {
         //     window.scroll({left: 0, top: 89 * j, behavior: 'smooth'})
         // }, 400)
 
-        window.scroll({left: 0, top: 89 * j})
+        // window.scroll({left: 0, top: 89 * j})
     }
 
-    let setCardHeight = (i, data) => {
+    let setCardHeight = (i, data, userData) => {
+
+        if (!data[i])
+            return
 
         let cardList = data[i].list
         let listLength = cardList.length >= 6 ? 6 : cardList.length
@@ -250,7 +263,7 @@ export default function Pages(props) {
         (!unlockedPage && !item.unlocked ? ' locked' : '')
         }
                     id={'card_' + item.name}
-                    onClick={(!isActive && (unlockedPage || item.unlocked) ? () => {setCardActive(item.i, data, j)} : () => {})}
+                    onClick={(!isActive && (unlockedPage || item.unlocked) ? () => {setCardActive(item.i, data, j, userData)} : () => {})}
                     style={{background:
                             (item.name !== 'fridge' ? item.color : !isActive ? '#2c2c2c' : (light ? item.color : item.color2))
 
@@ -262,7 +275,7 @@ export default function Pages(props) {
                     setLight(!light)
                     props.changeTheme(!light ? item.color : item.color2)
                 } else {
-                    setCardActive(0, data)
+                    setCardActive(0, data, 0, userData)
                 }
             }}>
                 {isActive && item.name !== 'cookbook' ? <span className={'count'}>{userSelected + '/' + item.list.length}</span> : ''}
