@@ -172,9 +172,9 @@ export default function Pages(props) {
         // });
     }
 
-    window.addEventListener("wheel", (e) => scrollToSection(e), {passive: false})
+    // window.addEventListener("wheel", (e) => scrollToSection(e), {passive: false})
 
-    const scrollToSection = (e) => {e.preventDefault()}
+    // const scrollToSection = (e) => {e.preventDefault()}
 
     let setCardHeight = (i, data, userData, j) => {
 
