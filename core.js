@@ -32,7 +32,10 @@ let meat = {
 
     list: [
         {name: 'steak', index: 394, recipe: true},
+        {name: 'beef stew', index: 126, recipe: true},
         {name: 'stew', index: 126, recipe: true},
+
+
         {name: 'slow', index: 600, recipe: true},
 
         {name: 'beef'},
@@ -40,6 +43,7 @@ let meat = {
         {name: 'chicken', page: true, item: false},
 
         {name: 'pate', index: 0, recipe: true},
+        {name: 'burger', index: 0, recipe: true},
         {name: 'shawarma', index: 0, recipe: true, page: 'bread'},
 
         {name: 'grill', index: 300, recipe: true},
@@ -129,13 +133,18 @@ let vegetables = {
     list: [
         {name: 'salad', recipe: true},
         {name: 'baked', recipe: true},
+        {name: 'boom', recipe: true},
         {name: 'broth', recipe: true},
+        {name: 'french fries', recipe: true},
         {name: 'fries', recipe: true},
         {name: 'fried', recipe: true},
         {name: 'relish', recipe: true},
         {name: 'soup', recipe: true, page: true},
         {name: 'pickled', recipe: true, page: 'pickling'},
         {name: 'coleslaw', recipe: true, page: true},
+        {name: 'assorted', recipe: true, page: true},
+
+        {name: 'ratatouille', recipe: true},
 
         {name: 'onion'},
         {name: 'potato'},
@@ -163,8 +172,6 @@ let vegetables = {
         {name: 'celery'},
         {name: 'chilli'},
         {name: 'sweet potato'},
-
-        {name: 'rata touille', recipe: true},
 
     ]
 }

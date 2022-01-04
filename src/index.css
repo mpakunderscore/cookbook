@@ -180,6 +180,7 @@ main {
     margin-bottom: 20px;
 
     min-height: 66px;
+    white-space: pre-line;
 }
 
 .card.locked {
@@ -278,7 +279,9 @@ main {
     border-radius: 10px;
     padding-left: 5px;
     padding-right: 5px;
+
     margin-bottom: 20px;
+
     font-size: 10px;
     font-weight: 600;
 
@@ -434,6 +437,11 @@ main {
     font-size: 34px;
     font-weight: 600;
     /*background: red;*/
+
+    opacity: .5;
+
+    /*background: rgba(255, 255, 255, 0.1);*/
+    /*border-radius: 50%;*/
 }
 
 input {

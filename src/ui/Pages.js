@@ -205,7 +205,14 @@ export default function Pages(props) {
         let card = document.getElementById('card_' + data[i].name)
         let textHeight = card.getElementsByClassName('text')[0].clientHeight
         // console.log(listLength)
-        card.style.height = 89 + textHeight + 20 + Math.ceil(listLength/3) * 86 + 'px'
+        card.style.height = 89 + textHeight + 20 +
+
+            Math.ceil((
+                listLength +
+                (data[i].name === 'vegetables' ? 1 : 0)
+            ) /3) * 86
+
+            + 'px'
         // card.style.height = 89 + 'px'
         // console.log(card.style.height)
 
@@ -406,6 +413,7 @@ export default function Pages(props) {
             list.push(
                 <div key={i + name}
                      className={'chips ' + (active || groupName === 'fridge' ? 'active' : '')}
+                     style={name === 'ratatouille' ? {width: 'calc((100% - 40px)/3 * 2 + 10px)'} : {}}
                      onClick={() => {
                          if (groupName !== 'awards' && groupName !== 'fridge')
                              selectItem(groupName, itemList[i])
