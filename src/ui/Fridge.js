@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react'
 import recipes from "../../recipes";
+import eventBus from "../EventBus";
 
 export default function Fridge(props) {
 
@@ -75,7 +76,10 @@ export default function Fridge(props) {
                     <div className={'name'}>
                         <div>{props.modal.group.toUpperCase()}</div>
                         <div>{props.modal.name.toUpperCase()}</div>
-                        <div className={'close'} onClick={() => props.setModal(false)}>✖</div>
+                        <div className={'close'} onClick={() => {
+                            props.modal.cancel()
+                            props.setModal(false)
+                        }}>✖</div>
                     </div>
 
                     {/*<div className={'separator'}/>*/}

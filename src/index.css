@@ -113,8 +113,9 @@ main {
     margin-top: -40px;
     padding-bottom: 40px;
 
-    -webkit-transition: border-radius 1s ease-out, height .3s ease-out;;
-    transition: border-radius 1s ease-out, height .3s ease-out;
+    -webkit-transition: border-radius .8s ease-out;
+    transition: border-radius .8s ease-out;
+    will-change: transform;
 }
 
 .card:first-child {
@@ -123,6 +124,7 @@ main {
 
 .card.active {
     cursor: auto;
+    /*transition: border-radius 1s ease-out;*/
     /*height: 318px;*/
     /*height: 396px;*/
     /*height: auto;*/

@@ -7,9 +7,10 @@ let colors = {}
 
 export default function Pages(props) {
 
-    eventBus.on('card', (data) => {
-        setCardHeight(active, data, userData)
-    })
+    // eventBus.on('theme', (data) => {
+    //
+    //     props.changeTheme(data[active].color)
+    // })
 
     const [, updateState] = React.useState()
     const forceUpdate = React.useCallback(() => updateState({}), [])
@@ -158,16 +159,24 @@ export default function Pages(props) {
 
         loadActivePageIndex(i)
 
-        setCardHeight(i, data, userData)
+        setCardHeight(i, data, userData, j)
 
         // setTimeout(function () {
         //     window.scroll({left: 0, top: 89 * j, behavior: 'smooth'})
         // }, 400)
 
-        window.scroll({left: 0, top: 89 * j})
+        window.scroll({left: 0, top: 89 * j, behavior: 'smooth'})
+
+        // element.scrollIntoView({
+        //     behavior: 'smooth'
+        // });
     }
 
-    let setCardHeight = (i, data, userData) => {
+    window.addEventListener("wheel", (e) => scrollToSection(e), {passive: false})
+
+    const scrollToSection = (e) => {e.preventDefault()}
+
+    let setCardHeight = (i, data, userData, j) => {
 
         if (!data[i])
             return
@@ -197,7 +206,14 @@ export default function Pages(props) {
         let textHeight = card.getElementsByClassName('text')[0].clientHeight
         // console.log(listLength)
         card.style.height = 89 + textHeight + 20 + Math.ceil(listLength/3) * 86 + 'px'
+        // card.style.height = 89 + 'px'
         // console.log(card.style.height)
+
+        // document.getElementById('app').scrollIntoView({
+        //     left: 0,
+        //     top: 89 * j,
+        //     behavior: 'smooth'
+        // });
     }
 
     let renderPages = () => {
@@ -459,6 +475,9 @@ export default function Pages(props) {
                     group: 'kitchen',
                     list: fridge,
                     color: item.color,
+                    cancel: () => {
+                        props.changeTheme(data[active].color)
+                    }
                 }
 
                 console.log(fridgeModal)
@@ -494,7 +513,8 @@ export default function Pages(props) {
                 props.setModal({color: data[active].color, name: name, group: group, state: !!userData[group][name], accept: () => {
                         setUserAccept(group, name)
                         setCardHeight(active, data, userData)
-                        props.changeTheme(data[active].color)
+                }, cancel: () => {
+                    // props.changeTheme(data[active].color)
                 }})
 
             } else {
