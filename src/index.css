@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Light.ttf') format('truetype'), url('fonts/OpenSans-Regular.ttf') format('truetype'), url('fonts/OpenSans-SemiBold.ttf') format('truetype'), url('fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Bold.ttf') format('truetype');
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -90,8 +100,8 @@ main {
     margin-top: -40px;
     padding-bottom: 40px;
 
-    -webkit-transition: border-radius 1s ease-out, height .4s ease-out;;
-    transition: border-radius 1s ease-out, height .4s ease-out;
+    -webkit-transition: border-radius 1s ease-out, height .3s ease-out;;
+    transition: border-radius 1s ease-out, height .3s ease-out;
 }
 
 .card:first-child {
@@ -224,6 +234,10 @@ main {
     border: 1px dashed rgba(128, 128, 128, 0.5);
 }
 
+.list {
+    /*font-weight: 600;*/
+}
+
 .list > div {
     cursor: pointer;
     position: relative;
@@ -249,6 +263,11 @@ main {
     font-size: 10px;
 
     overflow: hidden;
+}
+
+.chips {
+    /*font-weight: 600;*/
+    /*background: red;*/
 }
 
 .list > div:active {
@@ -457,10 +476,14 @@ input:-webkit-autofill {
         justify-content: space-between;
     }
 
+    .card.active {
+        height: auto;
+    }
+
     main {
         max-width: 600px;
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: calc(50% - 300px);
+        padding-right: calc(50% - 300px);
         max-height: 100vh;
         /*border-radius: 10px;*/
 

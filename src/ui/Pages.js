@@ -48,9 +48,9 @@ export default function Pages(props) {
             setData(data)
             // console.log(data)
 
-            setCardActive(pageIndex, data)
-
             loadFridge(data)
+
+            setCardActive(pageIndex, data)
         })
 
         if (email) {
@@ -132,8 +132,15 @@ export default function Pages(props) {
         // setPosition(j)
         console.warn(j)
         console.log(data[i].name)
+        let oldCard = document.getElementById('card_' + data[active].name)
+        oldCard.style.height = '89px'
 
         setActive(i)
+        let card = document.getElementById('card_' + data[i].name)
+        let textHeight = card.getElementsByClassName('text')[0].clientHeight
+        console.log(textHeight)
+        card.style.height = 89 + textHeight + 20 + 2 * 86 + 'px'
+        console.log(card.style.height)
         props.changeTheme(data[i].color)
         // location.href = '#' + item.name
 
@@ -229,8 +236,7 @@ export default function Pages(props) {
                     setLight(!light)
                     props.changeTheme(!light ? item.color : item.color2)
                 } else {
-                    setActive(0)
-                    props.changeTheme(data[0].color)
+                    setCardActive(0, data)
                 }
             }}>
                 {isActive && item.name !== 'cookbook' ? <span className={'count'}>{userSelected + '/' + item.list.length}</span> : ''}
@@ -333,7 +339,7 @@ export default function Pages(props) {
 
             list.push(
                 <div key={i + name}
-                     className={(active || groupName === 'fridge' ? 'active' : '')}
+                     className={'chips ' + (active || groupName === 'fridge' ? 'active' : '')}
                      onClick={() => {
                          if (groupName !== 'awards' && groupName !== 'fridge')
                              selectItem(groupName, itemList[i])
