@@ -67,6 +67,7 @@ function App() {
 
             {modal ?
                 modal.name === 'fridge' ?
+
                     <Fridge changeTheme={changeTheme} modal={modal} setModal={setModal}/>
                     :
                     <Modal changeTheme={changeTheme} modal={modal} setModal={setModal}/>

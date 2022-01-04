@@ -7,6 +7,10 @@ let colors = {}
 
 export default function Pages(props) {
 
+    eventBus.on('card', (data) => {
+        setCardHeight(active, data, userData)
+    })
+
     const [, updateState] = React.useState()
     const forceUpdate = React.useCallback(() => updateState({}), [])
 
@@ -488,14 +492,16 @@ export default function Pages(props) {
 
                 props.setModal({color: data[active].color, name: name, group: group, state: !!userData[group][name], accept: () => {
                         setUserAccept(group, name)
-                    }
-                })
+                        setCardHeight(active, data, userData)
+                }})
 
             } else {
 
                 setUserAccept(group, name)
 
             }
+
+            setCardHeight(active, data, userData)
 
             forceUpdate()
 
