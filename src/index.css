@@ -211,6 +211,10 @@ main {
     /*!*margin-top: -20px;*!*/
 }
 
+#card_cookbook {
+    height: auto;
+}
+
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

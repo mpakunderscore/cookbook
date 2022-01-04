@@ -73,9 +73,10 @@ export default function Pages(props) {
             setUserData(userData)
             setCount(userData.count)
 
-            setTimeout(() => {
-                setCardActive(pageIndex, data, loadActivePageIndex(), userData)
-            }, 200)
+            if (pageIndex !== 0)
+                setTimeout(() => {
+                    setCardActive(pageIndex, data, loadActivePageIndex(), userData)
+                }, 200)
 
         })
 
