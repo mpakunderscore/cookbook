@@ -115,7 +115,12 @@ main {
 
     -webkit-transition: border-radius .8s ease-out;
     transition: border-radius .8s ease-out;
-    /*will-change: transform;*/
+    will-change: transform;
+}
+
+.card.fast {
+    -webkit-transition: border-radius .8s ease-out, height .4s ease-out;
+    transition: border-radius .8s ease-out, height .4s ease-out;
 }
 
 .card:first-child {

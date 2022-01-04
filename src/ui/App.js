@@ -3,6 +3,14 @@ import Pages from "./Pages"
 import Modal from "./Modal";
 import Fridge from "./Fridge";
 
+let getAndroidVersion = () => {
+    let match = navigator.userAgent.toLowerCase().match(/android\s([0-9.]*)/i)
+    return match ? match[1] : undefined
+}
+
+let androidVersion = getAndroidVersion()
+console.log(androidVersion)
+
 function App() {
 
     // Initialize deferredPrompt for use later to show browser install prompt.
@@ -63,7 +71,7 @@ function App() {
     return (
         <div className={'container'}>
 
-            <Pages installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal}/>
+            <Pages isFast={!(androidVersion > 0 && androidVersion < 11)} installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal}/>
 
             {modal ?
                 modal.name === 'fridge' ?

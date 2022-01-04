@@ -284,6 +284,7 @@ export default function Pages(props) {
         return <div className={'card ' +
         (isActive ? 'active' : '') +
         (item.highlight ? ' highlight' : '') +
+        (props.isFast ? ' fast' : '') +
         (!unlockedPage && !item.unlocked ? ' locked' : '')
         }
                     id={'card_' + item.name}
@@ -395,7 +396,7 @@ export default function Pages(props) {
 
 
             if (groupName === 'cookbook' && name === 'settings')
-                name = VERSION.substring(0, 7)
+                name = VERSION.substring(0, 7) + ' ' + (props.isFast ? 'fast' : 'slow')
 
             if (groupName === 'awards' && !active && !itemList[i].active)
                 name = '🏆'
