@@ -43,10 +43,7 @@ let recipes = {
                 {name: 'black pepper', color: colors.spice},
             ]
         },
-        fried: {
-            text: ''
-        },
-        fries: {
+        'french fries': {
             text: 'Peel and wash vegetables. Cut the potatoes and carrots into 1 cm thick strips. Place vegetables in a deep bowl.\n' +
                 'Let\'s prepare a herbal dressing. In a shallow bowl, mix together salt and sunflower oil. Add dried basil. Grind the peppercorns in a mortar, add to the overall mixture. Then add thyme. Mix well until smooth. Then, pour the resulting mixture over the vegetables. Mix well. Cover a baking sheet with baking paper, put vegetables. Oven, heat to 200 degrees, put a baking sheet in the oven and bake vegetables until tender. We take out ready-made vegetables and serve hot.\n',
             list: [
@@ -67,27 +64,19 @@ let recipes = {
             list: [
                 {name: 'broccoli', color: colors.vegetables},
                 {name: 'pumpkin', color: colors.vegetables},
-
                 {name: 'zucchini', color: colors.vegetables},
                 {name: 'yellow squash', color: colors.vegetables},
-
                 {name: 'pepper', color: colors.vegetables},
                 {name: 'onion', color: colors.vegetables},
                 {name: 'garlic', color: colors.vegetables},
-
                 {name: 'champi gnon', color: colors.mushrooms},
-
                 {name: 'balsamic vinegar', color: colors.oil},
                 {name: 'olive oil', color: colors.oil},
-
                 {name: 'salt', color: colors.spice},
                 {name: 'black pepper', color: colors.spice},
                 {name: 'thyme', color: colors.spice},
 
             ]
-        },
-        broth: {
-            text: ''
         },
         soup: {
             text: 'Wash and peel vegetables. Boil the water. Season with salt to taste. Remove the peel from the tomato. Chop the onions, carrots and potatoes into small pieces. Put them first in boiling water, cook for 15 minutes. Disassemble the cauliflower into small inflorescences. Cut the peeled tomato into cubes, chop the dill. After 15 minutes, add cauliflower, peas and tomato to the soup. Boil for another 10 minutes. Season the soup with herbs, and then turn it off. Let it brew for 10-15 minutes - and serve with butter.\n',
@@ -108,14 +97,40 @@ let recipes = {
 
         },
         relish: {
+            text: 'Wash vegetables, dry, peel onions and peppers. Remove tips from cucumbers and grate. Finely chop the rest of the vegetables. Add salt and mix well. It is advisable to leave the vegetable mixture salted in this form overnight. Then squeeze the vegetables well from the moisture released. Pour water into a bowl, add mustard seeds and sugar, bring to a boil. Transfer prepared vegetables and stir. Simmer the mixture over medium heat, stirring occasionally, for 10 minutes. Add vinegar and stir. Arrange the hot relish in prepared sterile jars and tighten the lids. Store the seasoning like any other preservation.\n'
+        },
+        broth: {
             text: ''
         },
+        fried: {
+            text: ''
+        },
+        pickled: {
+            text: 'Wash the vegetables, chop the tomatoes with a toothpick at the stalks. Remove the stalk with seeds from the pepper, cut into 4 parts. Peel the onion and cut into a couple of rings. Cut the apple into wedges, cut the garlic into cloves and peel. Chop the horseradish into small pieces. Put all the vegetables in a jar, pour boiling water over. Leave for 10 minutes. Drain and cook the brine, boil. Pour the vegetables over and roll up.\n',
+            list: [
+                {name: 'cucumber', color: colors.vegetables},
+                {name: 'tomato', color: colors.vegetables},
+                {name: 'pepper', color: colors.vegetables},
+                {name: 'grape', color: colors.vegetables},
+                {name: 'red onion', color: colors.vegetables},
+                {name: 'apple', color: colors.vegetables},
+                {name: 'horseradish', color: colors.vegetables},
+                {name: 'carnations', color: colors.vegetables},
+                {name: 'bay leave', color: colors.vegetables},
+                {name: 'garlic', color: colors.vegetables},
+                {name: 'sahara', color: colors.vegetables},
+                {name: 'salt', color: colors.vegetables},
+                {name: 'water', color: colors.vegetables},
+                {name: 'citric acid', color: colors.vegetables}
+            ]
+        }
     },
 
-    exampleGroup: {
-        exampleRecipe: {
-            name: 'name',
-            text: 'Big text here.',
+    meat: {
+        stew: {
+            name: 'stew',
+            text: 'Cut the beef into random pieces.\n' +
+                'Use a heavy-bottomed saucepan or deep skillet. Put pieces of beef there, pour a glass of boiling water. Put allspice, bay leaf, bring to a boil. Simmer over low heat, covered for about 30-40 minutes. Peel the onion, cut into large half rings, then half the rings. Peel the carrots, cut into cubes. When almost all the liquid in the saucepan has evaporated, pour vegetable oil into it. Add onion. Add carrots. Stir well, increase heat and fry vegetables and meat for about 5-10 minutes. Pour in another glass of boiling water, salt and pepper. Continue simmering the beef over low heat, covered for about 1-1.5 hours. The beef stew turns out to be soft, aromatic and very tasty!',
             list: []
         }
     }

@@ -134,7 +134,7 @@ let vegetables = {
         {name: 'fried', recipe: true},
         {name: 'relish', recipe: true},
         {name: 'soup', recipe: true, page: true},
-        {name: 'pickling', recipe: true, page: true},
+        {name: 'pickled', recipe: true, page: 'pickling'},
         {name: 'coleslaw', recipe: true, page: true},
 
         {name: 'onion'},
