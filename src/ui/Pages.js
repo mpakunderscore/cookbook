@@ -69,7 +69,10 @@ export default function Pages(props) {
             setUserData(userData)
             setCount(userData.count)
 
-            setCardActive(pageIndex, data, loadActivePageIndex(), userData)
+            setTimeout(() => {
+                setCardActive(pageIndex, data, loadActivePageIndex(), userData)
+            }, 200)
+
         })
 
         // setCardHeight(active, data)
@@ -139,8 +142,8 @@ export default function Pages(props) {
             return
 
         // setPosition(j)
-        console.warn(j)
-        console.log(data)
+        // console.warn(j)
+        // console.log(data)
         let oldCard = document.getElementById('card_' + data[active].name)
         oldCard.style.height = '89px'
 
@@ -187,9 +190,9 @@ export default function Pages(props) {
 
         let card = document.getElementById('card_' + data[i].name)
         let textHeight = card.getElementsByClassName('text')[0].clientHeight
-        console.log(listLength)
+        // console.log(listLength)
         card.style.height = 89 + textHeight + 20 + Math.ceil(listLength/3) * 86 + 'px'
-        console.log(card.style.height)
+        // console.log(card.style.height)
     }
 
     let renderPages = () => {

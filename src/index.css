@@ -18,7 +18,7 @@
 @font-face {
     font-family: 'Lato';
     src: url('fonts/Lato-Bold.ttf') format('truetype');
-    font-weight: 600;
+    font-weight: 700;
 }
 
 html, body {
@@ -164,7 +164,7 @@ main {
 }
 
 .card .text {
-    font-size: 20px;
+    /*font-size: 20px;*/
     font-weight: 300;
     letter-spacing: 1px;
     color: ghostwhite;
@@ -356,6 +356,10 @@ main {
 
 #fridge {
     /*background: red;*/
+}
+
+#fridge .card {
+    height: auto
 }
 
 .container {
