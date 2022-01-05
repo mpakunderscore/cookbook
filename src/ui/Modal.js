@@ -1,13 +1,19 @@
 import React, {useEffect, useState, useRef} from 'react'
 import recipes from "../../recipes";
+import {loadImages} from "../api";
 
 export default function Modal(props) {
 
     let [backgroundColor, setBackgroundColor] = useState('gray')
 
+    let [imageID, setImageID] = useState('')
+
+    let [urls, setUrls] = useState([])
+
     let [amateur, setAmateur] = useState(props.modal.state)
 
     useEffect(() => {
+
         console.log(props.modal.color)
         if (props.modal.color) {
             props.changeTheme(props.modal.color)
@@ -15,7 +21,13 @@ export default function Modal(props) {
         } else {
             props.changeTheme(backgroundColor)
         }
-    })
+
+        loadImages(props.modal.name, props.modal.group).then(images => {
+            console.log(images)
+            setUrls(images)
+        })
+
+    }, [])
 
     let renderList = (itemList, active) => {
 
@@ -31,14 +43,17 @@ export default function Modal(props) {
             list.push(
                 <div key={itemList[i].name}
                      className={(active || itemList[i].active || (amateur && itemList[i].name === 'amateur') ? 'active' : '')}
-                     style={itemList[i].color ? {background: itemList[i].color, color: itemList[i].highlight ? '#4c4c4c' : 'white'} : {}}
+                     style={itemList[i].color ? {
+                         background: itemList[i].color,
+                         color: itemList[i].highlight ? '#4c4c4c' : 'white'
+                     } : {}}
                      onClick={() => {
 
                          if (itemList[i].name === 'i am amateur') {
                              props.modal.accept()
                              setAmateur(!amateur)
                          } else
-                            selectItem()
+                             selectItem()
                      }}>
                     {itemList[i].name.toUpperCase()}
                 </div>
@@ -52,6 +67,18 @@ export default function Modal(props) {
         // props.setModal(false)
     }
 
+    let generateImages = () => {
+
+        console.log(urls)
+
+        let images = []
+        for (let i = 0; i < 10; i++) {
+            images.push(<img key={'image' + i} src={urls[i]}/>)
+        }
+
+        return images
+    }
+
     return (
         <div id={'modal'}>
 
@@ -63,6 +90,12 @@ export default function Modal(props) {
                         <div>{props.modal.group.toUpperCase()}</div>
                         <div>{props.modal.name.toUpperCase()}</div>
                         <div className={'close'} onClick={() => props.setModal(false)}>✖</div>
+                    </div>
+
+                    <div id={'images'}>
+                        <div>
+                            {generateImages()}
+                        </div>
                     </div>
 
                     {/*<div className={'separator'}/>*/}

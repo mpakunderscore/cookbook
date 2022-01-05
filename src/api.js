@@ -49,6 +49,14 @@ let sendMessage = (message) => {
         })
 }
 
+let loadImages = (name, group) => {
+    return fetch(prefix + '/images')
+        .then(response => response.json())
+        .then(data => {
+            return data
+        })
+}
+
 module.exports = {
-    loadFood, loadUser, sendMessage, loadActivePageIndex
+    loadFood, loadUser, sendMessage, loadActivePageIndex, loadImages
 }
