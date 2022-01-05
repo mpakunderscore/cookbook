@@ -46,22 +46,30 @@ let initAPI = async (app) => {
     })
 }
 
-let images = []
+let images = {}
 
 let loadCoreImages = async () => {
 
     for (let i = 0; i < food.length; i++) {
         console.log(food[i].name)
-        console.log(food[i].list.length)
-    }
+        let recipes = food[i].list.filter(item => item.recipe === true)
+        if (recipes.length > 0) {
+            images[food[i].name] = {}
 
+            for (let j = 0; j < recipes.length; j++) {
+                images[food[i].name][recipes[j].name] = await loadImages(recipes[j].name)
+            }
+        }
+    }
 }
 
 let loadImages = async (query) => {
 
-    let clientID = 'frjPxPVuy8TBY16CU7KlZQAEopFlU21UGm84KlV0UB4'
+    let imagesArray = []
 
-    let url = 'https://api.unsplash.com/search/photos?query=' + query + '&client_id=' + clientID
+    let clientID = 'JlxtO4Z40A34q4wNJ3MuOzL9oNwmZ8NsItP9KU1Cwuk'
+
+    let url = 'https://api.unsplash.com/search/photos?query=' + encodeURIComponent(query) + '&client_id=' + clientID
 
     let response = await axios.get(url, {
 
@@ -81,10 +89,10 @@ let loadImages = async (query) => {
 
     for (let i = 0; i < response.data.results.length; i++) {
         // images.push(response.data.results[i].urls.small)
-        images.push(response.data.results[i].urls.thumb)
+        imagesArray.push(response.data.results[i].urls.thumb)
     }
 
-    // console.log(images)
+    return imagesArray
 }
 
 // loadImages('burger').then()

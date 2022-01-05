@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Pages from "./Pages"
 import Modal from "./Modal";
 import Fridge from "./Fridge";
+import {loadImages} from "../api";
 
 let getAndroidVersion = () => {
     let match = navigator.userAgent.toLowerCase().match(/android\s([0-9.]*)/i)
@@ -17,6 +18,8 @@ function App() {
 
     // Initialize deferredPrompt for use later to show browser install prompt.
     let [deferredPrompt, setDeferredPrompt] = useState()
+
+    let [images, setImages] = useState({})
 
     let initPWA = () => {
 
@@ -68,7 +71,12 @@ function App() {
 
     useEffect(async () => {
         initPWA()
-    })
+
+        loadImages().then(images => {
+            console.log(images)
+            setImages(images)
+        })
+    }, [])
 
     return (
         <div className={'container'}>
@@ -80,7 +88,7 @@ function App() {
 
                     <Fridge changeTheme={changeTheme} modal={modal} setModal={setModal}/>
                     :
-                    <Modal changeTheme={changeTheme} modal={modal} setModal={setModal}/>
+                    <Modal images={images} changeTheme={changeTheme} modal={modal} setModal={setModal}/>
 
                 : ''
             }

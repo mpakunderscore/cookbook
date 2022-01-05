@@ -461,9 +461,9 @@ let coffee = {
     color: '#6F4E37',
 
     list: [
-        {name: 'cappuccino'},
-        {name: 'latte'},
-        {name: 'americano'},
+        {name: 'cappuccino', recipe: true},
+        {name: 'latte', recipe: true},
+        {name: 'americano', recipe: true},
     ]
 }
 

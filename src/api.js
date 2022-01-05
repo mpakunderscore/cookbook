@@ -49,7 +49,7 @@ let sendMessage = (message) => {
         })
 }
 
-let loadImages = (name, group) => {
+let loadImages = () => {
     return fetch(prefix + '/images')
         .then(response => response.json())
         .then(data => {

@@ -4,9 +4,11 @@ import {loadImages} from "../api";
 
 export default function Modal(props) {
 
+    // console.log(props.images)
+
     let [backgroundColor, setBackgroundColor] = useState('gray')
 
-    let [imageID, setImageID] = useState('')
+    // let [imageID, setImageID] = useState('')
 
     let [urls, setUrls] = useState([])
 
@@ -21,11 +23,6 @@ export default function Modal(props) {
         } else {
             props.changeTheme(backgroundColor)
         }
-
-        loadImages(props.modal.name, props.modal.group).then(images => {
-            console.log(images)
-            setUrls(images)
-        })
 
     }, [])
 
@@ -69,12 +66,21 @@ export default function Modal(props) {
 
     let generateImages = () => {
 
-        console.log(urls)
+        let group = props.images[props.modal.group]
+        console.log(group)
+
+        let localImages = group[props.modal.name]
+        console.log(localImages)
 
         let images = []
         for (let i = 0; i < 10; i++) {
-            images.push(<img key={'image' + i} src={urls[i]}/>)
+            images.push(<img key={'image' + i} src={localImages[i]}/>)
         }
+
+        images.push(<div className={'separator2'}/>)
+        images.push(<div className={'separator2'}/>)
+        images.push(<div className={'separator2'}/>)
+        images.push(<div className={'separator2'}/>)
 
         return images
     }
