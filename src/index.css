@@ -460,8 +460,12 @@ main {
     /*background: red;*/
 }
 
-#fridge > div:last-child {
-    min-height: 100%;
+#modal > div {
+    height: 100%;
+}
+
+#modal > div > div:last-child {
+    min-height: 100px;
 }
 
 #modal .card {

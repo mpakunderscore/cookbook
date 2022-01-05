@@ -69,7 +69,7 @@ export default function Modal(props) {
         let group = props.images[props.modal.group]
         // console.log(group)
 
-        let localImages = group[props.modal.name]
+        let localImages = group ? group[props.modal.name] : []
         // console.log(localImages)
 
         let images = []

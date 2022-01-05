@@ -1,28 +1,4 @@
-let colors = {
-    cookbook: '#361F1F',
-    meat: '#A42E2F',
-    fish: '#FA8072',
-    vegetables: '#62bb69',
-    chicken: '#ffdbd7',
-    drinks: 'rgba(75, 160, 210, 1)',
-    soup: '#E6B43C',
-    fruits: '#FFD658',
-    sauce: '#E86515',
-    bread: '#FAD69E',
-    rice: '#FFF',
-    spice: '#4b4848',
-    herbs: 'rgba(80, 140, 50, 1)',
-    equipment: '#bdbdbd',
-    pickling: 'rgba(100, 60, 100, 1)',
-    milk: 'rgba(255, 255, 255, 1)',
-    dessert: 'rgba(255, 55, 116, 1)',
-    eggs: '#fff',
-    coffee: '#6F4E37',
-    pasta: '#EECB7B',
-    mushrooms: '#B3AA9A',
-    oil: '#dbcf5c',
-    awards: '#ffd7b7',
-}
+const colors = require("./colors")
 
 let recipes = {
 

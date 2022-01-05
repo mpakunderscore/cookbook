@@ -1,8 +1,9 @@
+const colors = require("./colors");
 let core = {
     name: 'cookbook',
     title: 'COOKBOOK',
     text: 'Learn to cook. Unlock new cards with tasty recipes and unique groceries. Use fridge function for shopping and recipe generation. Compete with others, get rewards and find helpful tips.',
-    color: '#361F1F',
+    color: colors.cookbook,
     unlocked: true,
 
     list: [
@@ -27,7 +28,7 @@ let meat = {
     name: 'meat',
     title: 'Meat',
     text: 'Humans have hunted animals for meat since prehistoric times. Meat is mainly composed of water, protein, and fat. It is edible raw, but is normally eaten after it has been cooked and seasoned or processed in a variety of ways.',
-    color: '#A42E2F',
+    color: colors.meat,
     unlocked: true,
 
     list: [
@@ -78,7 +79,7 @@ let fish = {
     name: 'fish',
     title: 'Fish',
     text: 'Many species of fish are consumed as food in virtually all regions around the world. Fish has been an important source of protein and other nutrients for humans throughout history.',
-    color: '#FA8072',
+    color: colors.fish,
     unlocked: true,
 
     list: [
@@ -102,7 +103,7 @@ let chicken = {
     name: 'chicken',
     title: 'Chicken',
     text: 'More than 50 billion chickens are reared annually as a source of meat and eggs. In the United States alone, more than 8 billion chickens are slaughtered each year for meat, and more than 300 million chickens are reared for egg production.',
-    color: '#ffdbd7',
+    color: colors.chicken,
     highlight: true,
 
     list: [
@@ -127,7 +128,7 @@ let vegetables = {
     text: 'Vegetables are parts of plants that are consumed by humans or other animals as food. Bell peppers are usually sold green, but they can also be red, purple or yellow.\n' +
         'Tomatoes are very high in the carotenoid, and can lower your risk of cancer.\n' +
         'Other vegetables high in carotenoids are carrots, spinach, sweet potatoes, and collard greens.\n',
-    color: 'rgb(98, 187, 105)',
+    color: colors.vegetables,
     unlocked: true,
 
     list: [
@@ -180,7 +181,7 @@ let drinks = {
     name: 'drinks',
     title: 'Drinks',
     text: 'A drink (or beverage) is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture.',
-    color: 'rgba(75, 160, 210, 1)',
+    color: colors.drinks,
     unlocked: true,
 
     list: [
@@ -203,7 +204,7 @@ let soup = {
     name: 'soup',
     title: 'Soup',
     text: 'Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, milk, or water.',
-    color: '#E6B43C',
+    color: colors.soup,
 
     list: [
         {name: 'broth', recipe: true},
@@ -225,7 +226,7 @@ let fruits = {
     name: 'fruits',
     title: 'Fruits',
     text: 'Fruits',
-    color: '#FFD658',
+    color: colors.fruits,
     highlight: true,
 
     list: [
@@ -258,7 +259,7 @@ let sauce = {
     name: 'sauce',
     title: 'Sauce',
     text: 'In cooking, a sauce is a liquid, cream, or semi-solid food, served on or used in preparing other foods. Most sauces are not normally consumed by themselves, they add flavor, moisture, and visual appeal to a dish.',
-    color: '#E86515',
+    color: colors.sauce,
 
     list: [
         {name: 'guacamole', recipe: true},
@@ -277,7 +278,7 @@ let bread = {
     name: 'bread',
     title: 'Bread',
     text: 'Bread is a staple food prepared from a dough of flour and water, usually by baking. Throughout recorded history and around the world, it has been an important part of many cultures\' diet.',
-    color: '#FAD69E',
+    color: colors.bread,
     highlight: true,
 
     list: [
@@ -298,7 +299,7 @@ let rice = {
     name: 'rice',
     title: 'Rice',
     text: 'As a cereal grain, domesticated rice is the most widely consumed staple food for over half of the world\'s human population, especially in Asia and Africa. It is the agricultural commodity with the third-highest worldwide production, after sugarcane and maize.',
-    color: '#FFF',
+    color: colors.rice,
     highlight: true,
 
     list: [
@@ -313,7 +314,7 @@ let spice = {
     name: 'spice',
     title: 'Spice',
     text: 'Spice',
-    color: '#4b4848',
+    color: colors.spice,
 
     list: [
         {name: 'salt'},
@@ -344,7 +345,7 @@ let herbs = {
     name: 'herbs',
     title: 'Herbs',
     text: 'Herbs',
-    color: 'rgba(80, 140, 50, 1)',
+    color: colors.herbs,
 
     list: [
         {name: 'dill'},
@@ -375,7 +376,7 @@ let equipment = {
     name: 'equipment',
     title: 'Equipment',
     text: 'Equipment',
-    color: '#bdbdbd',
+    color: colors.equipment,
 
     list: [
         {name: 'knife'},
@@ -398,7 +399,7 @@ let pickling = {
     name: 'pickling',
     title: 'Pickling',
     text: 'Pickling is the process of preserving or extending the shelf life of food by either anaerobic fermentation in brine or immersion in vinegar. The pickling procedure typically affects the food\'s texture and flavor. The resulting food is called a pickle, or, to prevent ambiguity, prefaced with pickled.',
-    color: 'rgba(100, 60, 100, 1)',
+    color: colors.pickling,
 
     list: []
 }
@@ -407,7 +408,7 @@ let bento = {
     name: 'bento',
     title: 'Bento',
     text: 'bento',
-    color: '#000',
+    color: colors.bento,
 
     list: []
 }
@@ -416,7 +417,7 @@ let milk = {
     name: 'milk',
     title: 'Milk',
     text: 'Milk',
-    color: 'rgba(255, 255, 255, 1)',
+    color: colors.milk,
     highlight: true,
 
     list: [
@@ -433,7 +434,7 @@ let dessert = {
     name: 'dessert',
     title: 'Dessert',
     text: 'Dessert',
-    color: 'rgba(255, 55, 116, 1)',
+    color: colors.dessert,
 
     list: [
         {name: 'cake', recipe: true},
@@ -446,7 +447,7 @@ let eggs = {
     name: 'eggs',
     title: 'Eggs',
     text: 'Eggs',
-    color: '#fff',
+    color: colors.eggs,
     highlight: true,
 
     list: [
@@ -458,7 +459,7 @@ let coffee = {
     name: 'coffee',
     title: 'Coffee',
     text: 'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee.',
-    color: '#6F4E37',
+    color: colors.coffee,
 
     list: [
         {name: 'cappuccino', recipe: true},
@@ -471,7 +472,7 @@ let pasta = {
     name: 'pasta',
     title: 'Pasta',
     text: 'Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking. ',
-    color: '#EECB7B',
+    color: colors.pasta,
     highlight: true,
 
     list: [
@@ -487,7 +488,7 @@ let mushrooms = {
     name: 'mushrooms',
     title: 'Mushrooms',
     text: '🍄',
-    color: '#B3AA9A',
+    color: colors.mushrooms,
     highlight: true,
 
     list: [
@@ -501,7 +502,7 @@ let oil = {
     name: 'oil vinegar',
     title: 'Oil Vinegar',
     text: 'Oil and Vinegar',
-    color: '#dbcf5c',
+    color: colors.oil,
     highlight: true,
 
     list: [
@@ -510,6 +511,7 @@ let oil = {
         {name: 'canola oil'},
         {name: 'balsamic vinegar'},
         {name: 'vinegar'},
+        {name: 'citric acid'},
     ]
 }
 
@@ -517,8 +519,6 @@ let fridge = {
     name: 'fridge',
     title: 'Fridge',
     text: 'You have to store your food in the fridge and it will advise you what else to put there',
-    color: '#fff8e6',
-    color2: '#2d2d2d',
     highlight: true,
     unlocked: true,
 
@@ -531,7 +531,7 @@ let awards = {
     name: 'awards',
     title: 'Awards',
     text: 'You can get different rewards for completing recipes and discovering ingredients. And for something else',
-    color: '#ffd7b7',
+    color: colors.awards,
     highlight: true,
     unlocked: true,
 

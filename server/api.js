@@ -95,8 +95,6 @@ let loadImages = async (query) => {
     return imagesArray
 }
 
-// loadImages('burger').then()
-
 loadCoreImages().then()
 
 module.exports = {
