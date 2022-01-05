@@ -86,7 +86,7 @@ export default function Fridge(props) {
         items[i].active = !items[i].active
         setItems(items)
         forceUpdate()
-        console.log(items)
+        // console.log(items)
     }
 
     return (

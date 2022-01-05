@@ -6,9 +6,9 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 
 console.log(VERSION)
 
-console.log(navigator.connection.downlink + ' Mbps')
+// console.log(navigator.connection.downlink + ' Mbps')
 
-console.log(navigator.language)
+// console.log(navigator.language)
 
 // console.log(navigator)
 
