@@ -114,7 +114,7 @@ export default function Unlocked(props) {
 
                     <div className={'text'}>{}</div>
 
-                    <div className={'cup'}>🏆</div>
+                    <div className={'cup'}>{props.unlocked.emoji ? props.unlocked.emoji : '🏆'}</div>
 
                     {/*<div className={'list'}>*/}
                     {/*    {renderList([{name: 'shopping list', call: () => setShop(!shop)}, {name: 'generate recipe', call: () => setRecipe(!recipe)}, {name: '💡', call: () => setLight(!light)}])}*/}

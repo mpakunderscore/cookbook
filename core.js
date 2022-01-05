@@ -101,6 +101,7 @@ let fish = {
 
 let chicken = {
     name: 'chicken',
+    emoji: '🐓',
     title: 'Chicken',
     text: 'More than 50 billion chickens are reared annually as a source of meat and eggs. In the United States alone, more than 8 billion chickens are slaughtered each year for meat, and more than 300 million chickens are reared for egg production.',
     color: colors.chicken,
@@ -202,6 +203,7 @@ let drinks = {
 
 let soup = {
     name: 'soup',
+    emoji: '🍲',
     title: 'Soup',
     text: 'Soup is a primarily liquid food, generally served warm or hot (but may be cool or cold), that is made by combining ingredients of meat or vegetables with stock, milk, or water.',
     color: colors.soup,
@@ -224,6 +226,7 @@ let soup = {
 
 let fruits = {
     name: 'fruits',
+    emoji: '🍋',
     title: 'Fruits',
     text: 'Fruits',
     color: colors.fruits,
@@ -257,6 +260,7 @@ let fruits = {
 
 let sauce = {
     name: 'sauce',
+    emoji: '🥣',
     title: 'Sauce',
     text: 'In cooking, a sauce is a liquid, cream, or semi-solid food, served on or used in preparing other foods. Most sauces are not normally consumed by themselves, they add flavor, moisture, and visual appeal to a dish.',
     color: colors.sauce,
@@ -276,6 +280,7 @@ let sauce = {
 
 let bread = {
     name: 'bread',
+    emoji: '🥖',
     title: 'Bread',
     text: 'Bread is a staple food prepared from a dough of flour and water, usually by baking. Throughout recorded history and around the world, it has been an important part of many cultures\' diet.',
     color: colors.bread,
@@ -297,6 +302,7 @@ let bread = {
 
 let rice = {
     name: 'rice',
+    emoji: '🍚',
     title: 'Rice',
     text: 'As a cereal grain, domesticated rice is the most widely consumed staple food for over half of the world\'s human population, especially in Asia and Africa. It is the agricultural commodity with the third-highest worldwide production, after sugarcane and maize.',
     color: colors.rice,
@@ -306,12 +312,13 @@ let rice = {
         {name: 'rice'},
         {name: 'plant', recipe: true},
         {name: 'sushi', recipe: true},
-        {name: 'onigiri', recipe: true},
+        {name: 'onigiri', recipe: true, emoji: '🍙'},
     ]
 }
 
 let spice = {
     name: 'spice',
+    emoji: '🧂',
     title: 'Spice',
     text: 'Spice',
     color: colors.spice,
@@ -343,6 +350,7 @@ let spice = {
 
 let herbs = {
     name: 'herbs',
+    emoji: '🌿',
     title: 'Herbs',
     text: 'Herbs',
     color: colors.herbs,
@@ -374,6 +382,7 @@ let herbs = {
 
 let equipment = {
     name: 'equipment',
+    emoji: '🔪',
     title: 'Equipment',
     text: 'Equipment',
     color: colors.equipment,
@@ -397,6 +406,7 @@ let equipment = {
 
 let pickling = {
     name: 'pickling',
+    emoji: '🥫',
     title: 'Pickling',
     text: 'Pickling is the process of preserving or extending the shelf life of food by either anaerobic fermentation in brine or immersion in vinegar. The pickling procedure typically affects the food\'s texture and flavor. The resulting food is called a pickle, or, to prevent ambiguity, prefaced with pickled.',
     color: colors.pickling,
@@ -415,6 +425,7 @@ let bento = {
 
 let milk = {
     name: 'milk',
+    emoji: '🥛',
     title: 'Milk',
     text: 'Milk',
     color: colors.milk,
@@ -432,6 +443,7 @@ let milk = {
 
 let dessert = {
     name: 'dessert',
+    emoji: '🍧',
     title: 'Dessert',
     text: 'Dessert',
     color: colors.dessert,
@@ -445,6 +457,7 @@ let dessert = {
 
 let eggs = {
     name: 'eggs',
+    emoji: '🥚',
     title: 'Eggs',
     text: 'Eggs',
     color: colors.eggs,
@@ -457,6 +470,7 @@ let eggs = {
 
 let coffee = {
     name: 'coffee',
+    emoji: '☕',
     title: 'Coffee',
     text: 'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee.',
     color: colors.coffee,
@@ -470,6 +484,7 @@ let coffee = {
 
 let pasta = {
     name: 'pasta',
+    emoji: '🍝',
     title: 'Pasta',
     text: 'Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking. ',
     color: colors.pasta,

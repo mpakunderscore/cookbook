@@ -4,6 +4,7 @@ import eventBus from "../EventBus";
 
 let all = 210
 let colors = {}
+let emoji = {}
 
 export default function Pages(props) {
 
@@ -240,6 +241,7 @@ export default function Pages(props) {
         for (let i = 0; i < data.length; i++) {
             data[i].i = i
             colors[data[i].name] = data[i].color
+            emoji[data[i].name] = data[i].emoji
 
             if (data[i].name !== 'awards' && data[i].name !== 'cookbook' && data[i].name !== 'fridge')
                 allItemsCounter += data[i].list.length
@@ -517,7 +519,8 @@ export default function Pages(props) {
                 }
 
                 userData[unlockedName] = {}
-                props.setUnlocked({name: unlockedName, color: colors[unlockedName]})
+                props.setUnlocked({name: unlockedName, color: colors[unlockedName], emoji: emoji[unlockedName]})
+                props.changeTheme(colors[unlockedName])
             }
 
             if (!userData[group])
