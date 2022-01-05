@@ -87,8 +87,8 @@ let fish = {
         {name: 'fried', recipe: true},
         {name: 'baked', recipe: true},
         {name: 'grill', recipe: true},
-        {name: 'fries', recipe: true},
-        {name: 'sushi', recipe: true},
+        {name: 'fries', recipe: true, page: 'oil'},
+        {name: 'sushi', recipe: true, page: 'rice'},
         {name: 'shrimps'},
         {name: 'octopus'},
         {name: 'mussels'},
@@ -116,6 +116,9 @@ let chicken = {
         {name: 'chicken'},
         {name: 'turkey'},
         {name: 'duck'},
+
+        {name: 'eggs', page: true},
+        {name: 'in white sauce', page: 'mushrooms'},
 
         {name: 'broth', recipe: true},
         {name: 'pate', index: 0, recipe: true},
@@ -153,10 +156,10 @@ let vegetables = {
         {name: 'garlic'},
         {name: 'tomato'},
         {name: 'cucumber'},
-        {name: 'avocado'},
+        {name: 'avocado', page: 'fruits'},
         {name: 'carrot'},
         {name: 'pepper'},
-        {name: 'lettuce'},
+        {name: 'lettuce', page: 'herbs'},
         {name: 'spinach'},
         {name: 'cabbage'},
         {name: 'eggplant'},
@@ -172,7 +175,7 @@ let vegetables = {
         {name: 'leek'},
         {name: 'zucchini'},
         {name: 'celery'},
-        {name: 'chilli'},
+        {name: 'chilli', page: 'spice'},
         {name: 'sweet potato'},
 
     ]
@@ -191,7 +194,7 @@ let drinks = {
         {name: 'tea', recipe: true, item: true},
         {name: 'lemonade', recipe: true},
         {name: 'juice'},
-        {name: 'smoothie', recipe: true},
+        {name: 'smoothie', recipe: true, page: 'equipment'},
         {name: 'chocolate', recipe: true},
         {name: 'mulled', recipe: true},
         {name: 'cocktail', recipe: true},
@@ -211,7 +214,7 @@ let soup = {
     list: [
         {name: 'broth', recipe: true},
         {name: 'stew', recipe: true},
-        {name: 'cream', recipe: true},
+        {name: 'cream', recipe: true, page: 'sauce'},
         {name: 'tom yum', recipe: true},
         {name: 'fish', recipe: true},
         {name: 'chicken', recipe: true},
@@ -350,7 +353,7 @@ let spice = {
 
 let herbs = {
     name: 'herbs',
-    emoji: '🌿',
+    emoji: '🌱',
     title: 'Herbs',
     text: 'Herbs',
     color: colors.herbs,
@@ -476,8 +479,8 @@ let coffee = {
     color: colors.coffee,
 
     list: [
-        {name: 'cappuccino', recipe: true},
-        {name: 'latte', recipe: true},
+        {name: 'cappuccino', recipe: true, page: 'milk'},
+        {name: 'latte', recipe: true, page: 'dessert'},
         {name: 'americano', recipe: true},
     ]
 }
@@ -502,7 +505,8 @@ let pasta = {
 let mushrooms = {
     name: 'mushrooms',
     title: 'Mushrooms',
-    text: '🍄',
+    emoji: '🍄',
+    text: 'A mushroom or toadstool is the fleshy, spore-bearing fruiting body of a fungus, typically produced above ground, on soil, or on its food source.',
     color: colors.mushrooms,
     highlight: true,
 

@@ -49,6 +49,7 @@ export default function Modal(props) {
                          if (itemList[i].name === 'i am amateur') {
                              props.modal.accept()
                              setAmateur(!amateur)
+                             props.setModal(false)
                          } else
                              selectItem()
                      }}>
