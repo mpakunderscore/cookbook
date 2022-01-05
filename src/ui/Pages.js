@@ -209,7 +209,7 @@ export default function Pages(props) {
 
             Math.ceil((
                 listLength +
-                (data[i].name === 'vegetables' || profile ? 1 : 0)
+                (data[i].name === 'vegetables' && listLength > 12 || profile ? 1 : 0)
             ) /3) * 86
 
             + 'px'
@@ -508,10 +508,16 @@ export default function Pages(props) {
 
             if (unlockPage && !userData[name]) {
 
-                if (typeof unlockPage === 'string')
-                    userData[unlockPage] = {}
-                else
-                    userData[name] = {}
+                let unlockedName = ''
+
+                if (typeof unlockPage === 'string') {
+                    unlockedName = unlockPage
+                } else {
+                    unlockedName = name
+                }
+
+                userData[unlockedName] = {}
+                props.setUnlocked({name: unlockedName, color: colors[unlockedName]})
             }
 
             if (!userData[group])

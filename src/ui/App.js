@@ -3,6 +3,7 @@ import Pages from "./Pages"
 import Modal from "./Modal";
 import Fridge from "./Fridge";
 import {loadImages} from "../api";
+import Unlocked from "./Unlocked";
 
 let getAndroidVersion = () => {
     let match = navigator.userAgent.toLowerCase().match(/android\s([0-9.]*)/i)
@@ -60,6 +61,7 @@ function App() {
 
     let [modal, setModal] = useState(false)
     // let [email, setEmail] = useState(localStorage.getItem('email'))
+    let [unlocked, setUnlocked] = useState(false)
 
     let changeTheme = (color) => {
         let metaThemeColor = document.querySelector('meta[name=theme-color]')
@@ -81,9 +83,12 @@ function App() {
     return (
         <div className={'container'}>
 
-            <Pages isFast={isFast} installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal}/>
+            <Pages setUnlocked={setUnlocked} isFast={isFast} installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal}/>
 
-            {modal ?
+            {unlocked ? <Unlocked setUnlocked={setUnlocked} unlocked={unlocked} /> : ''}
+
+            {!unlocked && modal ?
+
                 modal.name === 'fridge' ?
 
                     <Fridge changeTheme={changeTheme} modal={modal} setModal={setModal}/>

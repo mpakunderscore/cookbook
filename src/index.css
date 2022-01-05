@@ -433,7 +433,7 @@ main {
 
 .categoryIcon {
     position: absolute;
-    font-size: 34px;
+    font-size: 32px;
     top: 0;
     left: 40px;
     width: 100px;
@@ -447,7 +447,7 @@ main {
 
 .award {
     position: absolute;
-    font-size: 34px;
+    font-size: 32px;
     top: 0;
     left: 20px;
     width: 100px;
@@ -526,7 +526,7 @@ main {
     /*left: 36px;*/
 
     line-height: 100px;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: 600;
     /*background: red;*/
 
@@ -574,6 +574,26 @@ input:-webkit-autofill {
 
 #fridge {
     color: #fff4d8;
+}
+
+
+
+#unlocked {
+    height: 100%;
+    color: #ffb833;
+    /*background: black;*/
+    z-index: 10;
+}
+
+.cup {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    font-size: 100px;
+    margin: 0 auto 100px;
+    border-radius: 50%;
+    background: ghostwhite;
 }
 
 @media screen and (max-width: 1000px) {
