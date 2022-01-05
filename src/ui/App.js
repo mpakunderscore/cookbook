@@ -71,7 +71,7 @@ function App() {
     return (
         <div className={'container'}>
 
-            <Pages isFast={!(androidVersion > 0 && androidVersion < 11)} installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal}/>
+            <Pages isFast={!androidVersion || !(androidVersion > 0 && androidVersion < 11)} installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal}/>
 
             {modal ?
                 modal.name === 'fridge' ?
