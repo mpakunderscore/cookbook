@@ -146,7 +146,7 @@ let vegetables = {
 
         {name: 'ratatouille', recipe: true},
 
-        {name: 'onion'},
+        {name: 'onion', emoji: '🧅'},
         {name: 'potato'},
         {name: 'garlic'},
         {name: 'tomato'},

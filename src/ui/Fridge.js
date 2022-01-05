@@ -4,13 +4,23 @@ import eventBus from "../EventBus";
 
 export default function Fridge(props) {
 
+    const [, updateState] = React.useState()
+    const forceUpdate = React.useCallback(() => updateState({}), [])
+
     let [backgroundColor, setBackgroundColor] = useState('#2d2d2d')
 
-    let [amateur, setAmateur] = useState(props.modal.state)
+    // let [amateur, setAmateur] = useState(props.modal.state)
+
+    let [items, setItems] = useState(props.modal.list)
+
+    let [shop, setShop] = useState(false)
+
+    let [recipe, setRecipe] = useState(false)
 
     let [light, setLight] = useState(true)
 
     useEffect(() => {
+
         // console.log(props.modal.color)
         if (props.modal.color) {
             props.changeTheme(props.modal.color)
@@ -18,9 +28,18 @@ export default function Fridge(props) {
         } else {
             props.changeTheme(backgroundColor)
         }
-    })
 
-    let renderList = (itemList, active) => {
+        let localItems = []
+        for (let i = 0; i < props.modal.list.length; i++) {
+            let item = props.modal.list[i]
+            item.i = i
+            localItems.push(item)
+        }
+        setItems(localItems)
+
+    }, [])
+
+    let renderList = (itemList) => {
 
         // console.log(itemList)
 
@@ -34,9 +53,8 @@ export default function Fridge(props) {
             list.push(
                 <div key={itemList[i].name + i}
                      className={
-                         (active ||
-                         itemList[i].active ||
-                         (amateur && itemList[i].name === 'amateur') ||
+                         (itemList[i].active ||
+                         (itemList[i].name === 'shopping list' && shop) ||
                          (itemList[i].name === '💡' && light) ?
                              'active' : '')
                      }
@@ -46,15 +64,17 @@ export default function Fridge(props) {
                          ...(itemList[i].name === '💡' ? {fontSize: '26px'} : {})}}
                      onClick={() => {
 
-                         selectItem()
+                         itemList[i].call ?
+                             itemList[i].call()
+                             :
+                             selectItem(itemList[i].i)
 
-                         if (itemList[i].name === '💡') {
-                             setLight(!light)
-                             // props.changeTheme(!light ? item.color : item.color2)
-                         }
+                         forceUpdate()
 
                      }}>
+                    {/*{!light ? '🧅' : itemList[i].name.toUpperCase()}*/}
                     {itemList[i].name.toUpperCase()}
+                    {/*{!hide ? itemList[i].name.toUpperCase() : ''}*/}
                 </div>
             )
         }
@@ -62,8 +82,11 @@ export default function Fridge(props) {
         return list
     }
 
-    let selectItem = () => {
-        // props.setModal(false)
+    let selectItem = (i) => {
+        items[i].active = !items[i].active
+        setItems(items)
+        forceUpdate()
+        console.log(items)
     }
 
     return (
@@ -71,7 +94,7 @@ export default function Fridge(props) {
 
             <div id={'fridge'}>
 
-                <div className={'card active'} style={{background: backgroundColor}}>
+                <div className={'card active menu'} style={{background: backgroundColor}}>
 
                     <div className={'name'}>
                         <div>{props.modal.group.toUpperCase()}</div>
@@ -85,11 +108,11 @@ export default function Fridge(props) {
                     {/*<div className={'separator'}/>*/}
 
                     <div className={'text'}>
-                        {'COLD HERE'}
+                        {'Pick up shopping list or generate recipe based on several groceries.'}
                     </div>
 
                     <div className={'list'}>
-                        {renderList([{name: 'shopping list'}, {name: 'generate recipe'}, {name: '💡'}])}
+                        {renderList([{name: 'shopping list', call: () => setShop(!shop)}, {name: 'generate recipe', call: () => setRecipe(!recipe)}, {name: '💡', call: () => setLight(!light)}])}
                     </div>
 
                 </div>
@@ -98,11 +121,13 @@ export default function Fridge(props) {
 
                 <div className={''} style={{backgroundColor: light ? '#D1D1D1' : '#424240'}}>
                     <div className={'separator'}/>
-                    <div className={'list'}>
-                        {renderList(props.modal.list)}
+                    <div id={'groceries'} className={'list'}>
+                        {shop ? renderList(items.filter(item => item.active === true)) : ''}
+                        {/*{!shop && recipe ? renderList([...items].sort(() => (Math.random() > .5) ? 1 : -1)) : ''}*/}
+                        {/*{shop && recipe && renderList(items.filter(item => item.active === true).sort(() => (Math.random() > .5) ? 1 : -1))}*/}
+                        {!shop && renderList(items)}
                     </div>
                 </div>
-
 
             </div>
 

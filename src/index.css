@@ -293,6 +293,10 @@ main {
     /*background: red;*/
 }
 
+/*.chips.active {*/
+/*    border: 1px solid black;*/
+/*}*/
+
 .list > div:active {
     background: rgba(248, 248, 255, 0.5);
     color: gray;
@@ -302,6 +306,29 @@ main {
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid ghostwhite;
     color: gray;
+}
+
+#groceries {
+    height: 100%;
+    /*display: flex;*/
+    /*align-items: stretch;*/
+}
+
+#groceries > div.active {
+    /*font-size: 16px;*/
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 4px 8px;
+    color: #151515;
+}
+
+#fridge .card {
+    /*background: rgba(255, 255, 255, 0.8);*/
+    /*border: 3px solid ghostwhite;*/
+    /*color: gray;*/
+}
+
+#fridge .menu .list > div.active {
+    color: #151515;
 }
 
 .list > div > .recipe {
@@ -369,7 +396,12 @@ main {
 }
 
 #fridge {
+    height: 100%;
     /*background: red;*/
+}
+
+#fridge > div:last-child {
+    min-height: 100%;
 }
 
 #modal .card {

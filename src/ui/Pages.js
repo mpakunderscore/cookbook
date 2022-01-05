@@ -209,7 +209,7 @@ export default function Pages(props) {
 
             Math.ceil((
                 listLength +
-                (data[i].name === 'vegetables' ? 1 : 0)
+                (data[i].name === 'vegetables' || profile ? 1 : 0)
             ) /3) * 86
 
             + 'px'
