@@ -5,11 +5,13 @@ import Fridge from "./Fridge";
 
 let getAndroidVersion = () => {
     let match = navigator.userAgent.toLowerCase().match(/android\s([0-9.]*)/i)
-    return match ? match[1] : undefined
+    return match ? match[1] : -1
 }
 
 let androidVersion = getAndroidVersion()
 console.log(androidVersion)
+
+let isFast = !(androidVersion > 0 && androidVersion < 11)
 
 function App() {
 
@@ -71,7 +73,7 @@ function App() {
     return (
         <div className={'container'}>
 
-            <Pages isFast={!androidVersion || !(androidVersion > 0 && androidVersion < 11)} installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal}/>
+            <Pages isFast={isFast} installPWA={installPWA} changeTheme={changeTheme} setModal={setModal} display={!modal}/>
 
             {modal ?
                 modal.name === 'fridge' ?
