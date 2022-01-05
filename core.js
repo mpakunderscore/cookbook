@@ -127,7 +127,7 @@ let vegetables = {
     text: 'Vegetables are parts of plants that are consumed by humans or other animals as food. Bell peppers are usually sold green, but they can also be red, purple or yellow.\n' +
         'Tomatoes are very high in the carotenoid, and can lower your risk of cancer.\n' +
         'Other vegetables high in carotenoids are carrots, spinach, sweet potatoes, and collard greens.\n',
-    color: '#62bb69',
+    color: 'rgb(98, 187, 105)',
     unlocked: true,
 
     list: [
@@ -524,6 +524,8 @@ let fridge = {
 
     list: []
 }
+
+let nuts = {}
 
 let awards = {
     name: 'awards',

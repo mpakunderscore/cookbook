@@ -67,10 +67,10 @@ export default function Modal(props) {
     let generateImages = () => {
 
         let group = props.images[props.modal.group]
-        console.log(group)
+        // console.log(group)
 
         let localImages = group[props.modal.name]
-        console.log(localImages)
+        // console.log(localImages)
 
         let images = []
         for (let i = 0; i < localImages.length; i++) {
@@ -130,11 +130,10 @@ export default function Modal(props) {
 
                 </div>
 
-                <div className={'separator'}/>
-
                 {/*highlight*/}
 
-                <div className={''}>
+                <div className={''} style={{background: backgroundColor.replace(')', ', 0.3)').replace('rgb', 'rgba')}}>
+                    <div className={'separator'}/>
                     <div className={'list'}>
                         {recipes[props.modal.group] && recipes[props.modal.group][props.modal.name] && recipes[props.modal.group][props.modal.name].list ?
                             renderList(recipes[props.modal.group][props.modal.name].list)

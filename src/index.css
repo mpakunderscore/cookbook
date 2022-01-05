@@ -266,7 +266,7 @@ main {
     /*top: 0;*/
     /*!*color: black;*!*/
     /*z-index: 1;*/
-    opacity: .2;
+    opacity: .4;
 }
 
 .card.locked > div:not(.name) {
