@@ -111,6 +111,8 @@ export default function Modal(props) {
                         }
                     </div>
 
+                    {props.help === 0 ? <div onClick={() => props.setHelp(1)} className={'help'}>{'You can mark a recipe as unlocked if you\'ve done it in the past. But to get a mastered you have to do it two more times and attach a photo. Only then you will be able to claim the competition.'}</div> : ''}
+
                     <div className={'list'}>
                         {!props.modal.name ?
                             renderList([{name: 'order'}, {name: 'clear'}, {name: 'close'}])

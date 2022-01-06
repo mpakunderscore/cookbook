@@ -71,6 +71,8 @@ function App() {
 
     console.log(modal)
 
+    let [help, setHelp] = useState(0)
+
     useEffect(async () => {
         initPWA()
 
@@ -93,7 +95,7 @@ function App() {
 
                     <Fridge changeTheme={changeTheme} modal={modal} setModal={setModal}/>
                     :
-                    <Modal images={images} changeTheme={changeTheme} modal={modal} setModal={setModal}/>
+                    <Modal setHelp={setHelp} help={help} images={images} changeTheme={changeTheme} modal={modal} setModal={setModal}/>
 
                 : ''
             }

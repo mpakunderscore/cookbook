@@ -211,6 +211,7 @@ export default function Pages(props) {
 
         let card = document.getElementById('card_' + data[i].name)
         let textHeight = card.getElementsByClassName('text')[0].clientHeight
+        // let helpHeight = card.getElementsByClassName('help')[0].clientHeight
         // console.log(listLength)
         card.style.height = 89 + textHeight + 20 +
 
