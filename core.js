@@ -518,9 +518,9 @@ let mushrooms = {
 }
 
 let oil = {
-    name: 'oil vinegar',
-    title: 'Oil Vinegar',
-    text: 'Oil and Vinegar',
+    name: 'oil',
+    title: 'Oil',
+    text: 'Oil, Vinegar and Acid',
     color: colors.oil,
     highlight: true,
 
