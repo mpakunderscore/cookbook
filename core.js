@@ -519,6 +519,7 @@ let mushrooms = {
 
 let oil = {
     name: 'oil',
+    emoji: '🫒',
     title: 'Oil',
     text: 'Oil, Vinegar and Acid',
     color: colors.oil,

@@ -37,6 +37,8 @@ export default function Unlocked(props) {
         // }
         // setItems(localItems)
 
+        navigator.vibrate(100)
+
     }, [])
 
     // let renderList = (itemList) => {
