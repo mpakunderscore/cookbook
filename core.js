@@ -117,7 +117,7 @@ let chicken = {
         {name: 'turkey'},
         {name: 'duck'},
 
-        {name: 'eggs', page: true},
+        {name: 'eggs', item: false, page: true},
         {name: 'in white sauce', page: 'mushrooms'},
 
         {name: 'broth', recipe: true},
@@ -467,6 +467,13 @@ let eggs = {
 
     list: [
         {name: 'chicken eggs'},
+        {name: 'quail eggs'},
+        {name: 'ostrich eggs'},
+        {name: 'scrambled eggs', recipe: true},
+        {name: 'english breakfast', recipe: true},
+        {name: 'tamagoyaki', recipe: true},
+        {name: 'shakshuka', recipe: true},
+        {name: 'poached', recipe: true}
     ]
 }
 
