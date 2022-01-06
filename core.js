@@ -145,10 +145,11 @@ let vegetables = {
         {name: 'relish', recipe: true},
         {name: 'soup', recipe: true, page: true},
         {name: 'pickled', recipe: true, page: 'pickling'},
-        {name: 'coleslaw', recipe: true, page: true},
+
         {name: 'assorted', recipe: true, page: true},
 
         {name: 'ratatouille', recipe: true},
+        {name: 'coleslaw', recipe: true, page: true},
 
         {name: 'onion', emoji: '🧅'},
         {name: 'potato'},

@@ -94,9 +94,9 @@ export default function Unlocked(props) {
     return (
         <div id={'modal'}>
 
-            <div id={'unlocked'} style={{background: props.unlocked.color}}>
+            <div id={'unlocked'}>
 
-                <div className={'card highlight'}>
+                <div className={'card highlight'} style={{background: props.unlocked.color}}>
 
                     <div className={'name'}>
                         <div>{'unlocked'}</div>
