@@ -129,9 +129,9 @@ let chicken = {
 let vegetables = {
     name: 'vegetables',
     title: 'Vegetables',
-    text: 'Vegetables are parts of plants that are consumed by humans or other animals as food. Bell peppers are usually sold green, but they can also be red, purple or yellow.\n' +
-        'Tomatoes are very high in the carotenoid, and can lower your risk of cancer.\n' +
-        'Other vegetables high in carotenoids are carrots, spinach, sweet potatoes, and collard greens.\n',
+    text: 'Vegetables are parts of plants that are consumed by humans or other animals as food. Bell peppers are usually sold green, but they can also be red, purple or yellow. ' +
+        'Tomatoes are very high in the carotenoid, and can lower your risk of cancer. ' +
+        'Other vegetables high in carotenoids are carrots, spinach, sweet potatoes, and collard greens.',
     color: colors.vegetables,
     unlocked: true,
 
