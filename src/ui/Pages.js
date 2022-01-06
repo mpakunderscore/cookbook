@@ -64,6 +64,9 @@ export default function Pages(props) {
 
             console.log(userData)
 
+            if (!userData['awards'])
+                userData['awards']= {}
+
             if (email && !userData['awards']['postal']) {
                 userData['awards']['postal'] = true
             }
