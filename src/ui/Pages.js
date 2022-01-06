@@ -118,6 +118,9 @@ export default function Pages(props) {
 
         setLogin(false)
         setEmail(email)
+        forceUpdate()
+
+        props.setUnlocked({name: 'postal', color: 'rgb(50, 50, 50)', emoji: ''})
     }
 
     let updateUser = async () => {
