@@ -46,7 +46,7 @@ export default function Modal(props) {
                      } : {}}
                      onClick={() => {
 
-                         if (itemList[i].name === 'i am amateur') {
+                         if (itemList[i].name === 'i did it unlock') {
                              props.modal.accept()
                              setAmateur(!amateur)
                              props.setModal(false)
@@ -116,7 +116,7 @@ export default function Modal(props) {
                             renderList([{name: 'order'}, {name: 'clear'}, {name: 'close'}])
                             :
                             renderList([
-                                {name: '🏆'}, {name: 'expert'}, {name: 'i am amateur', active: amateur},
+                                {name: 'want 🏆 ?'}, {name: 'mastered'}, {name: 'i did it unlock', active: amateur},
                             ])
                         }
                         {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
