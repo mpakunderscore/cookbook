@@ -111,8 +111,8 @@ let loadImages = async (query) => {
     // console.log(images)
 
     for (let i = 0; i < images.length; i++) {
-        // console.log(images[i].attribs.src)
-        if (images[i].attribs.height && images[i].attribs.height > 200 && images[i].attribs.src && !images[i].attribs.src.startsWith('/'))
+        console.log(images[i].attribs.src)
+        if (images[i].attribs.src && !images[i].attribs.src.startsWith('/'))
             imagesArray.push(images[i].attribs.src)
     }
 
