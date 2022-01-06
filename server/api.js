@@ -62,7 +62,7 @@ let loadCoreImages = async () => {
                 let queryString = recipes[j].name.split(' ').length > 1 ?
                     recipes[j].name
                     :
-                    food[i].name + ' ' + recipes[j].name
+                    food[i].name.replace('vegetables', 'veg') + ' ' + recipes[j].name
 
                 images[food[i].name][recipes[j].name] = await loadImages(queryString)
             }

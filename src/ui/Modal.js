@@ -75,7 +75,7 @@ export default function Modal(props) {
 
         let images = []
         for (let i = 0; i < localImages.length; i++) {
-            images.push(<img key={'image' + i} src={localImages[i]}/>)
+            images.push(<img height={180} key={'image' + i} src={localImages[i]}/>)
         }
 
         return images
