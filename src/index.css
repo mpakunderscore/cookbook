@@ -350,7 +350,8 @@ main {
 
 .list > div.disabled {
     opacity: .8;
-    background: gray;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    background: rgba(128, 128, 128, 0.3);
 }
 
 .chips {
@@ -608,13 +609,18 @@ input:-webkit-autofill {
 }
 
 .help {
-    background: ghostwhite;
+    background: rgba(248, 248, 255, 0.7);
     padding: 20px;
     font-size: 20px;
     font-weight: 300;
     color: #2d2d2d;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
     letter-spacing: 1px;
+
+    border-radius: 10px;
+    /*border: 1px dashed gray;*/
+
+    margin: 20px;
 }
 
 @keyframes wobble {
