@@ -64,7 +64,7 @@ let loadCoreImages = async () => {
                     :
                     food[i].name + ' ' + recipes[j].name
 
-                images[food[i].name][recipes[j].name] = await loadImages(queryString + '+recipe')
+                images[food[i].name][recipes[j].name] = await loadImages(queryString)
             }
         }
     }
@@ -86,9 +86,10 @@ let loadImages = async (query) => {
 
     // let url = 'https://api.unsplash.com/search/photos?query=' + encodeURIComponent(query) + '&client_id=' + clientID
 
-    let url = 'https://www.google.com/search?q=' + query.replace(' ', '+') + '&tbm=isch&tbs=isz:l%2Cil:cl'
+    // let url = 'https://www.google.com/search?q=' + query.replace(' ', '+') + '&tbm=isch&tbs=isz:l%2Cil:cl'
+    let url = 'https://www.bing.com/images/search?q=' + query.replace(' ', '%20') // + '&qft=+filterui:imagesize-large+filterui:photo-photo'
 
-    // console.log(url)
+    console.log(url)
 
     let response = await axios.get(url, {
 
@@ -111,7 +112,7 @@ let loadImages = async (query) => {
 
     for (let i = 0; i < images.length; i++) {
         // console.log(images[i].attribs.src)
-        if (!images[i].attribs.src.startsWith('/'))
+        if (images[i].attribs.height && images[i].attribs.height > 200 && images[i].attribs.src && !images[i].attribs.src.startsWith('/'))
             imagesArray.push(images[i].attribs.src)
     }
 
