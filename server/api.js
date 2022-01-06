@@ -57,7 +57,7 @@ let loadCoreImages = async () => {
             images[food[i].name] = {}
 
             for (let j = 0; j < recipes.length; j++) {
-                images[food[i].name][recipes[j].name] = await loadImages(recipes[j].name)
+                images[food[i].name][recipes[j].name] = await loadImages(food[i].name + ' ' + recipes[j].name)
             }
         }
     }
@@ -67,7 +67,7 @@ let loadImages = async (query) => {
 
     let imagesArray = []
 
-    let clientID = 'JlxtO4Z40A34q4wNJ3MuOzL9oNwmZ8NsItP9KU1Cwuk'
+    let clientID = 'frjPxPVuy8TBY16CU7KlZQAEopFlU21UGm84KlV0UB4'
 
     let url = 'https://api.unsplash.com/search/photos?query=' + encodeURIComponent(query) + '&client_id=' + clientID
 

@@ -38,7 +38,7 @@ export default function Modal(props) {
         let list = []
         for (let i = 0; i < listLength; i++) {
             list.push(
-                <div key={itemList[i].name}
+                <div key={itemList[i].name + i}
                      className={(active || itemList[i].active || (amateur && itemList[i].name === 'amateur') ? 'active' : '')}
                      style={itemList[i].color ? {
                          background: itemList[i].color,
@@ -77,11 +77,6 @@ export default function Modal(props) {
         for (let i = 0; i < localImages.length; i++) {
             images.push(<img key={'image' + i} src={localImages[i]}/>)
         }
-
-        images.push(<div className={'separator2'}/>)
-        images.push(<div className={'separator2'}/>)
-        images.push(<div className={'separator2'}/>)
-        images.push(<div className={'separator2'}/>)
 
         return images
     }
@@ -144,10 +139,7 @@ export default function Modal(props) {
                     </div>
                 </div>
 
-
             </div>
-
-
         </div>
 
     )
