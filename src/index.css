@@ -348,6 +348,11 @@ main {
     overflow: hidden;
 }
 
+.list > div.disabled {
+    opacity: .8;
+    background: gray;
+}
+
 .chips {
     /*font-weight: 600;*/
     /*background: red;*/

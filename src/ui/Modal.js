@@ -39,19 +39,25 @@ export default function Modal(props) {
         for (let i = 0; i < listLength; i++) {
             list.push(
                 <div key={itemList[i].name + i}
-                     className={(active || itemList[i].active || (amateur && itemList[i].name === 'amateur') ? 'active' : '')}
+                     className={
+                         (itemList[i].disabled ? 'disabled ' : '') +
+                         (active || itemList[i].active || (amateur && itemList[i].name === 'amateur') ? 'active' : '')}
                      style={itemList[i].color ? {
                          background: itemList[i].color,
                          color: itemList[i].highlight ? '#4c4c4c' : 'white'
                      } : {}}
                      onClick={() => {
 
-                         if (itemList[i].name === 'i did it unlock') {
+                         if (itemList[i].name === 'i did it') {
                              props.modal.accept()
-                             setAmateur(!amateur)
+                             setAmateur(true)
                              props.setModal(false)
-                         } else
+                         } else if (!itemList[i].disabled) {
+                            props.setHelp(0)
+                         } else {
                              selectItem()
+                         }
+
                      }}>
                     {itemList[i].name.toUpperCase()}
                 </div>
@@ -75,7 +81,8 @@ export default function Modal(props) {
 
         let images = []
         for (let i = 0; i < localImages.length; i++) {
-            images.push(<img height={180} key={'image' + i} src={localImages[i]}/>)
+            images.push(<img height={180
+            } key={'image' + i} src={localImages[i]}/>)
         }
 
         return images
@@ -118,7 +125,7 @@ export default function Modal(props) {
                             renderList([{name: 'order'}, {name: 'clear'}, {name: 'close'}])
                             :
                             renderList([
-                                {name: 'want 🏆'}, {name: 'mastered'}, {name: 'i did it unlock', active: amateur},
+                                {name: '🏆', disabled: true}, {name: 'mastered'}, {name: 'i did it', active: amateur},
                             ])
                         }
                         {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
