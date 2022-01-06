@@ -101,7 +101,7 @@ let fish = {
 
 let chicken = {
     name: 'chicken',
-    emoji: '🐓',
+    emoji: '🍗',
     title: 'Chicken',
     text: 'More than 50 billion chickens are reared annually as a source of meat and eggs. In the United States alone, more than 8 billion chickens are slaughtered each year for meat, and more than 300 million chickens are reared for egg production.',
     color: colors.chicken,
