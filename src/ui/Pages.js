@@ -333,6 +333,8 @@ export default function Pages(props) {
 
             {item.name === 'eggs' || item.name === 'breakfast' ? <div className={'yolk'}></div> : ''}
 
+            {item.name === 'vegetables' ? <div className={'leaf'}></div> : ''}
+
             {/*{item.name === 'fridge' && !isActive ? <div className={'categoryIcon'}>🧊</div> : ''}*/}
 
             {/*{item.name === 'awards' && !isActive ? <div className={'categoryIcon'}>🏆</div> : ''}*/}
