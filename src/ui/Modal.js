@@ -93,7 +93,7 @@ export default function Modal(props) {
 
             <div>
 
-                <div className={'card active'} style={{background: backgroundColor}}>
+                <div className={'card active ' + (props.modal.highlight ? 'highlight' : '')} style={{background: backgroundColor}}>
 
                     <div className={'name'}>
                         <div>{props.modal.group.toUpperCase()}</div>

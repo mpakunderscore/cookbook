@@ -535,7 +535,9 @@ export default function Pages(props) {
 
             if (isRecipe) {
 
-                props.setModal({color: data[active].color, name: name, group: group, state: !!userData[group][name], accept: () => {
+                props.setModal({color: data[active].color, name: name, group: group, state: !!userData[group][name],
+                    highlight: data.find(item => item.name === group).highlight,
+                    accept: () => {
                         setUserAccept(group, name)
                         setCardHeight(active, data, userData)
                 }, cancel: () => {
