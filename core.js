@@ -2,7 +2,7 @@ const colors = require("./colors");
 let core = {
     name: 'cookbook',
     title: 'COOKBOOK',
-    text: 'Learn to cook. Unlock new cards with tasty recipes and unique groceries. There is fridge function for shopping list reminder and recipe generation. Compete with others, get rewards and find helpful tips.',
+    text: 'Learn to cook. Unlock new cards with tasty recipes and unique groceries. There is fridge function for shopping list and recipe generation. Compete with others, get rewards and find helpful tips.',
     color: colors.cookbook,
     unlocked: true,
 
