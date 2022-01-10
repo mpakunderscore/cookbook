@@ -58,7 +58,7 @@ let googleIndex = async (name) => {
     return index
 }
 
-loadFridge().then(r => {})
+// loadFridge().then(r => {})
 
 let loadCoreImages = async (images) => {
 
