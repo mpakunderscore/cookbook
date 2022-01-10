@@ -655,10 +655,6 @@ input:-webkit-autofill {
         justify-content: space-between;
     }
 
-    .card.active {
-        height: auto;
-    }
-
     main {
         max-width: 600px;
         padding-left: calc(50% - 300px);
@@ -668,6 +664,24 @@ input:-webkit-autofill {
 
         margin: auto;
         /*width: 50%;*/
+    }
+
+    .card.active {
+        height: auto;
+    }
+
+    .card .text {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .card .list {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .card .list > div {
+        /*width: calc((100% - 60px) / 3 - 10px);*/
     }
 
     #modal {
