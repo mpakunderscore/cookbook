@@ -125,8 +125,10 @@ export default function Modal(props) {
                             renderList([{name: 'order'}, {name: 'clear'}, {name: 'close'}])
                             :
                             renderList([
-                                {name: '🏆', disabled: true}, {name: 'mastered'}, {name: 'i did it', active: amateur},
+                                {name: 'mastered'}, {name: 'i did it', active: amateur},
                             ])
+
+                            // {name: '🏆', disabled: true},
                         }
                         {/*{item.list.length > 0 & <div>{item.list[0].name}</div>}*/}
                         {/*<div>{item.list[1].name}</div>*/}
