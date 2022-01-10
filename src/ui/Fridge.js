@@ -38,7 +38,23 @@ export default function Fridge(props) {
         }
         setItems(localItems)
 
-        setItems(loadFridge())
+        loadFridge().then(groceries => {
+            console.log(groceries)
+            // console.log(items)
+
+            let newItems = []
+            for (let i = 0; i < items.length; i++) {
+                let name = items[i].name
+                console.log(name)
+                let index = groceries[name]
+                console.log(index)
+                items[i].index = index
+                newItems.push(items[i])
+            }
+
+            setItems(newItems)
+            // console.log(items)
+        })
 
     }, [])
 
@@ -115,7 +131,10 @@ export default function Fridge(props) {
                     </div>
 
                     <div className={'list'}>
-                        {renderList([{name: 'shopping list', call: () => setShop(!shop)}, {name: 'generate recipe', call: () => setRecipe(!recipe)}, {name: '💡', call: () => setLight(!light)}])}
+                        {renderList([{name: 'shopping list', call: () => setShop(!shop)}, {name: 'generate recipe', call: () => setRecipe(!recipe)}, {name: '💡', call: () => {
+                                setLight(!light)
+                                setItems(light ? items.sort((a, b) => {return a.index - b.index}) : items)
+                            }}])}
                     </div>
 
                 </div>
