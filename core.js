@@ -118,7 +118,7 @@ let chicken = {
         {name: 'duck'},
 
         {name: 'eggs', item: false, page: true},
-        {name: 'in white sauce', page: 'mushrooms'},
+        {name: 'in white sauce', recipe: true, page: 'mushrooms'},
 
         {name: 'broth', recipe: true},
         {name: 'pate', index: 0, recipe: true},
@@ -151,8 +151,8 @@ let vegetables = {
         {name: 'ratatouille', recipe: true},
         {name: 'coleslaw', recipe: true, page: true},
 
-        {name: 'onion', emoji: '🧅'},
         {name: 'potato'},
+        {name: 'onion', emoji: '🧅'},
         {name: 'garlic'},
         {name: 'tomato'},
         {name: 'cucumber'},
