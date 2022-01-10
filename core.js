@@ -117,7 +117,7 @@ let chicken = {
         {name: 'turkey'},
         {name: 'duck'},
 
-        {name: 'eggs', item: false, page: true},
+        // {name: 'eggs', item: false, page: true},
         {name: 'in white sauce', recipe: true, page: 'mushrooms'},
 
         {name: 'broth', recipe: true},
@@ -215,7 +215,7 @@ let soup = {
         {name: 'broth', recipe: true},
         {name: 'stew', recipe: true},
         {name: 'cream', recipe: true, page: 'sauce'},
-        {name: 'spoon', item: true, page: 'equipment'},
+        {name: 'spoon', item: false, recipe: false, page: 'equipment'},
         {name: 'tom yum', recipe: true},
         {name: 'fish', recipe: true},
         {name: 'chicken', recipe: true},
@@ -386,9 +386,9 @@ let herbs = {
 
 let equipment = {
     name: 'equipment',
-    emoji: '🔪',
+    emoji: '🍽️',
     title: 'Equipment',
-    text: 'Equipment',
+    text: 'In cutlery or kitchenware, a fork (from Latin: furca \'pitchfork\') is a utensil, now usually made of metal, whose long handle terminates in a head that branches into several narrow and often slightly curved tines with which one can spear foods either to hold them to cut with a knife or to lift them to the mouth.',
     color: colors.equipment,
 
     list: [
