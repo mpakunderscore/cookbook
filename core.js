@@ -467,14 +467,7 @@ let eggs = {
     highlight: true,
 
     list: [
-        {name: 'chicken eggs'},
-        {name: 'quail eggs'},
-        {name: 'ostrich eggs'},
-        {name: 'scrambled eggs', recipe: true},
-        {name: 'english breakfast', recipe: true},
-        {name: 'tamagoyaki', recipe: true},
-        {name: 'shakshuka', recipe: true},
-        {name: 'poached', recipe: true}
+
     ]
 }
 
@@ -593,25 +586,47 @@ let awards = {
     ]
 }
 
+let breakfast = {
+    name: 'breakfast',
+    title: 'Breakfast',
+    text: 'This is a set of simple recipes for the morning, not only actually. To fill your belly quickly and tasty. The rest of the recipes are more complicated and take longer.',
+    color: colors.breakfast,
+    highlight: true,
+    unlocked: true,
+
+    list: [
+        {name: 'eggs'},
+        {name: 'scrambled eggs', recipe: true},
+        {name: 'english breakfast', recipe: true},
+        {name: 'tamagoyaki', recipe: true},
+        {name: 'shakshuka', recipe: true},
+        {name: 'poached', recipe: true},
+        {name: 'pancakes', recipe: true},
+        {name: 'toast', recipe: true},
+        {name: 'syrniki', recipe: true}
+    ]
+}
+
 module.exports = [
     core,
+    breakfast,
     vegetables,
     meat,
     fish,
     drinks,
-    soup,
     chicken,
-    sauce,
-    bread,
     spice,
-    herbs,
+    soup,
+    coffee,
     fruits,
+    herbs,
+    bread,
+    sauce,
     rice,
     pickling,
-    eggs,
+    // eggs,
     mushrooms,
     pasta,
-    coffee,
     dessert,
     milk,
     oil,

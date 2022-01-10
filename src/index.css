@@ -411,6 +411,10 @@ main {
     background: white;
 }
 
+.card.highlight > .list > div > .recipe {
+    background: #d3d3d3;
+}
+
 .list > div > .page {
     position: absolute;
     left: 0;
@@ -694,7 +698,7 @@ input:-webkit-autofill {
     }
 
     .card #images > div > img {
-        transform: rotate(20deg);
+        /*transform: rotate(20deg);*/
     }
 
     #modal {

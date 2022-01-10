@@ -57,6 +57,14 @@ let loadImages = () => {
         })
 }
 
+let loadFridge = () => {
+    return fetch(prefix + '/fridge')
+        .then(response => response.json())
+        .then(data => {
+            return data
+        })
+}
+
 module.exports = {
-    loadFood, loadUser, sendMessage, loadActivePageIndex, loadImages
+    loadFood, loadUser, sendMessage, loadActivePageIndex, loadImages, loadFridge
 }

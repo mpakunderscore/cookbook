@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react'
 import recipes from "../../recipes";
 import eventBus from "../EventBus";
+import {loadFridge} from "../api";
 
 export default function Fridge(props) {
 
@@ -36,6 +37,8 @@ export default function Fridge(props) {
             localItems.push(item)
         }
         setItems(localItems)
+
+        setItems(loadFridge())
 
     }, [])
 

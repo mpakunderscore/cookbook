@@ -23,6 +23,7 @@ let colors = {
     oil: 'rgb(219, 207, 92)',
     awards: 'rgb(255, 215, 183)',
     bento: 'rgb(0, 0, 0)',
+    breakfast: 'rgb(255,255,255)'
 }
 
 module.exports = colors

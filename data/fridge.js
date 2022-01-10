@@ -463,21 +463,21 @@ let fridge = [
     ]
 ]
 
-let out = []
-for (let i = 0; i < fridge.length; i++) {
+// let out = []
+// for (let i = 0; i < fridge.length; i++) {
+//
+//     let name = fridge[i].name
+//     let index = parseInt(fridge[i].index.replace(/,/g, ''))
+//
+//     out.push({name, index})
+// }
 
-    let name = fridge[i].name
-    let index = parseInt(fridge[i].index.replace(/,/g, ''))
+// console.log(out)
 
-    out.push({name, index})
-}
-
-console.log(out)
-
-
-
-out.sort(function(a,b) {
+fridge.sort(function(a,b) {
     return b.index - a.index;
 })
 
-console.log(out)
+console.log(fridge)
+
+module.exports = {fridge}

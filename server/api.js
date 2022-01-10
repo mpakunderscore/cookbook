@@ -3,6 +3,7 @@ const cheerio = require("cheerio")
 const {getUsers, getUser, updateUser, getMessages, saveMessage} = require("./database/database")
 const axios = require("axios")
 const {loadCoreImages} = require("../google")
+const {fridge} = require("../data/fridge");
 
 let prefix = '/api'
 
@@ -47,6 +48,10 @@ let initAPI = async (app) => {
 
     app.get(prefix + '/images', async (request, response) => {
         response.json(images)
+    })
+
+    app.get(prefix + '/fridge', async (request, response) => {
+        response.json(fridge)
     })
 }
 
