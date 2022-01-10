@@ -60,7 +60,7 @@ let googleIndex = [
         "index": 1250000000
     },
     {
-        "name": "chicken eggs",
+        "name": "eggs",
         "index": 1130000000
     },
     {

@@ -133,7 +133,7 @@ export default function Fridge(props) {
                     <div className={'list'}>
                         {renderList([{name: 'shopping list', call: () => setShop(!shop)}, {name: 'generate recipe', call: () => setRecipe(!recipe)}, {name: '💡', call: () => {
                                 setLight(!light)
-                                setItems(light ? items.sort((a, b) => {return a.index - b.index}) : items)
+                                setItems(light ? items.sort((a, b) => {return b.index - a.index}) : items)
                             }}])}
                     </div>
 
