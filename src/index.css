@@ -681,6 +681,10 @@ input:-webkit-autofill {
         padding-right: 30px;
     }
 
+    .card .name span.count {
+        margin-left: 0;
+    }
+
     .card .list > div {
         /*width: calc((100% - 60px) / 3 - 10px);*/
     }
