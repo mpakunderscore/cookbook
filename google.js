@@ -97,7 +97,7 @@ let loadImages = async (query) => {
 
     // let url = 'https://api.unsplash.com/search/photos?query=' + encodeURIComponent(query) + '&client_id=' + clientID
 
-    let url = 'https://www.google.com/search?q=' + query.replace(' ', '+') + '&tbm=isch&tbs=isz:l%2Cil:cl'
+    let url = 'https://www.google.com/search?q=' + query.replace(' ', '+') + '+beautiful' + '&tbm=isch&tbs=isz:l%2Cil:cl'
     // let url = 'https://www.bing.com/images/search?q=' + query.replace(' ', '%20') // + '&qft=+filterui:imagesize-large+filterui:photo-photo'
 
     console.log(url)
