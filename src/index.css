@@ -473,21 +473,36 @@ main {
     /*overflow: auto;*/
 }
 
-.edge {
+.bubble {
     position: absolute;
     width: 80px;
     height: 80px;
-    /*background: red;*/
-    top: -40px;
     background: rgba(255, 255, 255, 0.1);
+    top: -40px;
     left: 10px;
     border-radius: 50%;
 
     transition: top 1s;
 }
 
-#card_drinks.active .edge {
-    top: -60px;
+.bubble2 {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 10px;
+    left: 50px;
+    border-radius: 50%;
+
+    transition: top 1s;
+}
+
+#card_drinks.active .bubble {
+    top: -10px;
+}
+
+#card_drinks.active .bubble2 {
+    top: -30px;
 }
 
 .bone {

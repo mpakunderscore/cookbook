@@ -335,7 +335,7 @@ export default function Pages(props) {
 
             {item.name === 'vegetables' ? <div className={'leaf'}></div> : ''}
 
-            {item.name === 'drinks' ? <div className={'edge'}></div> : ''}
+            {item.name === 'drinks' ? <div className={'bubble'}><div className={'bubble2'}></div></div> : ''}
 
             {/*{item.name === 'meat' ? <div className={'bone'}></div> : ''}*/}
 
