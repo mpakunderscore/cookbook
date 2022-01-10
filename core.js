@@ -215,6 +215,7 @@ let soup = {
         {name: 'broth', recipe: true},
         {name: 'stew', recipe: true},
         {name: 'cream', recipe: true, page: 'sauce'},
+        {name: 'spoon', item: true, page: 'equipment'},
         {name: 'tom yum', recipe: true},
         {name: 'fish', recipe: true},
         {name: 'chicken', recipe: true},
