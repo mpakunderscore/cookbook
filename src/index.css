@@ -468,6 +468,41 @@ main {
     /*left: -100px;*/
 }
 
+#card_drinks.active {
+    /*border-radius: 0;*/
+    /*overflow: auto;*/
+}
+
+.edge {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    /*background: red;*/
+    top: -40px;
+    background: rgba(255, 255, 255, 0.1);
+    left: 10px;
+    border-radius: 50%;
+
+    transition: top 1s;
+}
+
+#card_drinks.active .edge {
+    top: -60px;
+}
+
+.bone {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    /*background: red;*/
+    top: -100px;
+    background: rgba(255, 255, 255, 0.9);
+    /*border: 5px solid rgba(255, 255, 255, 0.4);*/
+    /*left: 200px;*/
+    right: -100px;
+    border-radius: 50%;
+}
+
 .categoryIcon {
     position: absolute;
     font-size: 32px;
