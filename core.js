@@ -610,8 +610,8 @@ let breakfast = {
 
 module.exports = [
     core,
-    breakfast,
     vegetables,
+    breakfast,
     meat,
     fish,
     drinks,
