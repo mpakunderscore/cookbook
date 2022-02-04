@@ -619,6 +619,17 @@ let youtube = {
     text: 'YouTube',
     color: colors.youtube,
     unlocked: true,
+
+    list: [
+        {name: 'Binging with Babish'},
+        {name: 'Pro Home Cooks'},
+        {name: 'Bon Appétit'},
+        {name: 'JunsKitchen'},
+        {name: 'Almazan Kitchen'},
+        {name: 'Alex'},
+        {name: 'Uncle Roger'},
+        {name: 'You Suck At Cooking'},
+    ]
 }
 
 module.exports = [
