@@ -612,7 +612,14 @@ let breakfast = {
     ]
 }
 
-let youtube = {}
+let youtube = {
+    name: 'YouTube',
+    emoji: '▶️',
+    title: 'YouTube',
+    text: 'YouTube',
+    color: colors.youtube,
+    unlocked: true,
+}
 
 module.exports = [
     core,
@@ -638,6 +645,7 @@ module.exports = [
     milk,
     oil,
     equipment,
+    youtube,
     // fridge,
     awards,
 ]
