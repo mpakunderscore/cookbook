@@ -460,6 +460,8 @@ let dessert = {
         {name: 'cake', recipe: true},
         {name: 'waffles', recipe: true},
         {name: 'muffins', recipe: true},
+
+        {name: 'cheesecake', recipe: true},
     ]
 }
 
