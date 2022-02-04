@@ -112,6 +112,8 @@ let chicken = {
         {name: 'fries', recipe: true},
         {name: 'soup', recipe: true},
 
+        {name: 'butter chicken', recipe: true},
+
         // {name: 'eggs', page: true, item: false},
         {name: 'chicken'},
         {name: 'turkey'},
@@ -152,6 +154,8 @@ let vegetables = {
         {name: 'coleslaw', recipe: true, page: true},
 
         {name: 'potato'},
+        {name: 'fondant potatoes', recipe: true},
+
         {name: 'onion', emoji: '🧅'},
         {name: 'garlic'},
         {name: 'tomato'},
@@ -607,6 +611,8 @@ let breakfast = {
         {name: 'syrniki', recipe: true}
     ]
 }
+
+let youtube = {}
 
 module.exports = [
     core,
