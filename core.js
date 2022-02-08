@@ -620,6 +620,7 @@ let youtube = {
     title: 'YouTube',
     text: 'YouTube',
     color: colors.youtube,
+    highlight: true,
     unlocked: true,
 
     list: [
