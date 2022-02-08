@@ -615,7 +615,7 @@ let breakfast = {
 }
 
 let youtube = {
-    name: 'YouTube',
+    name: 'youtube',
     emoji: '▶️',
     title: 'YouTube',
     text: 'YouTube',
@@ -624,14 +624,15 @@ let youtube = {
     unlocked: true,
 
     list: [
-        {name: 'Binging with Babish'},
-        {name: 'Pro Home Cooks'},
-        {name: 'Bon Appétit'},
-        {name: 'JunsKitchen'},
-        {name: 'Almazan Kitchen'},
-        {name: 'Alex'},
-        {name: 'Uncle Roger'},
-        {name: 'You Suck At Cooking'},
+        {name: 'Binging with Babish', link: true},
+        {name: 'Pro Home Cooks', link: true},
+        {name: 'Bon Appétit', link: true},
+        {name: 'Juns Kitchen', link: true},
+        {name: 'Almazan Kitchen', link: true},
+        {name: 'French Guy Cooking', link: true},
+        {name: 'Uncle Roger', link: true},
+        {name: 'You Suck At Cooking', link: true},
+        {name: 'Gordon Ramsay', link: true},
     ]
 }
 

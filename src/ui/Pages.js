@@ -331,15 +331,17 @@ export default function Pages(props) {
             {/*<div className={'title'}>{item.title}</div>*/}
             <div className={'text'}>{item.text}</div>
 
-            {item.name === 'eggs' || item.name === 'breakfast' ? <div className={'yolk'}></div> : ''}
+            {item.name === 'eggs' || item.name === 'breakfast' ? <div className={'yolk'}/> : ''}
 
-            {item.name === 'vegetables' ? <div className={'leaf'}></div> : ''}
+            {item.name === 'vegetables' ? <div className={'leaf'}/> : ''}
 
-            {item.name === 'fish' ? <div className={'bone'}></div> : ''}
+            {item.name === 'fish' ? <div className={'bone'}/> : ''}
 
-            {item.name === 'meat' ? <div className={'fat'}></div> : ''}
+            {item.name === 'meat' ? <div className={'fat'}/> : ''}
 
-            {item.name === 'drinks' ? <div className={'bubble'}><div className={'bubble2'}></div></div> : ''}
+            {item.name === 'drinks' ? <div className={'bubble'}><div className={'bubble2'}/></div> : ''}
+
+            {item.name === 'youtube' ? <img src={'images/youtube.png'} className={'youtube'} alt={''}/> : ''}
 
             {/*{item.name === 'meat' ? <div className={'bone'}></div> : ''}*/}
 

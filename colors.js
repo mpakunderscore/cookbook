@@ -1,6 +1,8 @@
 let colors = {
     cookbook: 'rgb(54, 31, 31)',
-    meat: 'rgb(164, 46, 47)',
+    // meat: 'rgb(189, 64, 53)',
+
+    meat: 'rgb(236, 202, 181)',
     fish: 'rgb(250, 128, 114)',
     vegetables: 'rgb(98, 187, 105)',
     chicken: 'rgb(255, 219, 215)',
@@ -24,7 +26,7 @@ let colors = {
     awards: 'rgb(255, 215, 183)',
     bento: 'rgb(0, 0, 0)',
     breakfast: 'rgb(255, 255, 255)',
-    youtube: 'rgb(255, 0, 0)',
+    youtube: 'rgb(40, 40, 40)',
 }
 
 module.exports = colors
