@@ -38,6 +38,7 @@ let meat = {
 
 
         {name: 'slow', index: 600, recipe: true},
+        {name: 'slow ribs', recipe: true},
 
         {name: 'beef'},
         {name: 'pork'},
@@ -350,6 +351,8 @@ let spice = {
         {name: 'mint'},
         {name: 'oregano'},
         {name: 'thyme'},
+        {name: 'hondashi'},
+
         // {name: ''},
         // {name: ''},
         // {name: ''},
